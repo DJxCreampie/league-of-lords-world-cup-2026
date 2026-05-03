@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { rankManagers, type Manager } from './scoring'
 import './style.css'
 
+const lastUpdated = 'May 3, 2026 at 10:45 AM ET'
+
 const managers: Manager[] = [
   {
     name: 'Avery Stone',
@@ -105,6 +107,7 @@ createRoot(document.getElementById('root')!).render(
         <div className="page-header">
           <p>Fantasy World Cup</p>
           <h1 id="leaderboard-title">Leaderboard</h1>
+          <span>Last updated: {lastUpdated}</span>
         </div>
 
         <ol className="manager-list">
@@ -114,7 +117,10 @@ createRoot(document.getElementById('root')!).render(
                 <span className="rank">#{index + 1}</span>
                 <div>
                   <h2>{manager.name}</h2>
-                  <p>{manager.totalGoals} total goals</p>
+                  <p>
+                    {manager.totalGoals} total goals · {manager.activeTeamsRemaining} active teams
+                    remaining
+                  </p>
                 </div>
               </div>
 

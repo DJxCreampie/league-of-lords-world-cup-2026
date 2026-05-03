@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest'
-import { getManagerTotal, rankManagers, type Manager } from './scoring'
+import {
+  getActiveTeamsRemaining,
+  getManagerTotal,
+  rankManagers,
+  type Manager,
+} from './scoring'
 
 describe('scoring', () => {
   it('sets manager total to the sum of team goals', () => {
@@ -66,5 +71,35 @@ describe('scoring', () => {
     }
 
     expect(getManagerTotal(manager)).toBe(8)
+  })
+
+  it('counts active and champion teams as active teams remaining', () => {
+    const manager: Manager = {
+      name: 'Still Alive',
+      teams: [
+        { name: 'Team A', goals: 3, status: 'active' },
+        { name: 'Team B', goals: 2, status: 'eliminated' },
+        { name: 'Team C', goals: 5, status: 'champion' },
+        { name: 'Team D', goals: 1, status: 'eliminated' },
+      ],
+    }
+
+    expect(getActiveTeamsRemaining(manager)).toBe(2)
+  })
+
+  it('adds active teams remaining to ranked managers', () => {
+    const managers: Manager[] = [
+      {
+        name: 'Leader',
+        teams: [
+          { name: 'Team A', goals: 5, status: 'active' },
+          { name: 'Team B', goals: 4, status: 'champion' },
+          { name: 'Team C', goals: 3, status: 'eliminated' },
+          { name: 'Team D', goals: 2, status: 'eliminated' },
+        ],
+      },
+    ]
+
+    expect(rankManagers(managers)[0].activeTeamsRemaining).toBe(2)
   })
 })

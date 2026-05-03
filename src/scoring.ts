@@ -13,10 +13,15 @@ export type Manager = {
 
 export type RankedManager = Manager & {
   totalGoals: number
+  activeTeamsRemaining: number
 }
 
 export function getManagerTotal(manager: Manager): number {
   return manager.teams.reduce((sum, team) => sum + team.goals, 0)
+}
+
+export function getActiveTeamsRemaining(manager: Manager): number {
+  return manager.teams.filter((team) => team.status !== 'eliminated').length
 }
 
 export function rankManagers(managers: Manager[]): RankedManager[] {
@@ -24,6 +29,7 @@ export function rankManagers(managers: Manager[]): RankedManager[] {
     .map((manager) => ({
       ...manager,
       totalGoals: getManagerTotal(manager),
+      activeTeamsRemaining: getActiveTeamsRemaining(manager),
     }))
     .sort((a, b) => b.totalGoals - a.totalGoals)
 }
