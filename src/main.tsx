@@ -1,104 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { rankManagers, type Manager } from './scoring'
+import { assignments, lastUpdated, managers, teams } from './mockData'
+import { rankManagers } from './scoring'
 import './style.css'
 
-const lastUpdated = 'May 3, 2026 at 10:45 AM ET'
-
-const managers: Manager[] = [
-  {
-    name: 'Avery Stone',
-    teams: [
-      { name: 'Brazil', goals: 12, status: 'active' },
-      { name: 'Japan', goals: 7, status: 'eliminated' },
-      { name: 'Morocco', goals: 8, status: 'active' },
-      { name: 'Canada', goals: 3, status: 'eliminated' },
-    ],
-  },
-  {
-    name: 'Maya Brooks',
-    teams: [
-      { name: 'France', goals: 14, status: 'champion' },
-      { name: 'Ghana', goals: 5, status: 'eliminated' },
-      { name: 'Uruguay', goals: 6, status: 'active' },
-      { name: 'South Korea', goals: 4, status: 'eliminated' },
-    ],
-  },
-  {
-    name: 'Theo Park',
-    teams: [
-      { name: 'Argentina', goals: 13, status: 'active' },
-      { name: 'Switzerland', goals: 6, status: 'eliminated' },
-      { name: 'Senegal', goals: 7, status: 'active' },
-      { name: 'Saudi Arabia', goals: 2, status: 'eliminated' },
-    ],
-  },
-  {
-    name: 'Nora Patel',
-    teams: [
-      { name: 'England', goals: 11, status: 'active' },
-      { name: 'Mexico', goals: 5, status: 'eliminated' },
-      { name: 'Croatia', goals: 7, status: 'active' },
-      { name: 'Qatar', goals: 1, status: 'eliminated' },
-    ],
-  },
-  {
-    name: 'Leo Martinez',
-    teams: [
-      { name: 'Spain', goals: 10, status: 'active' },
-      { name: 'Cameroon', goals: 4, status: 'eliminated' },
-      { name: 'United States', goals: 6, status: 'active' },
-      { name: 'Wales', goals: 2, status: 'eliminated' },
-    ],
-  },
-  {
-    name: 'Iris Chen',
-    teams: [
-      { name: 'Portugal', goals: 9, status: 'active' },
-      { name: 'Ecuador', goals: 5, status: 'eliminated' },
-      { name: 'Serbia', goals: 4, status: 'eliminated' },
-      { name: 'Australia', goals: 6, status: 'active' },
-    ],
-  },
-  {
-    name: 'Sam Rivera',
-    teams: [
-      { name: 'Netherlands', goals: 8, status: 'active' },
-      { name: 'Poland', goals: 4, status: 'eliminated' },
-      { name: 'Tunisia', goals: 3, status: 'eliminated' },
-      { name: 'Costa Rica', goals: 2, status: 'eliminated' },
-    ],
-  },
-  {
-    name: 'Quinn Morgan',
-    teams: [
-      { name: 'Germany', goals: 7, status: 'eliminated' },
-      { name: 'Denmark', goals: 3, status: 'eliminated' },
-      { name: 'Iran', goals: 4, status: 'eliminated' },
-      { name: 'Belgium', goals: 5, status: 'active' },
-    ],
-  },
-  {
-    name: 'Elena Rossi',
-    teams: [
-      { name: 'Italy', goals: 6, status: 'eliminated' },
-      { name: 'Chile', goals: 4, status: 'eliminated' },
-      { name: 'Nigeria', goals: 5, status: 'active' },
-      { name: 'New Zealand', goals: 1, status: 'eliminated' },
-    ],
-  },
-  {
-    name: 'Jules Carter',
-    teams: [
-      { name: 'Colombia', goals: 5, status: 'active' },
-      { name: 'Peru', goals: 3, status: 'eliminated' },
-      { name: 'Egypt', goals: 4, status: 'eliminated' },
-      { name: 'Scotland', goals: 2, status: 'eliminated' },
-    ],
-  },
-]
-
-const leaderboard = rankManagers(managers)
+const leaderboard = rankManagers(managers, teams, assignments)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -112,13 +18,13 @@ createRoot(document.getElementById('root')!).render(
 
         <ol className="manager-list">
           {leaderboard.map((manager, index) => (
-            <li className="manager-card" key={manager.name}>
+            <li className="manager-card" key={manager.id}>
               <div className="manager-summary">
                 <span className="rank">#{index + 1}</span>
                 <div>
                   <h2>{manager.name}</h2>
                   <p>
-                    {manager.totalGoals} total goals · {manager.activeTeamsRemaining} active teams
+                    {manager.totalGoals} total goals &middot; {manager.activeTeamsRemaining} active teams
                     remaining
                   </p>
                 </div>
@@ -126,7 +32,7 @@ createRoot(document.getElementById('root')!).render(
 
               <ul className="team-list" aria-label={`${manager.name}'s teams`}>
                 {manager.teams.map((team) => (
-                  <li className="team-row" key={team.name}>
+                  <li className="team-row" key={team.id}>
                     <span className="team-name">{team.name}</span>
                     <span className="team-goals">{team.goals} goals</span>
                     <span className={`status ${team.status}`}>{team.status}</span>
