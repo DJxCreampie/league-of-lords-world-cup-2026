@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { assignments, lastUpdated, managers, teams } from './mockData'
+import { assignments, lastUpdated, managers, matches, teams } from './mockData'
 import { rankManagers } from './scoring'
 import './style.css'
 
-const leaderboard = rankManagers(managers, teams, assignments)
+const leaderboard = rankManagers(managers, teams, assignments, matches)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
