@@ -1,4 +1,11 @@
-import type { Assignment, Manager, Match, Team } from './types'
+import type {
+  Assignment,
+  Manager,
+  Match,
+  MatchScoreOverride,
+  Team,
+  TeamGoalAdjustment,
+} from './types'
 
 export const lastUpdated = 'May 3, 2026 at 10:45 AM ET'
 
@@ -151,4 +158,14 @@ export const matches: Match[] = [
   { id: 'match-peru-ukraine', stage: 'Group', status: 'finished', homeTeamId: 'team-peru', awayTeamId: 'team-ukraine', homeGoals: 3, awayGoals: 0 },
   { id: 'match-egypt-paraguay', stage: 'Group', status: 'finished', homeTeamId: 'team-egypt', awayTeamId: 'team-paraguay', homeGoals: 4, awayGoals: 0 },
   { id: 'match-scotland-ivory-coast', stage: 'Group', status: 'finished', homeTeamId: 'team-scotland', awayTeamId: 'team-ivory-coast', homeGoals: 2, awayGoals: 0 },
+]
+
+export const matchScoreOverrides: MatchScoreOverride[] = [
+  { matchId: 'match-brazil-norway', homeGoals: 9, awayGoals: 1 },
+  { matchId: 'match-france-ghana-shootout', homeGoals: 13, awayGoals: 5 },
+]
+
+export const teamGoalAdjustments: TeamGoalAdjustment[] = [
+  { teamId: 'team-morocco', goals: 1 },
+  { teamId: 'team-canada', goals: -1 },
 ]

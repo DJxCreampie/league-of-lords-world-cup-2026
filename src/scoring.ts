@@ -1,4 +1,11 @@
-import type { Assignment, Manager, Match, Team } from './types'
+import type {
+  Assignment,
+  Manager,
+  Match,
+  MatchScoreOverride,
+  Team,
+  TeamGoalAdjustment,
+} from './types'
 
 export type ScoredTeam = Team & {
   goals: number
@@ -10,22 +17,43 @@ export type RankedManager = Manager & {
   activeTeamsRemaining: number
 }
 
-export function getTeamGoals(team: Team, matches: Match[]): number {
-  return matches.reduce((total, match) => {
+function getMatchGoals(match: Match, matchScoreOverrides: MatchScoreOverride[]): Pick<Match, 'homeGoals' | 'awayGoals'> {
+  const override = matchScoreOverrides.find((scoreOverride) => scoreOverride.matchId === match.id)
+
+  return override ?? match
+}
+
+function getTeamGoalAdjustment(team: Team, teamGoalAdjustments: TeamGoalAdjustment[]): number {
+  return teamGoalAdjustments
+    .filter((adjustment) => adjustment.teamId === team.id)
+    .reduce((total, adjustment) => total + adjustment.goals, 0)
+}
+
+export function getTeamGoals(
+  team: Team,
+  matches: Match[],
+  matchScoreOverrides: MatchScoreOverride[] = [],
+  teamGoalAdjustments: TeamGoalAdjustment[] = [],
+): number {
+  const matchGoals = matches.reduce((total, match) => {
     if (match.status === 'scheduled') {
       return total
     }
 
+    const effectiveGoals = getMatchGoals(match, matchScoreOverrides)
+
     if (match.homeTeamId === team.id) {
-      return total + match.homeGoals
+      return total + effectiveGoals.homeGoals
     }
 
     if (match.awayTeamId === team.id) {
-      return total + match.awayGoals
+      return total + effectiveGoals.awayGoals
     }
 
     return total
   }, 0)
+
+  return matchGoals + getTeamGoalAdjustment(team, teamGoalAdjustments)
 }
 
 export function getAssignedTeams(
@@ -33,6 +61,8 @@ export function getAssignedTeams(
   teams: Team[],
   assignments: Assignment[],
   matches: Match[],
+  matchScoreOverrides: MatchScoreOverride[] = [],
+  teamGoalAdjustments: TeamGoalAdjustment[] = [],
 ): ScoredTeam[] {
   const teamById = new Map(teams.map((team) => [team.id, team]))
 
@@ -42,7 +72,7 @@ export function getAssignedTeams(
     .filter((team): team is Team => team !== undefined)
     .map((team) => ({
       ...team,
-      goals: getTeamGoals(team, matches),
+      goals: getTeamGoals(team, matches, matchScoreOverrides, teamGoalAdjustments),
     }))
 }
 
@@ -51,11 +81,17 @@ export function getManagerTotal(
   teams: Team[],
   assignments: Assignment[],
   matches: Match[],
+  matchScoreOverrides: MatchScoreOverride[] = [],
+  teamGoalAdjustments: TeamGoalAdjustment[] = [],
 ): number {
-  return getAssignedTeams(manager, teams, assignments, matches).reduce(
-    (sum, team) => sum + team.goals,
-    0,
-  )
+  return getAssignedTeams(
+    manager,
+    teams,
+    assignments,
+    matches,
+    matchScoreOverrides,
+    teamGoalAdjustments,
+  ).reduce((sum, team) => sum + team.goals, 0)
 }
 
 export function getActiveTeamsRemaining(
@@ -63,10 +99,17 @@ export function getActiveTeamsRemaining(
   teams: Team[],
   assignments: Assignment[],
   matches: Match[],
+  matchScoreOverrides: MatchScoreOverride[] = [],
+  teamGoalAdjustments: TeamGoalAdjustment[] = [],
 ): number {
-  return getAssignedTeams(manager, teams, assignments, matches).filter(
-    (team) => team.status !== 'eliminated',
-  ).length
+  return getAssignedTeams(
+    manager,
+    teams,
+    assignments,
+    matches,
+    matchScoreOverrides,
+    teamGoalAdjustments,
+  ).filter((team) => team.status !== 'eliminated').length
 }
 
 export function rankManagers(
@@ -74,10 +117,19 @@ export function rankManagers(
   teams: Team[],
   assignments: Assignment[],
   matches: Match[],
+  matchScoreOverrides: MatchScoreOverride[] = [],
+  teamGoalAdjustments: TeamGoalAdjustment[] = [],
 ): RankedManager[] {
   return managers
     .map((manager) => {
-      const assignedTeams = getAssignedTeams(manager, teams, assignments, matches)
+      const assignedTeams = getAssignedTeams(
+        manager,
+        teams,
+        assignments,
+        matches,
+        matchScoreOverrides,
+        teamGoalAdjustments,
+      )
 
       return {
         ...manager,

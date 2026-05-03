@@ -1,10 +1,26 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { assignments, lastUpdated, managers, matches, teams } from './mockData'
+import {
+  assignments,
+  lastUpdated,
+  managers,
+  matches,
+  matchScoreOverrides,
+  teamGoalAdjustments,
+  teams,
+} from './mockData'
 import { rankManagers } from './scoring'
 import './style.css'
 
-const leaderboard = rankManagers(managers, teams, assignments, matches)
+const leaderboard = rankManagers(
+  managers,
+  teams,
+  assignments,
+  matches,
+  matchScoreOverrides,
+  teamGoalAdjustments,
+)
+const hasManualOverrides = matchScoreOverrides.length > 0 || teamGoalAdjustments.length > 0
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -14,6 +30,7 @@ createRoot(document.getElementById('root')!).render(
           <p>Fantasy World Cup</p>
           <h1 id="leaderboard-title">Leaderboard</h1>
           <span>Last updated: {lastUpdated}</span>
+          {hasManualOverrides && <small>Manual scoring corrections applied</small>}
         </div>
 
         <ol className="manager-list">

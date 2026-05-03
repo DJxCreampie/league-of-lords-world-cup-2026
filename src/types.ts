@@ -29,3 +29,14 @@ export type Match = {
   homePenaltyShootoutGoals?: number
   awayPenaltyShootoutGoals?: number
 }
+
+export type MatchScoreOverride = {
+  matchId: string
+  homeGoals: number
+  awayGoals: number
+}
+
+export type TeamGoalAdjustment = {
+  teamId: string
+  goals: number
+}

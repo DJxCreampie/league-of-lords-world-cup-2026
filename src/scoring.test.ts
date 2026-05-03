@@ -12,7 +12,7 @@ import {
   getTeamGoals,
   rankManagers,
 } from './scoring'
-import type { Assignment, Manager, Match, Team } from './types'
+import type { Assignment, Manager, Match, MatchScoreOverride, Team, TeamGoalAdjustment } from './types'
 
 const testManagers: Manager[] = [
   { id: 'middle', name: 'Middle' },
@@ -128,6 +128,15 @@ const testMatches: Match[] = [
   },
 ]
 
+const testMatchScoreOverrides: MatchScoreOverride[] = [
+  { matchId: 'finished-a-b', homeGoals: 6, awayGoals: 1 },
+]
+
+const testTeamGoalAdjustments: TeamGoalAdjustment[] = [
+  { teamId: 'team-c', goals: 2 },
+  { teamId: 'team-e', goals: -1 },
+]
+
 function getUnassignedTeams(teams: Team[], assignments: Assignment[]): Team[] {
   const assignedTeamIds = new Set(assignments.map((assignment) => assignment.teamId))
 
@@ -204,5 +213,39 @@ describe('scoring', () => {
         matchesWithChangedUnassignedGoal,
       ),
     ).toBe(totalBefore)
+  })
+
+  it('uses manual match overrides to change team totals', () => {
+    expect(getTeamGoals(testTeams[0], testMatches, testMatchScoreOverrides)).toBe(6)
+    expect(getTeamGoals(testTeams[1], testMatches, testMatchScoreOverrides)).toBe(1)
+  })
+
+  it('uses manual match overrides to change manager totals', () => {
+    expect(
+      getManagerTotal(testManagers[0], testTeams, testAssignments, testMatches, testMatchScoreOverrides),
+    ).toBe(9)
+  })
+
+  it('uses manual team goal adjustments to change team totals', () => {
+    expect(getTeamGoals(testTeams[2], testMatches, [], testTeamGoalAdjustments)).toBe(3)
+    expect(getTeamGoals(testTeams[4], testMatches, [], testTeamGoalAdjustments)).toBe(6)
+  })
+
+  it('uses manual team goal adjustments to change manager totals', () => {
+    expect(
+      getManagerTotal(
+        testManagers[0],
+        testTeams,
+        testAssignments,
+        testMatches,
+        [],
+        testTeamGoalAdjustments,
+      ),
+    ).toBe(10)
+  })
+
+  it('uses normal match scoring when no overrides exist', () => {
+    expect(getTeamGoals(testTeams[0], testMatches)).toBe(4)
+    expect(getManagerTotal(testManagers[0], testTeams, testAssignments, testMatches)).toBe(8)
   })
 })
