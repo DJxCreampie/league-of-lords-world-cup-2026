@@ -1,19 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { rankManagers, type Manager } from './scoring'
 import './style.css'
-
-type TeamStatus = 'active' | 'eliminated' | 'champion'
-
-type Team = {
-  name: string
-  goals: number
-  status: TeamStatus
-}
-
-type Manager = {
-  name: string
-  teams: Team[]
-}
 
 const managers: Manager[] = [
   {
@@ -108,12 +96,7 @@ const managers: Manager[] = [
   },
 ]
 
-const leaderboard = managers
-  .map((manager) => ({
-    ...manager,
-    totalGoals: manager.teams.reduce((sum, team) => sum + team.goals, 0),
-  }))
-  .sort((a, b) => b.totalGoals - a.totalGoals)
+const leaderboard = rankManagers(managers)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
