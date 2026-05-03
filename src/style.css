@@ -18,7 +18,7 @@ body {
 }
 
 .leaderboard {
-  width: min(100%, 960px);
+  width: min(100%, 920px);
   margin: 0 auto;
 }
 
@@ -59,79 +59,96 @@ h1 {
 }
 
 .manager-list,
-.team-list {
+.detail-team-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .manager-list {
-  display: grid;
-  gap: 14px;
-}
-
-.manager-card {
-  background: #ffffff;
+  overflow: hidden;
   border: 1px solid #dfe6dc;
   border-radius: 8px;
-  padding: 18px;
+  background: #ffffff;
   box-shadow: 0 10px 24px rgb(23 32 51 / 0.06);
 }
 
-.manager-summary {
-  display: flex;
+.manager-row + .manager-row {
+  border-top: 1px solid #edf1ea;
+}
+
+.manager-toggle {
+  width: 100%;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 128px 152px;
   align-items: center;
   gap: 14px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #edf1ea;
+  padding: 16px 18px;
+  font: inherit;
+  text-align: left;
+}
+
+.manager-toggle:hover,
+.manager-toggle:focus-visible {
+  background: #f8faf6;
+}
+
+.manager-toggle:focus-visible {
+  outline: 3px solid #bbf7d0;
+  outline-offset: -3px;
 }
 
 .rank {
-  display: grid;
-  place-items: center;
-  flex: 0 0 48px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #14532d;
-  color: #ffffff;
+  color: #14532d;
   font-weight: 800;
 }
 
-h2 {
-  margin: 0;
-  font-size: 1.15rem;
+.manager-name {
+  min-width: 0;
+  font-size: 1rem;
+  font-weight: 800;
 }
 
-.manager-summary p {
-  margin: 4px 0 0;
+.manager-total,
+.manager-active {
   color: #53605a;
+  font-size: 0.94rem;
   font-weight: 700;
-  line-height: 1.4;
+  white-space: nowrap;
 }
 
-.team-list {
+.manager-detail {
+  border-top: 1px solid #edf1ea;
+  background: #fbfcfa;
+  padding: 6px 18px 14px 104px;
+}
+
+.detail-team-list {
   display: grid;
-  gap: 8px;
-  margin-top: 14px;
+  gap: 6px;
 }
 
-.team-row {
+.detail-team-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 10px;
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f3ed;
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-weight: 700;
 }
 
-.team-row:last-child {
-  border-bottom: 0;
+.detail-team-row:nth-child(odd) {
+  background: #f3f7f0;
 }
 
 .team-name {
   min-width: 0;
-  font-weight: 700;
 }
 
 .team-goals {
@@ -169,26 +186,37 @@ h2 {
   .app-shell {
     padding: 48px 24px;
   }
-
-  .manager-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .manager-card:first-child {
-    grid-column: 1 / -1;
-  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   h1 {
     font-size: 2rem;
   }
 
-  .manager-card {
+  .manager-toggle {
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 6px 12px;
     padding: 14px;
   }
 
-  .team-row {
+  .manager-total,
+  .manager-active {
+    font-size: 0.9rem;
+  }
+
+  .manager-total {
+    grid-column: 2;
+  }
+
+  .manager-active {
+    grid-column: 2;
+  }
+
+  .manager-detail {
+    padding: 8px 14px 14px 68px;
+  }
+
+  .detail-team-row {
     grid-template-columns: minmax(0, 1fr) auto;
   }
 

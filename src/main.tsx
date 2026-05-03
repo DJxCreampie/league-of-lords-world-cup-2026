@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   assignments,
@@ -22,8 +22,10 @@ const leaderboard = rankManagers(
 )
 const hasManualOverrides = matchScoreOverrides.length > 0 || teamGoalAdjustments.length > 0
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+function App() {
+  const [selectedManagerId, setSelectedManagerId] = useState<string | null>(null)
+
+  return (
     <main className="app-shell">
       <section className="leaderboard" aria-labelledby="leaderboard-title">
         <div className="page-header">
@@ -34,32 +36,50 @@ createRoot(document.getElementById('root')!).render(
         </div>
 
         <ol className="manager-list">
-          {leaderboard.map((manager, index) => (
-            <li className="manager-card" key={manager.id}>
-              <div className="manager-summary">
-                <span className="rank">#{index + 1}</span>
-                <div>
-                  <h2>{manager.name}</h2>
-                  <p>
-                    {manager.totalGoals} total goals &middot; {manager.activeTeamsRemaining} active teams
-                    remaining
-                  </p>
-                </div>
-              </div>
+          {leaderboard.map((manager, index) => {
+            const rank = index + 1
+            const isSelected = selectedManagerId === manager.id
 
-              <ul className="team-list" aria-label={`${manager.name}'s teams`}>
-                {manager.teams.map((team) => (
-                  <li className="team-row" key={team.id}>
-                    <span className="team-name">{team.name}</span>
-                    <span className="team-goals">{team.goals} goals</span>
-                    <span className={`status ${team.status}`}>{team.status}</span>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+            return (
+              <li className="manager-row" key={manager.id}>
+                <button
+                  className="manager-toggle"
+                  type="button"
+                  aria-expanded={isSelected}
+                  onClick={() => setSelectedManagerId(isSelected ? null : manager.id)}
+                >
+                  <span className="rank">#{rank}</span>
+                  <span className="manager-name">{manager.name}</span>
+                  <span className="manager-total">{manager.totalGoals} goals</span>
+                  <span className="manager-active">
+                    {manager.activeTeamsRemaining} active teams
+                  </span>
+                </button>
+
+                {isSelected && (
+                  <section className="manager-detail" aria-label={`${manager.name} detail`}>
+                    <ul className="detail-team-list" aria-label={`${manager.name} detail teams`}>
+                      {manager.teams.map((team) => (
+                        <li className="detail-team-row" key={team.id}>
+                          <span className="team-name">{team.name}</span>
+                          <span className="team-goals">{team.goals} goals</span>
+                          <span className={`status ${team.status}`}>{team.status}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+              </li>
+            )
+          })}
         </ol>
       </section>
     </main>
+  )
+}
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
   </StrictMode>,
 )
