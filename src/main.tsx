@@ -25,6 +25,7 @@ const leaderboard = rankManagers(
 
 type SortKey = 'rank' | 'manager' | 'goals' | 'active'
 type SortDirection = 'asc' | 'desc'
+type TeamsSortKey = 'status' | 'team' | 'manager' | 'goals'
 
 const hasManualOverrides =
   matchScoreOverrides.length > 0 ||
@@ -140,6 +141,9 @@ function App() {
     return sortDirection === 'asc' ? ' ↑' : ' ↓'
   }
 
+  const [teamsSortKey, setTeamsSortKey] = useState<TeamsSortKey>('team')
+  const [teamsSortDirection, setTeamsSortDirection] = useState<SortDirection>('asc')
+
   const teamsWithManager = useMemo(
     () =>
       [...teams]
@@ -154,6 +158,32 @@ function App() {
         }),
     [],
   )
+
+  const sortedTeams = useMemo(() => {
+    const sorted = [...teamsWithManager].sort((a, b) => {
+      if (teamsSortKey === 'team') return a.name.localeCompare(b.name)
+      if (teamsSortKey === 'manager') return a.managerName.localeCompare(b.managerName)
+      if (teamsSortKey === 'status') return a.status.localeCompare(b.status)
+      return (a.goalsFor ?? 0) - (b.goalsFor ?? 0)
+    })
+
+    return teamsSortDirection === 'asc' ? sorted : sorted.reverse()
+  }, [teamsSortDirection, teamsSortKey, teamsWithManager])
+
+  const handleTeamsSort = (nextSortKey: TeamsSortKey) => {
+    if (teamsSortKey === nextSortKey) {
+      setTeamsSortDirection((current) => (current === 'asc' ? 'desc' : 'asc'))
+      return
+    }
+
+    setTeamsSortKey(nextSortKey)
+    setTeamsSortDirection(nextSortKey === 'goals' ? 'desc' : 'asc')
+  }
+
+  const teamsSortIndicator = (column: TeamsSortKey) => {
+    if (teamsSortKey !== column) return ''
+    return teamsSortDirection === 'asc' ? ' ↑' : ' ↓'
+  }
 
   const unassignedCount = teamsWithManager.filter(
     (team) => team.managerName === 'Unassigned',
@@ -310,14 +340,14 @@ function App() {
           </p>
 
           <div className="teams-table-header">
-            <span>Status</span>
-            <span>Team</span>
-            <span>Manager</span>
-            <span>Goals</span>
+            <button type="button" className="teams-header-cell" onClick={() => handleTeamsSort('status')}>Status{teamsSortIndicator('status')}</button>
+            <button type="button" className="teams-header-cell" onClick={() => handleTeamsSort('team')}>Team{teamsSortIndicator('team')}</button>
+            <button type="button" className="teams-header-cell" onClick={() => handleTeamsSort('manager')}>Manager{teamsSortIndicator('manager')}</button>
+            <button type="button" className="teams-header-cell" onClick={() => handleTeamsSort('goals')}>Goals{teamsSortIndicator('goals')}</button>
           </div>
 
           <ul className="teams-list">
-            {teamsWithManager.map((team) => (
+            {sortedTeams.map((team) => (
               <li className="teams-row" key={team.id}>
                 <span className={`status ${team.status}`}>{team.status}</span>
                 <span>{team.name}</span>
