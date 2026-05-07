@@ -142,14 +142,16 @@ function App() {
 
   const teamsWithManager = useMemo(
     () =>
-      teams.map((team) => {
-        const assignment = assignments.find((item) => item.teamId === team.id)
-        const managerName = assignment
-          ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager'
-          : 'Unassigned'
+      [...teams]
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((team) => {
+          const assignment = assignments.find((item) => item.teamId === team.id)
+          const managerName = assignment
+            ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager'
+            : 'Unassigned'
 
-        return { ...team, managerName }
-      }),
+          return { ...team, managerName }
+        }),
     [],
   )
 
@@ -292,20 +294,28 @@ function App() {
             All 48 teams are shown. Unassigned: {unassignedCount}
           </p>
 
+          <div className="teams-table-header">
+            <span>Status</span>
+            <span>Team</span>
+            <span>Manager</span>
+            <span>Goals</span>
+          </div>
+
           <ul className="teams-list">
             {teamsWithManager.map((team) => (
               <li className="teams-row" key={team.id}>
-                <span>{team.name}</span>
-                <span>Group {team.group ?? 'TBD'}</span>
-                <span>{team.managerName}</span>
-                <span>{team.goalsFor ?? 0} goals</span>
                 <span className={`status ${team.status}`}>{team.status}</span>
+                <span>{team.name}</span>
+                <span>{team.managerName}</span>
+                <span>{team.goalsFor ?? 0}</span>
               </li>
             ))}
           </ul>
         </section>
       )}
 
+      {activeTab === 'leaderboard' && (
+        <>
       <section className="panel">
         <h2>Match Feed</h2>
         <div className="feed-nav">
@@ -385,6 +395,8 @@ function App() {
           <li>Manual overrides may be used if live data is wrong.</li>
         </ul>
       </section>
+        </>
+      )}
     </main>
   )
 }

@@ -42,12 +42,35 @@ h2 { margin:0 0 10px; font-size:1.1rem; }
 .tab { border: 1px solid #dfe6dc; background: #fff; border-radius: 8px; padding: 8px 12px; font-weight: 700; color: #334155; }
 .tab.active { background: #14532d; border-color: #14532d; color: #fff; }
 .teams-list { list-style: none; margin: 0; padding: 0; }
-.teams-row { border-top: 1px solid #edf1ea; padding: 8px 0; display: grid; gap: 4px; }
+
+.teams-table-header,
+.teams-row {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1.2fr) minmax(0, 1fr) 52px;
+  gap: 6px;
+  align-items: center;
+}
+.teams-table-header {
+  border-bottom: 1px solid #dfe6dc;
+  padding-bottom: 6px;
+  font-size: .78rem;
+  font-weight: 800;
+  color: #475569;
+}
+.teams-row {
+  border-top: 1px solid #edf1ea;
+  padding: 8px 0;
+  font-size: .9rem;
+}
+.teams-row span:nth-child(2),
+.teams-row span:nth-child(3) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.teams-row span:last-child { text-align: right; }
 .teams-row:first-child { border-top: 0; }
 @media (min-width: 760px) {
   .app-shell { padding: 20px 14px 40px; gap: 14px; }
   .page-header h1 { font-size: 2rem; }
   .leaderboard-table-header,
   .leaderboard-row { grid-template-columns: 72px minmax(0,1fr) 84px 84px; }
-  .teams-row { grid-template-columns: 1.5fr 0.8fr 1.4fr 0.8fr auto; align-items: center; gap: 8px; }
+  .teams-table-header,
+  .teams-row { grid-template-columns: 96px minmax(0, 1.3fr) minmax(0, 1fr) 72px; }
 }
