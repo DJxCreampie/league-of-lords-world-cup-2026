@@ -5,7 +5,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "normalize:mock": "node scripts/normalize-mock.mjs",
-    "update:data": "node scripts/update-data.mjs"
+    "update:data": "node scripts/update-data.mjs",
+    "spike:provider": "node scripts/api-spikes/run-provider-spike.mjs"
   },
   "dependencies": {
     "react": "latest",
