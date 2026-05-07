@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-07T04:37:26.903Z",
+  "generatedAt": "2026-05-07T07:46:06.106Z",
   "source": "mock-api",
   "matches": [
     {
@@ -22,7 +22,7 @@
       "awayGoals": 0,
       "sourceProvider": "mock-api",
       "sourceStatus": "NS",
-      "lastUpdated": "2026-05-07T04:37:26.904Z"
+      "lastUpdated": "2026-05-07T07:46:06.107Z"
     },
     {
       "matchId": "fx-2026-002",
@@ -44,7 +44,7 @@
       "awayGoals": 1,
       "sourceProvider": "mock-api",
       "sourceStatus": "LIVE",
-      "lastUpdated": "2026-05-07T04:37:26.904Z"
+      "lastUpdated": "2026-05-07T07:46:06.107Z"
     },
     {
       "matchId": "fx-2026-003",
@@ -67,7 +67,7 @@
       "winnerTeamId": "team-argentina",
       "sourceProvider": "mock-api",
       "sourceStatus": "FT",
-      "lastUpdated": "2026-05-07T04:37:26.904Z"
+      "lastUpdated": "2026-05-07T07:46:06.107Z"
     }
   ],
   "teams": [
