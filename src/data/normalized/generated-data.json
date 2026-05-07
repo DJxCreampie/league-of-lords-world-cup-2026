@@ -1,0 +1,538 @@
+{
+  "generatedAt": "2026-05-07T17:48:32Z",
+  "source": "football-data.org",
+  "meta": {
+    "competitionCode": "WC",
+    "seasonYear": 2026,
+    "scoreFreshness": "free-tier may be delayed",
+    "liveMinuteAvailable": false
+  },
+  "matches": [
+    {
+      "matchId": "wc-2026-001",
+      "competitionId": "2000",
+      "competitionCode": "WC",
+      "competitionName": "FIFA World Cup",
+      "seasonYear": 2026,
+      "kickoffTime": "2026-06-11T18:00:00Z",
+      "status": "upcoming",
+      "matchday": 1,
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_A",
+      "minute": null,
+      "homeTeamId": "team-mexico",
+      "homeTeamName": "Mexico",
+      "awayTeamId": "team-united-states",
+      "awayTeamName": "United States",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "sourceProvider": "football-data.org",
+      "sourceStatus": "SCHEDULED",
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "matchId": "wc-2026-002",
+      "competitionId": "2000",
+      "competitionCode": "WC",
+      "competitionName": "FIFA World Cup",
+      "seasonYear": 2026,
+      "kickoffTime": "2026-06-11T21:00:00Z",
+      "status": "upcoming",
+      "matchday": 1,
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_B",
+      "minute": null,
+      "homeTeamId": "team-brazil",
+      "homeTeamName": "Brazil",
+      "awayTeamId": "team-croatia",
+      "awayTeamName": "Croatia",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "sourceProvider": "football-data.org",
+      "sourceStatus": "SCHEDULED",
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    }
+  ],
+  "teams": [
+    {
+      "teamId": "team-algeria",
+      "teamName": "Algeria",
+      "apiTeamId": "fd-algeria",
+      "group": "A",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-argentina",
+      "teamName": "Argentina",
+      "apiTeamId": "fd-argentina",
+      "group": "A",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-australia",
+      "teamName": "Australia",
+      "apiTeamId": "fd-australia",
+      "group": "A",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-austria",
+      "teamName": "Austria",
+      "apiTeamId": "fd-austria",
+      "group": "A",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-belgium",
+      "teamName": "Belgium",
+      "apiTeamId": "fd-belgium",
+      "group": "B",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-brazil",
+      "teamName": "Brazil",
+      "apiTeamId": "fd-brazil",
+      "group": "B",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-colombia",
+      "teamName": "Colombia",
+      "apiTeamId": "fd-colombia",
+      "group": "B",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-croatia",
+      "teamName": "Croatia",
+      "apiTeamId": "fd-croatia",
+      "group": "B",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-ecuador",
+      "teamName": "Ecuador",
+      "apiTeamId": "fd-ecuador",
+      "group": "C",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-egypt",
+      "teamName": "Egypt",
+      "apiTeamId": "fd-egypt",
+      "group": "C",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-england",
+      "teamName": "England",
+      "apiTeamId": "fd-england",
+      "group": "C",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-france",
+      "teamName": "France",
+      "apiTeamId": "fd-france",
+      "group": "C",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-germany",
+      "teamName": "Germany",
+      "apiTeamId": "fd-germany",
+      "group": "D",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-ghana",
+      "teamName": "Ghana",
+      "apiTeamId": "fd-ghana",
+      "group": "D",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-haiti",
+      "teamName": "Haiti",
+      "apiTeamId": "fd-haiti",
+      "group": "D",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-iraq",
+      "teamName": "Iraq",
+      "apiTeamId": "fd-iraq",
+      "group": "D",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-japan",
+      "teamName": "Japan",
+      "apiTeamId": "fd-japan",
+      "group": "E",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-jordan",
+      "teamName": "Jordan",
+      "apiTeamId": "fd-jordan",
+      "group": "E",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-morocco",
+      "teamName": "Morocco",
+      "apiTeamId": "fd-morocco",
+      "group": "E",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-netherlands",
+      "teamName": "Netherlands",
+      "apiTeamId": "fd-netherlands",
+      "group": "E",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-new-zealand",
+      "teamName": "New Zealand",
+      "apiTeamId": "fd-new-zealand",
+      "group": "F",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-norway",
+      "teamName": "Norway",
+      "apiTeamId": "fd-norway",
+      "group": "F",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-panama",
+      "teamName": "Panama",
+      "apiTeamId": "fd-panama",
+      "group": "F",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-paraguay",
+      "teamName": "Paraguay",
+      "apiTeamId": "fd-paraguay",
+      "group": "F",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-portugal",
+      "teamName": "Portugal",
+      "apiTeamId": "fd-portugal",
+      "group": "G",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-qatar",
+      "teamName": "Qatar",
+      "apiTeamId": "fd-qatar",
+      "group": "G",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-saudi-arabia",
+      "teamName": "Saudi Arabia",
+      "apiTeamId": "fd-saudi-arabia",
+      "group": "G",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-scotland",
+      "teamName": "Scotland",
+      "apiTeamId": "fd-scotland",
+      "group": "G",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-senegal",
+      "teamName": "Senegal",
+      "apiTeamId": "fd-senegal",
+      "group": "H",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-south-africa",
+      "teamName": "South Africa",
+      "apiTeamId": "fd-south-africa",
+      "group": "H",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-spain",
+      "teamName": "Spain",
+      "apiTeamId": "fd-spain",
+      "group": "H",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-sweden",
+      "teamName": "Sweden",
+      "apiTeamId": "fd-sweden",
+      "group": "H",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-switzerland",
+      "teamName": "Switzerland",
+      "apiTeamId": "fd-switzerland",
+      "group": "I",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-tunisia",
+      "teamName": "Tunisia",
+      "apiTeamId": "fd-tunisia",
+      "group": "I",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-turkey",
+      "teamName": "Turkey",
+      "apiTeamId": "fd-turkey",
+      "group": "I",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-uruguay",
+      "teamName": "Uruguay",
+      "apiTeamId": "fd-uruguay",
+      "group": "I",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-uzbekistan",
+      "teamName": "Uzbekistan",
+      "apiTeamId": "fd-uzbekistan",
+      "group": "J",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-united-states",
+      "teamName": "United States",
+      "apiTeamId": "fd-united-states",
+      "group": "J",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-canada",
+      "teamName": "Canada",
+      "apiTeamId": "fd-canada",
+      "group": "J",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-mexico",
+      "teamName": "Mexico",
+      "apiTeamId": "fd-mexico",
+      "group": "J",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-cameroon",
+      "teamName": "Cameroon",
+      "apiTeamId": "fd-cameroon",
+      "group": "K",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-denmark",
+      "teamName": "Denmark",
+      "apiTeamId": "fd-denmark",
+      "group": "K",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-iran",
+      "teamName": "Iran",
+      "apiTeamId": "fd-iran",
+      "group": "K",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-ivory-coast",
+      "teamName": "Ivory Coast",
+      "apiTeamId": "fd-ivory-coast",
+      "group": "K",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-italy",
+      "teamName": "Italy",
+      "apiTeamId": "fd-italy",
+      "group": "L",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-chile",
+      "teamName": "Chile",
+      "apiTeamId": "fd-chile",
+      "group": "L",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-nigeria",
+      "teamName": "Nigeria",
+      "apiTeamId": "fd-nigeria",
+      "group": "L",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    },
+    {
+      "teamId": "team-south-korea",
+      "teamName": "South Korea",
+      "apiTeamId": "fd-south-korea",
+      "group": "L",
+      "goalsFor": 0,
+      "status": "active",
+      "matchesPlayed": 0,
+      "lastUpdated": "2026-05-07T17:48:32Z"
+    }
+  ]
+}

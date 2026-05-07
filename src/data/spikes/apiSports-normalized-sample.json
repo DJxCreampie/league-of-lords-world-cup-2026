@@ -1,0 +1,86 @@
+{
+  "provider": "API-Football / API-Sports",
+  "mode": "mock",
+  "generatedAt": "2026-05-07T01:19:02.031Z",
+  "matches": [
+    {
+      "matchId": "fx-2026-003",
+      "competitionId": "fifa-world-cup-2026",
+      "kickoffTime": "2026-06-18T20:00:00Z",
+      "status": "final",
+      "minute": 90,
+      "homeTeamId": "api-arg",
+      "awayTeamId": "api-jpn",
+      "homeTeamName": "Argentina",
+      "awayTeamName": "Japan",
+      "homeGoals": 3,
+      "awayGoals": 0,
+      "winnerTeamId": "api-arg",
+      "rawSource": {
+        "fixture": {
+          "id": "fx-2026-003",
+          "competition": "fifa-world-cup-2026",
+          "date": "2026-06-18T20:00:00Z",
+          "status": "FT",
+          "minute": 90
+        },
+        "teams": {
+          "home": {
+            "id": "api-arg",
+            "name": "Argentina"
+          },
+          "away": {
+            "id": "api-jpn",
+            "name": "Japan"
+          }
+        },
+        "goals": {
+          "home": 3,
+          "away": 0
+        }
+      }
+    }
+  ],
+  "teams": [
+    {
+      "teamId": "api-usa",
+      "teamName": "United States",
+      "apiTeamId": "api-usa",
+      "group": "D",
+      "goalsFor": 5,
+      "status": "active",
+      "matchesPlayed": 2,
+      "lastUpdated": "2026-06-18T21:15:00Z"
+    },
+    {
+      "teamId": "api-bra",
+      "teamName": "Brazil",
+      "apiTeamId": "api-bra",
+      "group": "B",
+      "goalsFor": 7,
+      "status": "active",
+      "matchesPlayed": 2,
+      "lastUpdated": "2026-06-18T21:15:00Z"
+    },
+    {
+      "teamId": "api-fra",
+      "teamName": "France",
+      "apiTeamId": "api-fra",
+      "group": "E",
+      "goalsFor": 6,
+      "status": "active",
+      "matchesPlayed": 2,
+      "lastUpdated": "2026-06-18T21:15:00Z"
+    },
+    {
+      "teamId": "api-jpn",
+      "teamName": "Japan",
+      "apiTeamId": "api-jpn",
+      "group": "C",
+      "goalsFor": 1,
+      "status": "eliminated",
+      "matchesPlayed": 2,
+      "lastUpdated": "2026-06-18T21:15:00Z"
+    }
+  ]
+}
