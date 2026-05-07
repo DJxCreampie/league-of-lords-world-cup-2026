@@ -1,38 +1,62 @@
 {
-  "generatedAt": "2026-05-07T00:35:07.597Z",
+  "generatedAt": "2026-05-07T04:37:26.903Z",
   "source": "mock-api",
   "matches": [
     {
       "matchId": "fx-2026-001",
       "competitionId": "fifa-world-cup-2026",
+      "competitionCode": "MOCK",
+      "competitionName": "Mock Competition",
+      "seasonYear": 2026,
       "kickoffTime": "2026-06-16T19:00:00Z",
       "status": "upcoming",
+      "matchday": null,
+      "stage": null,
+      "group": null,
       "minute": null,
       "homeTeamId": "team-united-states",
       "awayTeamId": "team-brazil",
       "homeTeamName": "USA",
       "awayTeamName": "Brazil",
       "homeGoals": 0,
-      "awayGoals": 0
+      "awayGoals": 0,
+      "sourceProvider": "mock-api",
+      "sourceStatus": "NS",
+      "lastUpdated": "2026-05-07T04:37:26.904Z"
     },
     {
       "matchId": "fx-2026-002",
       "competitionId": "fifa-world-cup-2026",
+      "competitionCode": "MOCK",
+      "competitionName": "Mock Competition",
+      "seasonYear": 2026,
       "kickoffTime": "2026-06-17T17:00:00Z",
       "status": "live",
+      "matchday": null,
+      "stage": null,
+      "group": null,
       "minute": 63,
       "homeTeamId": "team-england",
       "awayTeamId": "team-france",
       "homeTeamName": "England",
       "awayTeamName": "France",
       "homeGoals": 2,
-      "awayGoals": 1
+      "awayGoals": 1,
+      "sourceProvider": "mock-api",
+      "sourceStatus": "LIVE",
+      "lastUpdated": "2026-05-07T04:37:26.904Z"
     },
     {
       "matchId": "fx-2026-003",
       "competitionId": "fifa-world-cup-2026",
+      "competitionCode": "MOCK",
+      "competitionName": "Mock Competition",
+      "seasonYear": 2026,
       "kickoffTime": "2026-06-18T20:00:00Z",
       "status": "final",
+      "matchday": null,
+      "stage": null,
+      "group": null,
       "minute": 90,
       "homeTeamId": "team-argentina",
       "awayTeamId": "team-japan",
@@ -40,7 +64,10 @@
       "awayTeamName": "Japan",
       "homeGoals": 3,
       "awayGoals": 0,
-      "winnerTeamId": "team-argentina"
+      "winnerTeamId": "team-argentina",
+      "sourceProvider": "mock-api",
+      "sourceStatus": "FT",
+      "lastUpdated": "2026-05-07T04:37:26.904Z"
     }
   ],
   "teams": [
