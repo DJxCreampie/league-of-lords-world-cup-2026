@@ -3,7 +3,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "normalize:mock": "node scripts/normalize-mock.mjs"
   },
   "dependencies": {
     "react": "latest",
