@@ -1,4 +1,4 @@
-import { StrictMode, useState } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   assignments,
@@ -22,57 +22,96 @@ const leaderboard = rankManagers(
 )
 const hasManualOverrides = matchScoreOverrides.length > 0 || teamGoalAdjustments.length > 0
 
-function App() {
-  const [selectedManagerId, setSelectedManagerId] = useState<string | null>(null)
+const teamById = new Map(teams.map((team) => [team.id, team]))
+const managerNamesByTeamId = assignments.reduce<Record<string, string[]>>((acc, assignment) => {
+  const manager = managers.find((item) => item.id === assignment.managerId)
 
+  if (!manager) {
+    return acc
+  }
+
+  acc[assignment.teamId] = [...(acc[assignment.teamId] ?? []), manager.name]
+  return acc
+}, {})
+
+function App() {
   return (
     <main className="app-shell">
-      <section className="leaderboard" aria-labelledby="leaderboard-title">
-        <div className="page-header">
-          <p>League of Lords World Cup 2026</p>
-          <h1 id="leaderboard-title">Leaderboard</h1>
-          <span>Last updated: {lastUpdated}</span>
-          {hasManualOverrides && <small>Manual scoring corrections applied</small>}
-        </div>
+      <header className="page-header">
+        <p>League of Lords World Cup 2026</p>
+        <h1>Draft Order Dashboard</h1>
+        <span>Last updated: {lastUpdated}</span>
+        {hasManualOverrides && <small>Manual scoring corrections applied</small>}
+      </header>
 
-        <ol className="manager-list">
-          {leaderboard.map((manager, index) => {
-            const rank = index + 1
-            const isSelected = selectedManagerId === manager.id
+      <section className="panel" aria-labelledby="leaderboard-title">
+        <h2 id="leaderboard-title">Leaderboard</h2>
+        <ol className="leaderboard-list">
+          {leaderboard.map((manager, index) => (
+            <li key={manager.id} className="leaderboard-row">
+              <span className="rank">#{index + 1}</span>
+              <span className="manager-name">{manager.name}</span>
+              <span>{manager.totalGoals} goals</span>
+              <span>{manager.activeTeamsRemaining} active</span>
+              <span>{manager.teams.map((team) => team.name).join(', ')}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="panel" aria-labelledby="cards-title">
+        <h2 id="cards-title">Manager Cards</h2>
+        <div className="cards">
+          {leaderboard.map((manager) => (
+            <article key={manager.id} className="card">
+              <h3>{manager.name}</h3>
+              <p className="card-total">{manager.totalGoals} total goals</p>
+              <ul className="detail-team-list">
+                {manager.teams.map((team) => (
+                  <li className="detail-team-row" key={team.id}>
+                    <span>{team.name}</span>
+                    <span>{team.goals} goals</span>
+                    <span className={`status ${team.status}`}>{team.status}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="panel" aria-labelledby="match-feed-title">
+        <h2 id="match-feed-title">Match Feed</h2>
+        <ul className="feed-list">
+          {matches.slice(0, 10).map((match) => {
+            const homeTeam = teamById.get(match.homeTeamId)
+            const awayTeam = teamById.get(match.awayTeamId)
+            const impacted = [
+              ...(managerNamesByTeamId[match.homeTeamId] ?? []),
+              ...(managerNamesByTeamId[match.awayTeamId] ?? []),
+            ]
 
             return (
-              <li className="manager-row" key={manager.id}>
-                <button
-                  className="manager-toggle"
-                  type="button"
-                  aria-expanded={isSelected}
-                  onClick={() => setSelectedManagerId(isSelected ? null : manager.id)}
-                >
-                  <span className="rank">#{rank}</span>
-                  <span className="manager-name">{manager.name}</span>
-                  <span className="manager-total">{manager.totalGoals} goals</span>
-                  <span className="manager-active">
-                    {manager.activeTeamsRemaining} active teams
-                  </span>
-                </button>
-
-                {isSelected && (
-                  <section className="manager-detail" aria-label={`${manager.name} detail`}>
-                    <ul className="detail-team-list" aria-label={`${manager.name} detail teams`}>
-                      {manager.teams.map((team) => (
-                        <li className="detail-team-row" key={team.id}>
-                          <span className="team-name">{team.name}</span>
-                          <span className="team-goals">{team.goals} goals</span>
-                          <span className={`status ${team.status}`}>{team.status}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-                )}
+              <li key={match.id} className="feed-item">
+                <strong>{match.status.toUpperCase()}</strong> · {homeTeam?.name} {match.homeGoals} - {match.awayGoals} {awayTeam?.name}
+                <div>Impacted managers: {impacted.join(', ') || 'None (unassigned teams)'}</div>
               </li>
             )
           })}
-        </ol>
+        </ul>
+      </section>
+
+      <section className="panel" aria-labelledby="rules-title">
+        <h2 id="rules-title">Rules</h2>
+        <ul className="rules-list">
+          <li>Each manager gets 4 World Cup teams.</li>
+          <li>Manager score equals total goals scored by assigned teams.</li>
+          <li>Group stage and knockout goals count.</li>
+          <li>Penalty shootout goals do not count.</li>
+          <li>Eliminated teams keep their final goal total.</li>
+          <li>48 teams exist and 40 are assigned, so 8 may remain unassigned.</li>
+          <li>Manual overrides may be used if live data is wrong.</li>
+        </ul>
       </section>
     </main>
   )
