@@ -1,0 +1,12 @@
+[
+  { "managerId": "manager-1", "managerDisplayName": "Avery Stone", "teamIds": ["team-brazil", "team-japan", "team-morocco", "team-canada"] },
+  { "managerId": "manager-2", "managerDisplayName": "Maya Brooks", "teamIds": ["team-france", "team-ghana", "team-uruguay", "team-south-korea"] },
+  { "managerId": "manager-3", "managerDisplayName": "Theo Park", "teamIds": ["team-argentina", "team-switzerland", "team-senegal", "team-saudi-arabia"] },
+  { "managerId": "manager-4", "managerDisplayName": "Nora Patel", "teamIds": ["team-england", "team-mexico", "team-croatia", "team-qatar"] },
+  { "managerId": "manager-5", "managerDisplayName": "Leo Martinez", "teamIds": ["team-spain", "team-cameroon", "team-united-states", "team-wales"] },
+  { "managerId": "manager-6", "managerDisplayName": "Iris Chen", "teamIds": ["team-portugal", "team-ecuador", "team-serbia", "team-australia"] },
+  { "managerId": "manager-7", "managerDisplayName": "Sam Rivera", "teamIds": ["team-netherlands", "team-poland", "team-tunisia", "team-costa-rica"] },
+  { "managerId": "manager-8", "managerDisplayName": "Quinn Morgan", "teamIds": ["team-germany", "team-denmark", "team-iran", "team-belgium"] },
+  { "managerId": "manager-9", "managerDisplayName": "Elena Rossi", "teamIds": ["team-italy", "team-chile", "team-nigeria", "team-new-zealand"] },
+  { "managerId": "manager-10", "managerDisplayName": "Jules Carter", "teamIds": ["team-colombia", "team-peru", "team-egypt", "team-scotland"] }
+]

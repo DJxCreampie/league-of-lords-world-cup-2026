@@ -1,227 +1,45 @@
-:root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #172033;
-  background: #f4f7f3;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-.app-shell {
-  min-height: 100vh;
-  padding: 32px 16px;
-}
-
-.leaderboard {
-  width: min(100%, 920px);
-  margin: 0 auto;
-}
-
-.page-header {
-  margin-bottom: 24px;
-}
-
-.page-header p {
-  margin: 0 0 6px;
-  color: #5c6b61;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.page-header span {
-  display: inline-block;
-  margin-top: 10px;
-  color: #53605a;
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.page-header small {
-  display: block;
-  margin-top: 6px;
-  color: #6b5b14;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-h1 {
-  margin: 0;
-  font-size: 2.4rem;
-  line-height: 1;
-  font-weight: 700;
-}
-
-.manager-list,
-.detail-team-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.manager-list {
-  overflow: hidden;
-  border: 1px solid #dfe6dc;
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 10px 24px rgb(23 32 51 / 0.06);
-}
-
-.manager-row + .manager-row {
-  border-top: 1px solid #edf1ea;
-}
-
-.manager-toggle {
-  width: 100%;
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) 128px 152px;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 18px;
-  font: inherit;
-  text-align: left;
-}
-
-.manager-toggle:hover,
-.manager-toggle:focus-visible {
-  background: #f8faf6;
-}
-
-.manager-toggle:focus-visible {
-  outline: 3px solid #bbf7d0;
-  outline-offset: -3px;
-}
-
-.rank {
-  color: #14532d;
-  font-weight: 800;
-}
-
-.manager-name {
-  min-width: 0;
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-.manager-total,
-.manager-active {
-  color: #53605a;
-  font-size: 0.94rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.manager-detail {
-  border-top: 1px solid #edf1ea;
-  background: #fbfcfa;
-  padding: 6px 18px 14px 104px;
-}
-
-.detail-team-list {
-  display: grid;
-  gap: 6px;
-}
-
-.detail-team-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  padding: 9px 10px;
-  font-weight: 700;
-}
-
-.detail-team-row:nth-child(odd) {
-  background: #f3f7f0;
-}
-
-.team-name {
-  min-width: 0;
-}
-
-.team-goals {
-  color: #53605a;
-  font-size: 0.92rem;
-  white-space: nowrap;
-}
-
-.status {
-  min-width: 86px;
-  border-radius: 999px;
-  padding: 5px 9px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-align: center;
-  text-transform: capitalize;
-}
-
-.status.active {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.status.eliminated {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-.status.champion {
-  background: #fef3c7;
-  color: #92400e;
-}
-
+:root { font-family: system-ui, -apple-system, Segoe UI, sans-serif; color: #172033; background: #f4f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app-shell { max-width: 980px; margin: 0 auto; padding: 20px 14px 40px; display: grid; gap: 14px; }
+.page-header p { margin: 0; color: #5c6b61; font-size: .85rem; font-weight: 700; text-transform: uppercase; }
+h1 { margin: 4px 0 0; font-size: 1.9rem; }
+.page-header span { display:block; margin-top:8px; font-weight:600; }
+.page-header small { color:#6b5b14; font-weight:700; }
+.panel { background:#fff; border:1px solid #dfe6dc; border-radius:10px; padding:14px; box-shadow:0 8px 20px rgb(23 32 51 / 0.05); }
+h2 { margin:0 0 10px; font-size:1.1rem; }
+.leaderboard-list,.detail-team-list,.feed-list,.rules-list { margin:0; padding:0; list-style:none; }
+.leaderboard-row { display:grid; gap:6px; padding:8px 0; border-top:1px solid #edf1ea; }
+.leaderboard-row:first-child { border-top:0; }
+.rank { color:#14532d; font-weight:800; }
+.manager-name { font-weight:800; }
+.cards { display:grid; gap:10px; }
+.card { background:#fbfcfa; border:1px solid #edf1ea; border-radius:8px; padding:10px; }
+.card h3 { margin:0; }
+.card-total { margin:4px 0 8px; color:#53605a; font-weight:700; }
+.detail-team-row { display:grid; grid-template-columns: 1fr auto auto; gap:8px; padding:6px 0; border-top:1px solid #edf1ea; }
+.status { border-radius:999px; padding:2px 8px; font-size:.75rem; font-weight:800; text-transform:capitalize; }
+.status.active { background:#dcfce7; color:#166534; }
+.status.eliminated { background:#fee2e2; color:#991b1b; }
+.status.champion { background:#fef3c7; color:#92400e; }
+.feed-item { border-top:1px solid #edf1ea; padding:8px 0; }
+.feed-item:first-child { border-top:0; }
+.rules-list li { margin:6px 0; }
 @media (min-width: 760px) {
-  .app-shell {
-    padding: 48px 24px;
-  }
+  .leaderboard-row { grid-template-columns: 64px 1fr auto auto 1.5fr; align-items:center; }
+  .cards { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 640px) {
-  h1 {
-    font-size: 2rem;
-  }
+.override-badge { margin-left: 6px; font-size: .68rem; font-style: normal; font-weight: 700; color: #92400e; background: #fef3c7; border-radius: 999px; padding: 2px 6px; }
 
-  .manager-toggle {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 6px 12px;
-    padding: 14px;
-  }
+.banner {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
 
-  .manager-total,
-  .manager-active {
-    font-size: 0.9rem;
-  }
-
-  .manager-total {
-    grid-column: 2;
-  }
-
-  .manager-active {
-    grid-column: 2;
-  }
-
-  .manager-detail {
-    padding: 8px 14px 14px 68px;
-  }
-
-  .detail-team-row {
-    grid-template-columns: minmax(0, 1fr) auto;
-  }
-
-  .status {
-    grid-column: 1 / -1;
-    justify-self: start;
-  }
+.subtle-state {
+  margin: 0 0 10px;
+  color: #475569;
+  font-size: 0.92rem;
 }
