@@ -4,6 +4,14 @@ import generatedData from './data/normalized/generated-data.json'
 import { getAssignedTeams, rankManagers } from './scoring'
 
 describe('assignment integrity and pre-tournament behavior', () => {
+
+  it('all 48 teams are present and exactly 8 are unassigned', () => {
+    expect(teams).toHaveLength(48)
+    const assignedIds = new Set(assignments.map((assignment) => assignment.teamId))
+    const unassigned = teams.filter((team) => !assignedIds.has(team.id))
+    expect(unassigned).toHaveLength(8)
+  })
+
   it('every manager has exactly 4 displayed teams from official assignments', () => {
     for (const manager of managers) {
       const assigned = getAssignedTeams(manager, teams, assignments, matches, matchScoreOverrides, teamGoalAdjustments, teamManualOverrides)

@@ -43,3 +43,48 @@ h2 { margin:0 0 10px; font-size:1.1rem; }
   color: #475569;
   font-size: 0.92rem;
 }
+
+.tab-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  border: 1px solid #dfe6dc;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.tab.active {
+  background: #14532d;
+  border-color: #14532d;
+  color: #fff;
+}
+
+.teams-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.teams-row {
+  border-top: 1px solid #edf1ea;
+  padding: 8px 0;
+  display: grid;
+  gap: 4px;
+}
+
+.teams-row:first-child {
+  border-top: 0;
+}
+
+@media (min-width: 760px) {
+  .teams-row {
+    grid-template-columns: 1.5fr 0.8fr 1.4fr 0.8fr auto;
+    align-items: center;
+    gap: 8px;
+  }
+}

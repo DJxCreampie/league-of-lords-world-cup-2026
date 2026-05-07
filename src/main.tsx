@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   assignments,
@@ -26,7 +26,7 @@ const leaderboard = rankManagers(
 const hasManualOverrides = matchScoreOverrides.length > 0 || teamGoalAdjustments.length > 0 || teamManualOverrides.length > 0
 const manualOverrideByTeamId = new Map(teamManualOverrides.map((override) => [override.teamId, override]))
 const teamById = new Map(teams.map((team) => [team.id, team]))
-
+const managerById = new Map(managers.map((manager) => [manager.id, manager]))
 const managerNamesByTeamId = assignments.reduce<Record<string, string[]>>((acc, assignment) => {
   const manager = managers.find((item) => item.id === assignment.managerId)
   if (!manager) return acc
@@ -56,6 +56,32 @@ function formatKickoff(kickoffTime?: string): string {
 }
 
 function App() {
+  const [activeTab, setActiveTab] = useState<'leaderboard' | 'teams'>('leaderboard')
+
+  const teamsWithManager = useMemo(() => teams.map((team) => {
+    const assignment = assignments.find((item) => item.teamId === team.id)
+    const managerName = assignment ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager' : 'Unassigned'
+    return { ...team, managerName }
+  }), [])
+
+  const unassignedCount = teamsWithManager.filter((team) => team.managerName === 'Unassigned').length
+
+const visibleMatches = matches
+  .filter((match) => {
+    const homeTeam = teamById.get(match.homeTeamId)
+    const awayTeam = teamById.get(match.awayTeamId)
+    const isPlaceholder = !homeTeam || !awayTeam || /unknown/i.test(homeTeam.name) || /unknown/i.test(awayTeam.name)
+    return !isPlaceholder
+  })
+  .slice(0, 10)
+
+function formatKickoff(kickoffTime?: string): string {
+  if (!kickoffTime) return 'Kickoff TBD'
+  const date = new Date(kickoffTime)
+  return Number.isNaN(date.getTime()) ? 'Kickoff TBD' : date.toLocaleString()
+}
+
+function App() {
   return (
     <main className="app-shell">
       <header className="page-header">
@@ -65,79 +91,106 @@ function App() {
         {hasManualOverrides && <small>Manual scoring corrections applied</small>}
       </header>
 
-      {isPreTournament && (
-        <section className="panel banner" aria-live="polite">
-          <strong>World Cup matches have not started yet.</strong> Leaderboard will update once goals are recorded.
-        </section>
+      <nav className="tab-nav" aria-label="Dashboard sections">
+        <button className={activeTab === 'leaderboard' ? 'tab active' : 'tab'} onClick={() => setActiveTab('leaderboard')}>Leaderboard</button>
+        <button className={activeTab === 'teams' ? 'tab active' : 'tab'} onClick={() => setActiveTab('teams')}>Teams</button>
+      </nav>
+
+      {activeTab === 'leaderboard' && (
+        <>
+          {isPreTournament && (
+            <section className="panel banner" aria-live="polite">
+              <strong>World Cup matches have not started yet.</strong> Leaderboard will update once goals are recorded.
+            </section>
+          )}
+
+          <section className="panel" aria-labelledby="leaderboard-title">
+            <h2 id="leaderboard-title">Leaderboard</h2>
+            {isPreTournament && <p className="subtle-state">Pre-tournament state: totals remain at 0 until matches begin.</p>}
+            <ol className="leaderboard-list">
+              {leaderboard.map((manager, index) => (
+                <li key={manager.id} className="leaderboard-row">
+                  <span className="rank">#{index + 1}</span>
+                  <span className="manager-name">{manager.name}</span>
+                  <span>{manager.totalGoals} goals</span>
+                  <span>{manager.activeTeamsRemaining} active</span>
+                  <span>{manager.teams.map((team) => team.name).join(', ')}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section className="panel" aria-labelledby="cards-title">
+            <h2 id="cards-title">Manager Cards</h2>
+            <div className="cards">
+              {leaderboard.map((manager) => (
+                <article key={manager.id} className="card">
+                  <h3>{manager.name}</h3>
+                  <p className="card-total">{manager.totalGoals} total goals</p>
+                  <ul className="detail-team-list">
+                    {manager.teams.map((team) => (
+                      <li className="detail-team-row" key={team.id}>
+                        <span>{team.name} {manualOverrideByTeamId.has(team.id) && <em className="override-badge" title={manualOverrideByTeamId.get(team.id)?.note}>override</em>}</span>
+                        <span>{team.goals} goals</span>
+                        <span className={`status ${team.status}`}>{team.status}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="panel" aria-labelledby="match-feed-title">
+            <h2 id="match-feed-title">Match Feed</h2>
+            <ul className="feed-list">
+              {visibleMatches.map((match) => {
+                const homeTeam = teamById.get(match.homeTeamId)
+                const awayTeam = teamById.get(match.awayTeamId)
+                const impacted = [
+                  ...(managerNamesByTeamId[match.homeTeamId] ?? []),
+                  ...(managerNamesByTeamId[match.awayTeamId] ?? []),
+                ]
+
+                if (match.status === 'scheduled') {
+                  return (
+                    <li key={match.id} className="feed-item">
+                      <strong>Upcoming</strong> · {homeTeam?.name} vs {awayTeam?.name}
+                      <div>{formatKickoff(match.kickoffTime)}</div>
+                      <div>Impacted managers: {impacted.join(', ') || 'None (unassigned teams)'}</div>
+                    </li>
+                  )
+                }
+
+                return (
+                  <li key={match.id} className="feed-item">
+                    <strong>{match.status.toUpperCase()}</strong> · {homeTeam?.name} {match.homeGoals} - {match.awayGoals} {awayTeam?.name}
+                    <div>Impacted managers: {impacted.join(', ') || 'None (unassigned teams)'}</div>
+                  </li>
+                )
+              })}
+            </ul>
+          </section>
+        </>
       )}
 
-      <section className="panel" aria-labelledby="leaderboard-title">
-        <h2 id="leaderboard-title">Leaderboard</h2>
-        {isPreTournament && <p className="subtle-state">Pre-tournament state: totals remain at 0 until matches begin.</p>}
-        <ol className="leaderboard-list">
-          {leaderboard.map((manager, index) => (
-            <li key={manager.id} className="leaderboard-row">
-              <span className="rank">#{index + 1}</span>
-              <span className="manager-name">{manager.name}</span>
-              <span>{manager.totalGoals} goals</span>
-              <span>{manager.activeTeamsRemaining} active</span>
-              <span>{manager.teams.map((team) => team.name).join(', ')}</span>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="panel" aria-labelledby="cards-title">
-        <h2 id="cards-title">Manager Cards</h2>
-        <div className="cards">
-          {leaderboard.map((manager) => (
-            <article key={manager.id} className="card">
-              <h3>{manager.name}</h3>
-              <p className="card-total">{manager.totalGoals} total goals</p>
-              <ul className="detail-team-list">
-                {manager.teams.map((team) => (
-                  <li className="detail-team-row" key={team.id}>
-                    <span>{team.name} {manualOverrideByTeamId.has(team.id) && <em className="override-badge" title={manualOverrideByTeamId.get(team.id)?.note}>override</em>}</span>
-                    <span>{team.goals} goals</span>
-                    <span className={`status ${team.status}`}>{team.status}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="panel" aria-labelledby="match-feed-title">
-        <h2 id="match-feed-title">Match Feed</h2>
-        <ul className="feed-list">
-          {visibleMatches.map((match) => {
-            const homeTeam = teamById.get(match.homeTeamId)
-            const awayTeam = teamById.get(match.awayTeamId)
-            const impacted = [
-              ...(managerNamesByTeamId[match.homeTeamId] ?? []),
-              ...(managerNamesByTeamId[match.awayTeamId] ?? []),
-            ]
-
-            if (match.status === 'scheduled') {
-              return (
-                <li key={match.id} className="feed-item">
-                  <strong>Upcoming</strong> · {homeTeam?.name} vs {awayTeam?.name}
-                  <div>{formatKickoff(match.kickoffTime)}</div>
-                  <div>Impacted managers: {impacted.join(', ') || 'None (unassigned teams)'}</div>
-                </li>
-              )
-            }
-
-            return (
-              <li key={match.id} className="feed-item">
-                <strong>{match.status.toUpperCase()}</strong> · {homeTeam?.name} {match.homeGoals} - {match.awayGoals} {awayTeam?.name}
-                <div>Impacted managers: {impacted.join(', ') || 'None (unassigned teams)'}</div>
+      {activeTab === 'teams' && (
+        <section className="panel" aria-labelledby="teams-title">
+          <h2 id="teams-title">Teams</h2>
+          <p className="subtle-state">All 48 teams are shown. Unassigned: {unassignedCount}</p>
+          <ul className="teams-list">
+            {teamsWithManager.map((team) => (
+              <li key={team.id} className="teams-row">
+                <strong>{team.name}</strong>
+                <span>Group {team.group}</span>
+                <span>{team.managerName}</span>
+                <span>{team.goalsFor ?? 0} goals</span>
+                <span className={`status ${team.status}`}>{team.status}</span>
               </li>
-            )
-          })}
-        </ul>
-      </section>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="panel" aria-labelledby="rules-title">
         <h2 id="rules-title">Rules</h2>
