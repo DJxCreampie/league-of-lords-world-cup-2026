@@ -1,0 +1,14 @@
+{
+  "fixture": {
+    "id": "fx-2026-002",
+    "competition": "fifa-world-cup-2026",
+    "date": "2026-06-17T17:00:00Z",
+    "status": "LIVE",
+    "minute": 63
+  },
+  "teams": {
+    "home": { "id": "api-eng", "name": "England" },
+    "away": { "id": "api-fra", "name": "France" }
+  },
+  "goals": { "home": 2, "away": 1 }
+}

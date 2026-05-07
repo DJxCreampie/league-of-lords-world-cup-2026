@@ -3,7 +3,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "normalize:mock": "node scripts/normalize-mock.mjs",
+    "update:data": "node scripts/update-data.mjs",
+    "spike:provider": "node scripts/api-spikes/run-provider-spike.mjs",
+    "discover:football-data": "node scripts/api-spikes/football-data-field-discovery.mjs",
+    "update:data:football-data": "DATA_SOURCE=football-data node scripts/update-data.mjs"
   },
   "dependencies": {
     "react": "latest",
