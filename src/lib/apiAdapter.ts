@@ -2,6 +2,7 @@ import { TEAM_ID_BY_API_ID, TEAM_ID_BY_API_NAME } from '../data/mappings/teamMap
 import type { TeamStatus } from '../types'
 import type { NormalizedMatch, NormalizedMatchStatus, NormalizedTeamStatus } from './normalizedData'
 
+// TODO(real-api): Expand this status translation once a provider is selected.
 function normalizeStatus(raw: string): NormalizedMatchStatus {
   if (raw === 'NS') return 'upcoming'
   if (raw === 'LIVE') return 'live'
@@ -10,6 +11,7 @@ function normalizeStatus(raw: string): NormalizedMatchStatus {
   return 'canceled'
 }
 
+// TODO(real-api): Keep team mappings in sync with provider IDs/naming conventions.
 function resolveTeamId(apiTeamId: string, apiTeamName: string): string {
   const byId = TEAM_ID_BY_API_ID[apiTeamId]
   if (byId) return byId
@@ -20,6 +22,7 @@ function resolveTeamId(apiTeamId: string, apiTeamName: string): string {
   throw new Error(`Missing team mapping for API team: ${apiTeamId} / ${apiTeamName}`)
 }
 
+// TODO(real-api): Replace `raw: any` with provider-specific types once API contract is finalized.
 export function normalizeMatchResponse(raw: any): NormalizedMatch {
   if (!raw?.fixture?.id || !raw?.teams?.home || !raw?.teams?.away) {
     throw new Error('Malformed match payload')
