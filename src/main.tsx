@@ -103,6 +103,7 @@ function App() {
     (team) => team.managerName === 'Unassigned',
   ).length
 
+function App() {
   return (
     <main className="app-shell">
       <header className="page-header">
