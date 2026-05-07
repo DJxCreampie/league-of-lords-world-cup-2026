@@ -66,6 +66,22 @@ function App() {
 
   const unassignedCount = teamsWithManager.filter((team) => team.managerName === 'Unassigned').length
 
+const visibleMatches = matches
+  .filter((match) => {
+    const homeTeam = teamById.get(match.homeTeamId)
+    const awayTeam = teamById.get(match.awayTeamId)
+    const isPlaceholder = !homeTeam || !awayTeam || /unknown/i.test(homeTeam.name) || /unknown/i.test(awayTeam.name)
+    return !isPlaceholder
+  })
+  .slice(0, 10)
+
+function formatKickoff(kickoffTime?: string): string {
+  if (!kickoffTime) return 'Kickoff TBD'
+  const date = new Date(kickoffTime)
+  return Number.isNaN(date.getTime()) ? 'Kickoff TBD' : date.toLocaleString()
+}
+
+function App() {
   return (
     <main className="app-shell">
       <header className="page-header">
