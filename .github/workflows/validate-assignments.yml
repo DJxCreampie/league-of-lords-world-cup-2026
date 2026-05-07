@@ -1,0 +1,56 @@
+name: Validate Assignments
+
+on:
+  workflow_dispatch:
+    inputs:
+      refresh_source:
+        description: 'Refresh normalized data before validation'
+        required: false
+        default: 'football-data'
+        type: choice
+        options:
+          - none
+          - mock
+          - football-data
+      competition_code:
+        description: 'football-data competition code (if refresh_source=football-data)'
+        required: false
+        default: 'WC'
+      season_year:
+        description: 'football-data season year (if refresh_source=football-data)'
+        required: false
+        default: '2026'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+      FOOTBALL_DATA_COMPETITION_CODE: ${{ github.event.inputs.competition_code || 'WC' }}
+      FOOTBALL_DATA_SEASON_YEAR: ${{ github.event.inputs.season_year || '2026' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh normalized data (football-data)
+        if: ${{ github.event.inputs.refresh_source == 'football-data' }}
+        run: npm run update:data:football-data
+
+      - name: Refresh normalized data (mock)
+        if: ${{ github.event.inputs.refresh_source == 'mock' }}
+        run: npm run update:data
+
+      - name: Validate official assignments
+        run: npm run validate:assignments

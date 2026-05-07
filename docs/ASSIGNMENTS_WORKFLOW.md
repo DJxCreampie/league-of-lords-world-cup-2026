@@ -49,3 +49,22 @@ Behavior:
 
 ## Scoring connection
 Leaderboard scoring uses manager/team assignments. Keeping official assignments valid ensures manager totals are calculated consistently from assigned teams and team goals.
+
+
+## Run from GitHub Actions (manual)
+
+### Validate assignments
+1. Open **Actions → Validate Assignments → Run workflow**.
+2. Choose `refresh_source`:
+   - `football-data` (recommended)
+   - `mock`
+   - `none`
+3. The workflow runs `npm run validate:assignments` and fails clearly on invalid assignments.
+
+### Generate assignment draft
+1. Open **Actions → Generate Assignment Draft → Run workflow**.
+2. Choose `refresh_source` (`football-data` recommended).
+3. The workflow runs `npm run generate:assignments`.
+4. If the draft file changed, it commits only `data/assignment-drafts/generated-assignment-draft.json`.
+
+`FOOTBALL_DATA_API_KEY` must be configured in repository secrets when using `football-data` refresh mode.
