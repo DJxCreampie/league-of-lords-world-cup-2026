@@ -1,3 +1,5 @@
+import managerSource from './data/assignments/managers.json'
+import assignmentSource from './data/assignments/official-assignments.json'
 import type {
   Assignment,
   Manager,
@@ -10,18 +12,10 @@ import type {
 
 export const lastUpdated = 'May 3, 2026 at 10:45 AM ET'
 
-export const managers: Manager[] = [
-  { id: 'manager-1', name: 'Avery Stone' },
-  { id: 'manager-2', name: 'Maya Brooks' },
-  { id: 'manager-3', name: 'Theo Park' },
-  { id: 'manager-4', name: 'Nora Patel' },
-  { id: 'manager-5', name: 'Leo Martinez' },
-  { id: 'manager-6', name: 'Iris Chen' },
-  { id: 'manager-7', name: 'Sam Rivera' },
-  { id: 'manager-8', name: 'Quinn Morgan' },
-  { id: 'manager-9', name: 'Elena Rossi' },
-  { id: 'manager-10', name: 'Jules Carter' },
-]
+export const managers: Manager[] = managerSource.map((manager) => ({
+  id: manager.id,
+  name: manager.displayName,
+}))
 
 const baseTeams: Array<Pick<Team, 'id' | 'name' | 'status'>> = [
   { id: 'team-brazil', name: 'Brazil', status: 'active' },
@@ -89,48 +83,12 @@ export const teams: Team[] = baseTeams.map((team, index) => ({
   knockoutGoals: 0,
 }))
 
-export const assignments: Assignment[] = [
-  { managerId: 'manager-1', teamId: 'team-brazil' },
-  { managerId: 'manager-1', teamId: 'team-japan' },
-  { managerId: 'manager-1', teamId: 'team-morocco' },
-  { managerId: 'manager-1', teamId: 'team-canada' },
-  { managerId: 'manager-2', teamId: 'team-france' },
-  { managerId: 'manager-2', teamId: 'team-ghana' },
-  { managerId: 'manager-2', teamId: 'team-uruguay' },
-  { managerId: 'manager-2', teamId: 'team-south-korea' },
-  { managerId: 'manager-3', teamId: 'team-argentina' },
-  { managerId: 'manager-3', teamId: 'team-switzerland' },
-  { managerId: 'manager-3', teamId: 'team-senegal' },
-  { managerId: 'manager-3', teamId: 'team-saudi-arabia' },
-  { managerId: 'manager-4', teamId: 'team-england' },
-  { managerId: 'manager-4', teamId: 'team-mexico' },
-  { managerId: 'manager-4', teamId: 'team-croatia' },
-  { managerId: 'manager-4', teamId: 'team-qatar' },
-  { managerId: 'manager-5', teamId: 'team-spain' },
-  { managerId: 'manager-5', teamId: 'team-cameroon' },
-  { managerId: 'manager-5', teamId: 'team-united-states' },
-  { managerId: 'manager-5', teamId: 'team-wales' },
-  { managerId: 'manager-6', teamId: 'team-portugal' },
-  { managerId: 'manager-6', teamId: 'team-ecuador' },
-  { managerId: 'manager-6', teamId: 'team-serbia' },
-  { managerId: 'manager-6', teamId: 'team-australia' },
-  { managerId: 'manager-7', teamId: 'team-netherlands' },
-  { managerId: 'manager-7', teamId: 'team-poland' },
-  { managerId: 'manager-7', teamId: 'team-tunisia' },
-  { managerId: 'manager-7', teamId: 'team-costa-rica' },
-  { managerId: 'manager-8', teamId: 'team-germany' },
-  { managerId: 'manager-8', teamId: 'team-denmark' },
-  { managerId: 'manager-8', teamId: 'team-iran' },
-  { managerId: 'manager-8', teamId: 'team-belgium' },
-  { managerId: 'manager-9', teamId: 'team-italy' },
-  { managerId: 'manager-9', teamId: 'team-chile' },
-  { managerId: 'manager-9', teamId: 'team-nigeria' },
-  { managerId: 'manager-9', teamId: 'team-new-zealand' },
-  { managerId: 'manager-10', teamId: 'team-colombia' },
-  { managerId: 'manager-10', teamId: 'team-peru' },
-  { managerId: 'manager-10', teamId: 'team-egypt' },
-  { managerId: 'manager-10', teamId: 'team-scotland' },
-]
+export const assignments: Assignment[] = assignmentSource.flatMap((entry) =>
+  entry.teamIds.map((teamId) => ({
+    managerId: entry.managerId,
+    teamId,
+  })),
+)
 
 export const matches: Match[] = [
   { id: 'match-brazil-norway', stage: 'Group', status: 'finished', homeTeamId: 'team-brazil', awayTeamId: 'team-norway', homeGoals: 10, awayGoals: 0 },

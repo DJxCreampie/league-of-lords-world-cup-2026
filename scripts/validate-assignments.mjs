@@ -24,6 +24,10 @@ if (managers.length !== 10) errors.push(`Expected 10 managers, found ${managers.
 
 for (const entry of assignments) {
   if (!managerIds.has(entry.managerId)) errors.push(`Invalid managerId: ${entry.managerId}`)
+  const manager = managers.find((m) => m.id === entry.managerId)
+  if (manager && entry.managerDisplayName && manager.displayName !== entry.managerDisplayName) {
+    errors.push(`managerDisplayName mismatch for ${entry.managerId}: expected "${manager.displayName}", got "${entry.managerDisplayName}"`)
+  }
   if (!Array.isArray(entry.teamIds)) {
     errors.push(`managerId ${entry.managerId} has invalid teamIds (not array)`)
     continue
