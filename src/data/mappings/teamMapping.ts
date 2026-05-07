@@ -16,4 +16,11 @@ export const TEAM_ID_BY_API_NAME: Record<string, string> = {
   france: 'team-france',
   argentina: 'team-argentina',
   japan: 'team-japan',
+  'korea republic': 'team-south-korea',
+  'south korea': 'team-south-korea',
+  'ir iran': 'team-iran',
+  iran: 'team-iran',
+  netherlands: 'team-netherlands',
+  holland: 'team-netherlands',
+  'three lions': 'team-england',
 }
