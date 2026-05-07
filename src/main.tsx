@@ -180,9 +180,24 @@ function App() {
   })
 
   const selectedDayIndex = selectedDay ? matchDays.indexOf(selectedDay) : -1
+
+  const [selectedManager, setSelectedManager] = useState<string>('all')
+
+  const managerFilterOptions = useMemo(
+    () => [...managers].map((manager) => manager.name).sort((a, b) => a.localeCompare(b)),
+    [],
+  )
+
   const matchesForSelectedDay = visibleMatches.filter((match) => {
     if (!selectedDay) return false
-    return getMatchDayKey(match.kickoffTime) === selectedDay
+    if (getMatchDayKey(match.kickoffTime) !== selectedDay) return false
+
+    if (selectedManager === 'all') return true
+
+    const homeManagers = managerNamesByTeamId[match.homeTeamId] ?? []
+    const awayManagers = managerNamesByTeamId[match.awayTeamId] ?? []
+
+    return [...homeManagers, ...awayManagers].includes(selectedManager)
   })
 
   return (
@@ -334,6 +349,20 @@ function App() {
               ? new Date(`${selectedDay}T00:00:00Z`).toLocaleDateString()
               : 'No dated matches'}
           </span>
+          <label className="feed-filter">
+            <span>Manager</span>
+            <select
+              value={selectedManager}
+              onChange={(event) => setSelectedManager(event.target.value)}
+            >
+              <option value="all">All managers</option>
+              {managerFilterOptions.map((managerName) => (
+                <option key={managerName} value={managerName}>
+                  {managerName}
+                </option>
+              ))}
+            </select>
+          </label>
           <button
             type="button"
             className="tab"
@@ -349,12 +378,14 @@ function App() {
         </div>
 
         <ul className="feed-list">
+          {matchesForSelectedDay.length === 0 && (
+            <li className="feed-empty">No matches for this manager on the selected day.</li>
+          )}
           {matchesForSelectedDay.map((match) => {
             const homeTeam = teamById.get(match.homeTeamId)
             const awayTeam = teamById.get(match.awayTeamId)
             const homeManagers = managerNamesByTeamId[match.homeTeamId] ?? []
             const awayManagers = managerNamesByTeamId[match.awayTeamId] ?? []
-            const uniqueManagers = [...new Set([...homeManagers, ...awayManagers])]
 
             return (
               <li className="feed-item" key={match.id}>
@@ -372,10 +403,6 @@ function App() {
                     {awayTeam?.name} → {awayManagers.join(', ') || 'Unassigned'}
                   </li>
                 </ul>
-                <p>
-                  Impacted manager{uniqueManagers.length === 1 ? '' : 's'}:{' '}
-                  {uniqueManagers.join(', ') || 'None (unassigned teams)'}
-                </p>
               </li>
             )
           })}
