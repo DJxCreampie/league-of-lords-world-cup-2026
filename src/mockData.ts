@@ -22,7 +22,7 @@ export const managers: Manager[] = [
   { id: 'manager-10', name: 'Jules Carter' },
 ]
 
-export const teams: Team[] = [
+const baseTeams: Array<Pick<Team, 'id' | 'name' | 'status'>> = [
   { id: 'team-brazil', name: 'Brazil', status: 'active' },
   { id: 'team-japan', name: 'Japan', status: 'eliminated' },
   { id: 'team-morocco', name: 'Morocco', status: 'active' },
@@ -72,6 +72,21 @@ export const teams: Team[] = [
   { id: 'team-paraguay', name: 'Paraguay', status: 'eliminated' },
   { id: 'team-ivory-coast', name: 'Ivory Coast', status: 'active' },
 ]
+
+const TEAM_GROUPS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+
+export const teams: Team[] = baseTeams.map((team, index) => ({
+  ...team,
+  shortName: team.name
+    .split(' ')
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 3)
+    .toUpperCase(),
+  group: TEAM_GROUPS[index % TEAM_GROUPS.length],
+  goalsFor: 0,
+  knockoutGoals: 0,
+}))
 
 export const assignments: Assignment[] = [
   { managerId: 'manager-1', teamId: 'team-brazil' },
@@ -169,3 +184,30 @@ export const teamGoalAdjustments: TeamGoalAdjustment[] = [
   { teamId: 'team-morocco', goals: 1 },
   { teamId: 'team-canada', goals: -1 },
 ]
+
+
+const overrideByMatchId = new Map(matchScoreOverrides.map((override) => [override.matchId, override]))
+
+for (const match of matches) {
+  if (match.status === 'scheduled') {
+    continue
+  }
+
+  const effective = overrideByMatchId.get(match.id) ?? match
+  const homeTeam = teams.find((team) => team.id === match.homeTeamId)
+  const awayTeam = teams.find((team) => team.id === match.awayTeamId)
+
+  if (homeTeam) {
+    homeTeam.goalsFor = (homeTeam.goalsFor ?? 0) + effective.homeGoals
+    if (['Round of 32', 'Round of 16', 'Quarterfinal', 'Semifinal', 'Final'].includes(match.stage)) {
+      homeTeam.knockoutGoals = (homeTeam.knockoutGoals ?? 0) + effective.homeGoals
+    }
+  }
+
+  if (awayTeam) {
+    awayTeam.goalsFor = (awayTeam.goalsFor ?? 0) + effective.awayGoals
+    if (['Round of 32', 'Round of 16', 'Quarterfinal', 'Semifinal', 'Final'].includes(match.stage)) {
+      awayTeam.knockoutGoals = (awayTeam.knockoutGoals ?? 0) + effective.awayGoals
+    }
+  }
+}
