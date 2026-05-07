@@ -3,6 +3,7 @@ import fs from 'node:fs/promises'
 const managers = JSON.parse(await fs.readFile('src/data/assignments/managers.json', 'utf8'))
 const assignments = JSON.parse(await fs.readFile('src/data/assignments/official-assignments.json', 'utf8'))
 const generated = JSON.parse(await fs.readFile('src/data/normalized/generated-data.json', 'utf8'))
+const assignableTeams = JSON.parse(await fs.readFile('src/data/assignments/assignable-teams-2026.json', 'utf8'))
 
 const mappedTeamMap = new Map()
 const ignoredPlaceholders = new Map()
@@ -22,6 +23,12 @@ for (const match of generated.matches ?? []) {
   }
 }
 
+
+if (mappedTeamMap.size < 48) {
+  for (const team of assignableTeams) {
+    mappedTeamMap.set(team.id, { id: team.id, name: team.name })
+  }
+}
 const managerIds = new Set(managers.map((m) => m.id))
 const errors = []
 const assigned = []

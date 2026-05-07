@@ -30,7 +30,7 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     env:
-      DATA_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_mode || 'mock' }}
+      DATA_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_mode || 'football-data' }}
       FOOTBALL_DATA_COMPETITION_CODE: ${{ github.event.inputs.competition_code || 'WC' }}
       FOOTBALL_DATA_SEASON_YEAR: ${{ github.event.inputs.season_year || '2026' }}
       FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
@@ -48,7 +48,7 @@ jobs:
         run: npm ci
 
       - name: Refresh normalized data
-        # Scheduled runs stay on mock data. Manual runs can select football-data mode.
+        # Scheduled runs use football-data. Manual runs can select mode explicitly.
         run: npm run update:data
 
       - name: Build app
