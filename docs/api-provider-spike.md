@@ -31,3 +31,8 @@ The script writes normalized output to: `src/data/spikes/<provider>-normalized-s
 3. Verify minute granularity and update cadence during live matches.
 4. Verify teams/aliases map reliably to internal team IDs.
 5. Verify pricing/rate limits and ToS fit scheduled refresh frequency.
+
+
+## football-data.org field discovery
+- Run: `npm run discover:football-data`
+- Guide: `docs/football-data-field-discovery.md`
