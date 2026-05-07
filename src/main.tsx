@@ -23,63 +23,85 @@ const leaderboard = rankManagers(
   teamManualOverrides,
 )
 
-const hasManualOverrides = matchScoreOverrides.length > 0 || teamGoalAdjustments.length > 0 || teamManualOverrides.length > 0
-const manualOverrideByTeamId = new Map(teamManualOverrides.map((override) => [override.teamId, override]))
+const hasManualOverrides =
+  matchScoreOverrides.length > 0 ||
+  teamGoalAdjustments.length > 0 ||
+  teamManualOverrides.length > 0
+
+const manualOverrideByTeamId = new Map(
+  teamManualOverrides.map((override) => [override.teamId, override]),
+)
+
 const teamById = new Map(teams.map((team) => [team.id, team]))
 const managerById = new Map(managers.map((manager) => [manager.id, manager]))
-const managerNamesByTeamId = assignments.reduce<Record<string, string[]>>((acc, assignment) => {
-  const manager = managers.find((item) => item.id === assignment.managerId)
-  if (!manager) return acc
-  acc[assignment.teamId] = [...(acc[assignment.teamId] ?? []), manager.name]
-  return acc
-}, {})
+
+const managerNamesByTeamId = assignments.reduce<Record<string, string[]>>(
+  (acc, assignment) => {
+    const manager = managerById.get(assignment.managerId)
+
+    if (!manager) return acc
+
+    acc[assignment.teamId] = [...(acc[assignment.teamId] ?? []), manager.name]
+    return acc
+  },
+  {},
+)
 
 const completedMatches = matches.filter((match) => match.status === 'finished')
-const completedWithGoals = completedMatches.filter((match) => match.homeGoals + match.awayGoals > 0)
+const completedWithGoals = completedMatches.filter(
+  (match) => match.homeGoals + match.awayGoals > 0,
+)
 const upcomingMatches = matches.filter((match) => match.status === 'scheduled')
-const upcomingRatio = matches.length > 0 ? upcomingMatches.length / matches.length : 0
-const isPreTournament = completedWithGoals.length === 0 && (completedMatches.length === 0 || upcomingRatio >= 0.8)
+const upcomingRatio =
+  matches.length > 0 ? upcomingMatches.length / matches.length : 0
+
+const isPreTournament =
+  completedWithGoals.length === 0 &&
+  (completedMatches.length === 0 || upcomingRatio >= 0.8)
 
 const visibleMatches = matches
   .filter((match) => {
     const homeTeam = teamById.get(match.homeTeamId)
     const awayTeam = teamById.get(match.awayTeamId)
-    const isPlaceholder = !homeTeam || !awayTeam || /unknown/i.test(homeTeam.name) || /unknown/i.test(awayTeam.name)
+    const isPlaceholder =
+      !homeTeam ||
+      !awayTeam ||
+      /unknown/i.test(homeTeam.name) ||
+      /unknown/i.test(awayTeam.name)
+
     return !isPlaceholder
   })
   .slice(0, 10)
 
 function formatKickoff(kickoffTime?: string): string {
   if (!kickoffTime) return 'Kickoff TBD'
+
   const date = new Date(kickoffTime)
+
   return Number.isNaN(date.getTime()) ? 'Kickoff TBD' : date.toLocaleString()
 }
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'leaderboard' | 'teams'>('leaderboard')
+  const [activeTab, setActiveTab] = useState<'leaderboard' | 'teams'>(
+    'leaderboard',
+  )
 
-  const teamsWithManager = useMemo(() => teams.map((team) => {
-    const assignment = assignments.find((item) => item.teamId === team.id)
-    const managerName = assignment ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager' : 'Unassigned'
-    return { ...team, managerName }
-  }), [])
+  const teamsWithManager = useMemo(
+    () =>
+      teams.map((team) => {
+        const assignment = assignments.find((item) => item.teamId === team.id)
+        const managerName = assignment
+          ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager'
+          : 'Unassigned'
 
-  const unassignedCount = teamsWithManager.filter((team) => team.managerName === 'Unassigned').length
+        return { ...team, managerName }
+      }),
+    [],
+  )
 
-const visibleMatches = matches
-  .filter((match) => {
-    const homeTeam = teamById.get(match.homeTeamId)
-    const awayTeam = teamById.get(match.awayTeamId)
-    const isPlaceholder = !homeTeam || !awayTeam || /unknown/i.test(homeTeam.name) || /unknown/i.test(awayTeam.name)
-    return !isPlaceholder
-  })
-  .slice(0, 10)
-
-function formatKickoff(kickoffTime?: string): string {
-  if (!kickoffTime) return 'Kickoff TBD'
-  const date = new Date(kickoffTime)
-  return Number.isNaN(date.getTime()) ? 'Kickoff TBD' : date.toLocaleString()
-}
+  const unassignedCount = teamsWithManager.filter(
+    (team) => team.managerName === 'Unassigned',
+  ).length
 
 function App() {
   return (
@@ -91,48 +113,76 @@ function App() {
         {hasManualOverrides && <small>Manual scoring corrections applied</small>}
       </header>
 
-      <nav className="tab-nav" aria-label="Dashboard sections">
-        <button className={activeTab === 'leaderboard' ? 'tab active' : 'tab'} onClick={() => setActiveTab('leaderboard')}>Leaderboard</button>
-        <button className={activeTab === 'teams' ? 'tab active' : 'tab'} onClick={() => setActiveTab('teams')}>Teams</button>
+      <nav className="tab-nav" aria-label="Dashboard views">
+        <button
+          className={activeTab === 'leaderboard' ? 'tab active' : 'tab'}
+          type="button"
+          onClick={() => setActiveTab('leaderboard')}
+        >
+          Leaderboard
+        </button>
+        <button
+          className={activeTab === 'teams' ? 'tab active' : 'tab'}
+          type="button"
+          onClick={() => setActiveTab('teams')}
+        >
+          Teams
+        </button>
       </nav>
+
+      {isPreTournament && (
+        <section className="panel banner">
+          World Cup matches have not started yet. Leaderboard will update once
+          goals are recorded.
+        </section>
+      )}
 
       {activeTab === 'leaderboard' && (
         <>
-          {isPreTournament && (
-            <section className="panel banner" aria-live="polite">
-              <strong>World Cup matches have not started yet.</strong> Leaderboard will update once goals are recorded.
-            </section>
-          )}
+          <section className="panel">
+            <h2>Leaderboard</h2>
+            {isPreTournament && (
+              <p className="subtle-state">
+                Pre-tournament state: totals remain at 0 until matches begin.
+              </p>
+            )}
 
-          <section className="panel" aria-labelledby="leaderboard-title">
-            <h2 id="leaderboard-title">Leaderboard</h2>
-            {isPreTournament && <p className="subtle-state">Pre-tournament state: totals remain at 0 until matches begin.</p>}
             <ol className="leaderboard-list">
               {leaderboard.map((manager, index) => (
-                <li key={manager.id} className="leaderboard-row">
+                <li className="leaderboard-row" key={manager.id}>
                   <span className="rank">#{index + 1}</span>
                   <span className="manager-name">{manager.name}</span>
                   <span>{manager.totalGoals} goals</span>
                   <span>{manager.activeTeamsRemaining} active</span>
-                  <span>{manager.teams.map((team) => team.name).join(', ')}</span>
+                  <span>
+                    {manager.teams.map((team) => team.name).join(', ')}
+                  </span>
                 </li>
               ))}
             </ol>
           </section>
 
-          <section className="panel" aria-labelledby="cards-title">
-            <h2 id="cards-title">Manager Cards</h2>
+          <section className="panel">
+            <h2>Manager Cards</h2>
             <div className="cards">
               {leaderboard.map((manager) => (
-                <article key={manager.id} className="card">
+                <article className="card" key={manager.id}>
                   <h3>{manager.name}</h3>
                   <p className="card-total">{manager.totalGoals} total goals</p>
+
                   <ul className="detail-team-list">
                     {manager.teams.map((team) => (
                       <li className="detail-team-row" key={team.id}>
-                        <span>{team.name} {manualOverrideByTeamId.has(team.id) && <em className="override-badge" title={manualOverrideByTeamId.get(team.id)?.note}>override</em>}</span>
+                        <span>
+                          {team.name}
+                          {manualOverrideByTeamId.has(team.id) && (
+                            <em className="override-badge">override</em>
+                          )}
+                        </span>
                         <span>{team.goals} goals</span>
-                        <span className={`status ${team.status}`}>{team.status}</span>
+                        <span className={`status ${team.status}`}>
+                          {team.status}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -140,49 +190,21 @@ function App() {
               ))}
             </div>
           </section>
-
-          <section className="panel" aria-labelledby="match-feed-title">
-            <h2 id="match-feed-title">Match Feed</h2>
-            <ul className="feed-list">
-              {visibleMatches.map((match) => {
-                const homeTeam = teamById.get(match.homeTeamId)
-                const awayTeam = teamById.get(match.awayTeamId)
-                const impacted = [
-                  ...(managerNamesByTeamId[match.homeTeamId] ?? []),
-                  ...(managerNamesByTeamId[match.awayTeamId] ?? []),
-                ]
-
-                if (match.status === 'scheduled') {
-                  return (
-                    <li key={match.id} className="feed-item">
-                      <strong>Upcoming</strong> · {homeTeam?.name} vs {awayTeam?.name}
-                      <div>{formatKickoff(match.kickoffTime)}</div>
-                      <div>Impacted managers: {impacted.join(', ') || 'None (unassigned teams)'}</div>
-                    </li>
-                  )
-                }
-
-                return (
-                  <li key={match.id} className="feed-item">
-                    <strong>{match.status.toUpperCase()}</strong> · {homeTeam?.name} {match.homeGoals} - {match.awayGoals} {awayTeam?.name}
-                    <div>Impacted managers: {impacted.join(', ') || 'None (unassigned teams)'}</div>
-                  </li>
-                )
-              })}
-            </ul>
-          </section>
         </>
       )}
 
       {activeTab === 'teams' && (
-        <section className="panel" aria-labelledby="teams-title">
-          <h2 id="teams-title">Teams</h2>
-          <p className="subtle-state">All 48 teams are shown. Unassigned: {unassignedCount}</p>
+        <section className="panel">
+          <h2>Teams</h2>
+          <p className="subtle-state">
+            All 48 teams are shown. Unassigned: {unassignedCount}
+          </p>
+
           <ul className="teams-list">
             {teamsWithManager.map((team) => (
-              <li key={team.id} className="teams-row">
-                <strong>{team.name}</strong>
-                <span>Group {team.group}</span>
+              <li className="teams-row" key={team.id}>
+                <span>{team.name}</span>
+                <span>Group {team.group ?? 'TBD'}</span>
                 <span>{team.managerName}</span>
                 <span>{team.goalsFor ?? 0} goals</span>
                 <span className={`status ${team.status}`}>{team.status}</span>
@@ -192,8 +214,52 @@ function App() {
         </section>
       )}
 
-      <section className="panel" aria-labelledby="rules-title">
-        <h2 id="rules-title">Rules</h2>
+      <section className="panel">
+        <h2>Match Feed</h2>
+
+        <ul className="feed-list">
+          {visibleMatches.map((match) => {
+            const homeTeam = teamById.get(match.homeTeamId)
+            const awayTeam = teamById.get(match.awayTeamId)
+            const impacted = [
+              ...(managerNamesByTeamId[match.homeTeamId] ?? []),
+              ...(managerNamesByTeamId[match.awayTeamId] ?? []),
+            ]
+
+            if (match.status === 'scheduled') {
+              return (
+                <li className="feed-item" key={match.id}>
+                  <strong>
+                    Upcoming · {homeTeam?.name} vs {awayTeam?.name}
+                  </strong>
+                  <p>{formatKickoff(match.kickoffTime)}</p>
+                  <p>
+                    Impacted managers:{' '}
+                    {impacted.join(', ') || 'None (unassigned teams)'}
+                  </p>
+                </li>
+              )
+            }
+
+            return (
+              <li className="feed-item" key={match.id}>
+                <strong>
+                  {match.status.toUpperCase()} · {homeTeam?.name}{' '}
+                  {match.homeGoals} - {match.awayGoals} {awayTeam?.name}
+                </strong>
+                <p>
+                  Impacted managers:{' '}
+                  {impacted.join(', ') || 'None (unassigned teams)'}
+                </p>
+              </li>
+            )
+          })}
+        </ul>
+      </section>
+
+      <section className="panel">
+        <h2>Rules</h2>
+
         <ul className="rules-list">
           <li>Each manager gets 4 World Cup teams.</li>
           <li>Manager score equals total goals scored by assigned teams.</li>
