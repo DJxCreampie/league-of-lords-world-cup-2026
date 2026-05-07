@@ -1,4 +1,4 @@
-export type TeamStatus = 'active' | 'eliminated' | 'champion'
+export type TeamStatus = 'active' | 'eliminated' | 'champion' | 'unassigned'
 
 export type MatchStatus = 'scheduled' | 'live' | 'finished'
 
@@ -10,6 +10,10 @@ export type Manager = {
 export type Team = {
   id: string
   name: string
+  shortName?: string
+  group?: string
+  goalsFor?: number
+  knockoutGoals?: number
   status: TeamStatus
 }
 
@@ -39,4 +43,11 @@ export type MatchScoreOverride = {
 export type TeamGoalAdjustment = {
   teamId: string
   goals: number
+}
+
+export type TeamManualOverride = {
+  teamId: string
+  goalsFor?: number
+  status?: TeamStatus
+  note: string
 }
