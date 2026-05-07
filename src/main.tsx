@@ -29,7 +29,7 @@ function App() {
     <main className="app-shell">
       <section className="leaderboard" aria-labelledby="leaderboard-title">
         <div className="page-header">
-          <p>Fantasy World Cup</p>
+          <p>League of Lords World Cup 2026</p>
           <h1 id="leaderboard-title">Leaderboard</h1>
           <span>Last updated: {lastUpdated}</span>
           {hasManualOverrides && <small>Manual scoring corrections applied</small>}
