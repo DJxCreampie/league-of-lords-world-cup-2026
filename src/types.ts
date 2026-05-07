@@ -44,3 +44,10 @@ export type TeamGoalAdjustment = {
   teamId: string
   goals: number
 }
+
+export type TeamManualOverride = {
+  teamId: string
+  goalsFor?: number
+  status?: TeamStatus
+  note: string
+}

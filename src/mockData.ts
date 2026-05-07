@@ -5,6 +5,7 @@ import type {
   MatchScoreOverride,
   Team,
   TeamGoalAdjustment,
+  TeamManualOverride,
 } from './types'
 
 export const lastUpdated = 'May 3, 2026 at 10:45 AM ET'
@@ -178,6 +179,21 @@ export const matches: Match[] = [
 export const matchScoreOverrides: MatchScoreOverride[] = [
   { matchId: 'match-brazil-norway', homeGoals: 9, awayGoals: 1 },
   { matchId: 'match-france-ghana-shootout', homeGoals: 13, awayGoals: 5 },
+]
+
+
+
+export const teamManualOverrides: TeamManualOverride[] = [
+  {
+    teamId: 'team-morocco',
+    goalsFor: 12,
+    note: 'Manual correction: two delayed group-stage goals added.',
+  },
+  {
+    teamId: 'team-japan',
+    status: 'active',
+    note: 'Manual correction: federation appeal reversed elimination status.',
+  },
 ]
 
 export const teamGoalAdjustments: TeamGoalAdjustment[] = [

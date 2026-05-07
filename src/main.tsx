@@ -7,6 +7,7 @@ import {
   matches,
   matchScoreOverrides,
   teamGoalAdjustments,
+  teamManualOverrides,
   teams,
 } from './mockData'
 import { rankManagers } from './scoring'
@@ -19,8 +20,10 @@ const leaderboard = rankManagers(
   matches,
   matchScoreOverrides,
   teamGoalAdjustments,
+  teamManualOverrides,
 )
-const hasManualOverrides = matchScoreOverrides.length > 0 || teamGoalAdjustments.length > 0
+const hasManualOverrides = matchScoreOverrides.length > 0 || teamGoalAdjustments.length > 0 || teamManualOverrides.length > 0
+const manualOverrideByTeamId = new Map(teamManualOverrides.map((override) => [override.teamId, override]))
 
 const teamById = new Map(teams.map((team) => [team.id, team]))
 const managerNamesByTeamId = assignments.reduce<Record<string, string[]>>((acc, assignment) => {
@@ -69,7 +72,7 @@ function App() {
               <ul className="detail-team-list">
                 {manager.teams.map((team) => (
                   <li className="detail-team-row" key={team.id}>
-                    <span>{team.name}</span>
+                    <span>{team.name} {manualOverrideByTeamId.has(team.id) && <em className="override-badge" title={manualOverrideByTeamId.get(team.id)?.note}>override</em>}</span>
                     <span>{team.goals} goals</span>
                     <span className={`status ${team.status}`}>{team.status}</span>
                   </li>
