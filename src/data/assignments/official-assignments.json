@@ -1,0 +1,52 @@
+[
+  {
+    "managerId": "manager-1",
+    "managerDisplayName": "Greyson",
+    "teamIds": ["team-algeria", "team-argentina", "team-australia", "team-austria"]
+  },
+  {
+    "managerId": "manager-2",
+    "managerDisplayName": "Molina",
+    "teamIds": ["team-belgium", "team-brazil", "team-colombia", "team-croatia"]
+  },
+  {
+    "managerId": "manager-3",
+    "managerDisplayName": "Ridley",
+    "teamIds": ["team-ecuador", "team-egypt", "team-england", "team-france"]
+  },
+  {
+    "managerId": "manager-4",
+    "managerDisplayName": "Adog",
+    "teamIds": ["team-germany", "team-ghana", "team-haiti", "team-iraq"]
+  },
+  {
+    "managerId": "manager-5",
+    "managerDisplayName": "Trent",
+    "teamIds": ["team-japan", "team-jordan", "team-morocco", "team-netherlands"]
+  },
+  {
+    "managerId": "manager-6",
+    "managerDisplayName": "Josh",
+    "teamIds": ["team-new-zealand", "team-norway", "team-panama", "team-paraguay"]
+  },
+  {
+    "managerId": "manager-7",
+    "managerDisplayName": "Bailey",
+    "teamIds": ["team-portugal", "team-qatar", "team-saudi-arabia", "team-scotland"]
+  },
+  {
+    "managerId": "manager-8",
+    "managerDisplayName": "Graham",
+    "teamIds": ["team-senegal", "team-south-africa", "team-spain", "team-sweden"]
+  },
+  {
+    "managerId": "manager-9",
+    "managerDisplayName": "Mitch",
+    "teamIds": ["team-switzerland", "team-tunisia", "team-turkey", "team-uruguay"]
+  },
+  {
+    "managerId": "manager-10",
+    "managerDisplayName": "Evan",
+    "teamIds": ["team-uzbekistan", "team-united-states", "team-canada", "team-mexico"]
+  }
+]
