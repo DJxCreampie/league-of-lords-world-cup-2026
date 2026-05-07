@@ -31,3 +31,15 @@ h2 { margin:0 0 10px; font-size:1.1rem; }
 }
 
 .override-badge { margin-left: 6px; font-size: .68rem; font-style: normal; font-weight: 700; color: #92400e; background: #fef3c7; border-radius: 999px; padding: 2px 6px; }
+
+.banner {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.subtle-state {
+  margin: 0 0 10px;
+  color: #475569;
+  font-size: 0.92rem;
+}

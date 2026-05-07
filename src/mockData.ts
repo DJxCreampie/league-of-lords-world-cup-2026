@@ -135,7 +135,7 @@ export const assignments: Assignment[] = [
 export const matches: Match[] = [
   { id: 'match-brazil-norway', stage: 'Group', status: 'finished', homeTeamId: 'team-brazil', awayTeamId: 'team-norway', homeGoals: 10, awayGoals: 0 },
   { id: 'match-brazil-sweden-live', stage: 'Quarterfinal', status: 'live', homeTeamId: 'team-brazil', awayTeamId: 'team-sweden', homeGoals: 2, awayGoals: 1 },
-  { id: 'match-japan-sweden-scheduled', stage: 'Friendly', status: 'scheduled', homeTeamId: 'team-japan', awayTeamId: 'team-sweden', homeGoals: 99, awayGoals: 99 },
+  { id: 'match-japan-sweden-scheduled', stage: 'Friendly', status: 'scheduled', kickoffTime: '2026-06-12T18:00:00Z', homeTeamId: 'team-japan', awayTeamId: 'team-sweden', homeGoals: 99, awayGoals: 99 },
   { id: 'match-japan-ireland', stage: 'Group', status: 'finished', homeTeamId: 'team-japan', awayTeamId: 'team-ireland', homeGoals: 7, awayGoals: 0 },
   { id: 'match-morocco-greece', stage: 'Group', status: 'finished', homeTeamId: 'team-morocco', awayTeamId: 'team-greece', homeGoals: 8, awayGoals: 0 },
   { id: 'match-canada-ukraine', stage: 'Group', status: 'finished', homeTeamId: 'team-canada', awayTeamId: 'team-ukraine', homeGoals: 3, awayGoals: 0 },

@@ -26,6 +26,7 @@ export type Match = {
   id: string
   stage: string
   status: MatchStatus
+  kickoffTime?: string
   homeTeamId: string
   awayTeamId: string
   homeGoals: number
