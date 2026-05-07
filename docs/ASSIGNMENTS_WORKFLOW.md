@@ -28,6 +28,14 @@ Rules:
 - 40 assigned teams total
 - 8 unassigned teams total (48 World Cup teams - 40 assigned)
 
+
+## Full 48-team pool policy
+- Full reference list: `docs/ASSIGNABLE_TEAMS_2026.md`.
+- All 48 mapped teams remain available for reference and future assignment changes.
+- `src/data/assignments/official-assignments.json` should assign exactly 40 of these teams.
+- The remaining 8 teams stay unassigned but still referenceable (not removed from the pool).
+- Final 40-team assignment can be edited manually later before lock-in.
+
 ## Validate official assignments (required after manual edits)
 Run:
 
