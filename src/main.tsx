@@ -102,8 +102,7 @@ function App() {
   const unassignedCount = teamsWithManager.filter(
     (team) => team.managerName === 'Unassigned',
   ).length
-
-function App() {
+  
   return (
     <main className="app-shell">
       <header className="page-header">
