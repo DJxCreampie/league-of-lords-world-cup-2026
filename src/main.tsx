@@ -23,6 +23,9 @@ const leaderboard = rankManagers(
   teamManualOverrides,
 )
 
+type SortKey = 'rank' | 'manager' | 'goals' | 'active'
+type SortDirection = 'asc' | 'desc'
+
 const hasManualOverrides =
   matchScoreOverrides.length > 0 ||
   teamGoalAdjustments.length > 0 ||
@@ -89,6 +92,53 @@ function App() {
     'leaderboard',
   )
   const [expandedManagerId, setExpandedManagerId] = useState<string | null>(null)
+  const [sortKey, setSortKey] = useState<SortKey>('rank')
+  const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
+
+  const sortedLeaderboard = useMemo(() => {
+    const withRank = leaderboard.map((manager, index) => ({
+      ...manager,
+      rank: index + 1,
+    }))
+
+    if (sortKey === 'rank') return withRank
+
+    return [...withRank].sort((a, b) => {
+      if (sortKey === 'manager') {
+        const result = a.name.localeCompare(b.name)
+        return sortDirection === 'asc' ? result : -result
+      }
+
+      if (sortKey === 'goals') {
+        const result = a.totalGoals - b.totalGoals
+        return sortDirection === 'asc' ? result : -result
+      }
+
+      const result = a.activeTeamsRemaining - b.activeTeamsRemaining
+      return sortDirection === 'asc' ? result : -result
+    })
+  }, [sortDirection, sortKey])
+
+  const handleSortChange = (nextSortKey: SortKey) => {
+    if (nextSortKey === 'rank') {
+      setSortKey('rank')
+      setSortDirection('desc')
+      return
+    }
+
+    if (sortKey === nextSortKey) {
+      setSortDirection((current) => (current === 'desc' ? 'asc' : 'desc'))
+      return
+    }
+
+    setSortKey(nextSortKey)
+    setSortDirection(nextSortKey === 'manager' ? 'asc' : 'desc')
+  }
+
+  const sortIndicator = (column: SortKey) => {
+    if (sortKey !== column) return ''
+    return sortDirection === 'asc' ? ' ↑' : ' ↓'
+  }
 
   const teamsWithManager = useMemo(
     () =>
@@ -174,8 +224,23 @@ function App() {
             </p>
           )}
 
+          <div className="leaderboard-table-header" role="row">
+            <button type="button" className="header-cell" onClick={() => handleSortChange('rank')}>
+              Rank{sortIndicator('rank')}
+            </button>
+            <button type="button" className="header-cell" onClick={() => handleSortChange('manager')}>
+              Manager{sortIndicator('manager')}
+            </button>
+            <button type="button" className="header-cell" onClick={() => handleSortChange('goals')}>
+              Goals{sortIndicator('goals')}
+            </button>
+            <button type="button" className="header-cell" onClick={() => handleSortChange('active')}>
+              Active{sortIndicator('active')}
+            </button>
+          </div>
+
           <ol className="leaderboard-list">
-            {leaderboard.map((manager, index) => {
+            {sortedLeaderboard.map((manager) => {
               const isExpanded = expandedManagerId === manager.id
 
               return (
@@ -189,24 +254,29 @@ function App() {
                       )
                     }
                   >
-                    <span className="rank">#{index + 1}</span>
+                    <span className="rank">#{manager.rank}</span>
                     <span className="manager-name">{manager.name}</span>
-                    <span>{manager.totalGoals} goals</span>
-                    <span>{manager.activeTeamsRemaining} active</span>
+                    <span>{manager.totalGoals}</span>
+                    <span>{manager.activeTeamsRemaining}</span>
                   </button>
 
                   {isExpanded && (
-                    <ul className="expanded-teams">
-                      {manager.teams.map((team) => (
-                        <li className="detail-team-row" key={team.id}>
-                          <span>{team.name}</span>
-                          <span className={`status ${team.status}`}>
-                            {team.status}
-                          </span>
-                          <span>{team.goals} goals</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="expanded-teams-wrap">
+                      <div className="expanded-teams-header">
+                        <span>Team</span>
+                        <span>Status</span>
+                        <span>Goals</span>
+                      </div>
+                      <ul className="expanded-teams">
+                        {manager.teams.map((team) => (
+                          <li className="detail-team-row" key={team.id}>
+                            <span>{team.name}</span>
+                            <span className={`status ${team.status}`}>{team.status}</span>
+                            <span>{team.goals}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                 </li>
               )
