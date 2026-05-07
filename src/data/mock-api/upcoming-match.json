@@ -1,0 +1,14 @@
+{
+  "fixture": {
+    "id": "fx-2026-001",
+    "competition": "fifa-world-cup-2026",
+    "date": "2026-06-16T19:00:00Z",
+    "status": "NS",
+    "minute": null
+  },
+  "teams": {
+    "home": { "id": "api-usa", "name": "USA" },
+    "away": { "id": "api-bra", "name": "Brazil" }
+  },
+  "goals": { "home": null, "away": null }
+}

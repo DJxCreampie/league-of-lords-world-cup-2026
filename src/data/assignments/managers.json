@@ -1,0 +1,12 @@
+[
+  { "id": "manager-1", "displayName": "Avery Stone", "shortName": "Avery" },
+  { "id": "manager-2", "displayName": "Maya Brooks", "shortName": "Maya" },
+  { "id": "manager-3", "displayName": "Theo Park", "shortName": "Theo" },
+  { "id": "manager-4", "displayName": "Nora Patel", "shortName": "Nora" },
+  { "id": "manager-5", "displayName": "Leo Martinez", "shortName": "Leo" },
+  { "id": "manager-6", "displayName": "Iris Chen", "shortName": "Iris" },
+  { "id": "manager-7", "displayName": "Sam Rivera", "shortName": "Sam" },
+  { "id": "manager-8", "displayName": "Quinn Morgan", "shortName": "Quinn" },
+  { "id": "manager-9", "displayName": "Elena Rossi", "shortName": "Elena" },
+  { "id": "manager-10", "displayName": "Jules Carter", "shortName": "Jules" }
+]
