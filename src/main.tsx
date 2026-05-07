@@ -146,14 +146,16 @@ function App() {
 
   const teamsWithManager = useMemo(
     () =>
-      teams.map((team) => {
-        const assignment = assignments.find((item) => item.teamId === team.id)
-        const managerName = assignment
-          ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager'
-          : 'Unassigned'
+      [...teams]
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((team) => {
+          const assignment = assignments.find((item) => item.teamId === team.id)
+          const managerName = assignment
+            ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager'
+            : 'Unassigned'
 
-        return { ...team, managerName }
-      }),
+          return { ...team, managerName }
+        }),
     [],
   )
 
