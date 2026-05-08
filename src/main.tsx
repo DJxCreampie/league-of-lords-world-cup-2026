@@ -11,6 +11,7 @@ import {
   teams,
 } from './mockData'
 import { rankManagers } from './scoring'
+import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
 import './style.css'
 
 const leaderboard = rankManagers(
@@ -310,13 +311,15 @@ function App() {
                   {isExpanded && (
                     <div className="expanded-teams-wrap">
                       <div className="expanded-teams-header">
+                        <span>Tier</span>
                         <span>Team</span>
                         <span>Status</span>
                         <span>Goals</span>
                       </div>
                       <ul className="expanded-teams">
-                        {manager.teams.map((team) => (
+                        {sortTeamsByTierThenName(manager.teams).map((team) => (
                           <li className="detail-team-row" key={team.id}>
+                            <span>{formatTeamTier(team.name)}</span>
                             <span>{team.name}</span>
                             <span className={`status ${team.status}`}>{team.status}</span>
                             <span>{team.goals}</span>

@@ -1,9 +1,33 @@
 import { describe, expect, it } from 'vitest'
 import { assignments, managers, matchScoreOverrides, matches, teamGoalAdjustments, teamManualOverrides, teams } from './mockData'
 import generatedData from './data/normalized/generated-data.json'
+import assignableTeams from './data/assignments/assignable-teams-2026.json'
+import { deriveGeneratedTeamPool } from './lib/teamPool'
 import { getAssignedTeams, rankManagers } from './scoring'
 
 describe('assignment integrity and pre-tournament behavior', () => {
+  it('generated-data-derived team pool includes 48 real teams', () => {
+    const { teams: generatedPool } = deriveGeneratedTeamPool()
+    expect(generatedPool).toHaveLength(48)
+  })
+
+  it('stale fallback teams do not override generated-data team pool', () => {
+    const { teams: generatedPool } = deriveGeneratedTeamPool()
+    const generatedIds = new Set(generatedPool.map((team) => team.id))
+
+    expect(generatedIds.has('team-italy')).toBe(false)
+    expect(assignableTeams.some((team) => team.id === 'team-italy')).toBe(true)
+  })
+
+  it('valid generated team missing from stale list can still be assigned and displayed', () => {
+    const { teams: generatedPool } = deriveGeneratedTeamPool()
+    const staleIds = new Set(assignableTeams.map((team) => team.id))
+    const generatedOnlyTeam = generatedPool.find((team) => !staleIds.has(team.id))
+
+    expect(generatedOnlyTeam).toBeDefined()
+    expect(teams.some((team) => team.id === generatedOnlyTeam?.id)).toBe(true)
+    expect(assignments.some((assignment) => assignment.teamId === generatedOnlyTeam?.id)).toBe(true)
+  })
 
   it('all 48 teams are present and exactly 8 are unassigned', () => {
     expect(teams).toHaveLength(48)
