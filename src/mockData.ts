@@ -1,7 +1,7 @@
 import managerSource from './data/assignments/managers.json'
 import assignmentSource from './data/assignments/official-assignments.json'
-import assignableTeams from './data/assignments/assignable-teams-2026.json'
 import generatedData from './data/normalized/generated-data.json'
+import { deriveGeneratedTeamPool, normalizeAssignedTeamId } from './lib/teamPool'
 import type {
   Assignment,
   Manager,
@@ -20,10 +20,11 @@ export const managers: Manager[] = managerSource.map((manager) => ({
   name: manager.displayName,
 }))
 
+const { teams: derivedPool } = deriveGeneratedTeamPool()
 const generatedTeamsById = new Map((generatedData.teams ?? []).map((team) => [team.teamId, team]))
 const hasAnyFinishedMatches = (generatedData.matches ?? []).some((match) => match.status === 'final')
 
-export const teams: Team[] = assignableTeams.map((team) => {
+export const teams: Team[] = derivedPool.map((team) => {
   const generated = generatedTeamsById.get(team.id)
   return {
     id: team.id,
@@ -34,17 +35,17 @@ export const teams: Team[] = assignableTeams.map((team) => {
       .join('')
       .slice(0, 3)
       .toUpperCase(),
-    group: team.group,
-    goalsFor: hasAnyFinishedMatches ? Number(generated?.goalsFor ?? 0) : 0,
+    group: team.group ?? generated?.group,
+    goalsFor: hasAnyFinishedMatches ? Number(generated?.goalsFor ?? team.goalsFor ?? 0) : 0,
     knockoutGoals: 0,
-    status: (hasAnyFinishedMatches ? (generated?.status ?? 'active') : 'active') as TeamStatus,
+    status: (hasAnyFinishedMatches ? (generated?.status ?? team.status ?? 'active') : 'active') as TeamStatus,
   }
 })
 
 export const assignments: Assignment[] = assignmentSource.flatMap((entry) =>
   entry.teamIds.map((teamId) => ({
     managerId: entry.managerId,
-    teamId,
+    teamId: normalizeAssignedTeamId(teamId),
   })),
 )
 
