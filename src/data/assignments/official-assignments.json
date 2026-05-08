@@ -2,51 +2,51 @@
   {
     "managerId": "manager-1",
     "managerDisplayName": "Greyson",
-    "teamIds": ["team-algeria", "team-argentina", "team-australia", "team-austria"]
+    "teamIds": ["team-norway", "team-senegal", "team-united-states", "team-egypt"]
   },
   {
     "managerId": "manager-2",
     "managerDisplayName": "Molina",
-    "teamIds": ["team-belgium", "team-brazil", "team-colombia", "team-croatia"]
+    "teamIds": ["team-spain", "team-uruguay", "team-paraguay", "team-uzbekistan"]
   },
   {
     "managerId": "manager-3",
     "managerDisplayName": "Ridley",
-    "teamIds": ["team-ecuador", "team-egypt", "team-england", "team-france"]
+    "teamIds": ["team-england", "team-japan", "team-sweden", "team-jordan"]
   },
   {
     "managerId": "manager-4",
     "managerDisplayName": "Adog",
-    "teamIds": ["team-germany", "team-ghana", "team-haiti", "team-iraq"]
+    "teamIds": ["team-germany", "team-ivory-coast", "team-scotland", "team-australia"]
   },
   {
     "managerId": "manager-5",
     "managerDisplayName": "Trent",
-    "teamIds": ["team-japan", "team-jordan", "team-morocco", "team-netherlands"]
+    "teamIds": ["team-belgium", "team-ecuador", "team-canada", "team-qatar"]
   },
   {
     "managerId": "manager-6",
     "managerDisplayName": "Josh",
-    "teamIds": ["team-new-zealand", "team-norway", "team-panama", "team-paraguay"]
+    "teamIds": ["team-argentina", "team-colombia", "team-austria", "team-bosnia"]
   },
   {
     "managerId": "manager-7",
     "managerDisplayName": "Bailey",
-    "teamIds": ["team-portugal", "team-qatar", "team-saudi-arabia", "team-scotland"]
+    "teamIds": ["team-netherlands", "team-croatia", "team-algeria", "team-congo"]
   },
   {
     "managerId": "manager-8",
     "managerDisplayName": "Graham",
-    "teamIds": ["team-senegal", "team-south-africa", "team-spain", "team-sweden"]
+    "teamIds": ["team-brazil", "team-turkey", "team-mexico", "team-cape-verde"]
   },
   {
     "managerId": "manager-9",
     "managerDisplayName": "Mitch",
-    "teamIds": ["team-switzerland", "team-tunisia", "team-turkey", "team-uruguay"]
+    "teamIds": ["team-france", "team-switzerland", "team-south-korea", "team-panama"]
   },
   {
     "managerId": "manager-10",
     "managerDisplayName": "Evan",
-    "teamIds": ["team-uzbekistan", "team-united-states", "team-canada", "team-mexico"]
+    "teamIds": ["team-portugal", "team-morocco", "team-czechia", "team-haiti"]
   }
 ]
