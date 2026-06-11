@@ -87,4 +87,4 @@ Draft behavior:
 `FOOTBALL_DATA_API_KEY` must be configured in repository secrets when using `football-data` refresh mode.
 
 ## Leaderboard connection
-The app leaderboard currently reads assignment data from `src/data/assignments/official-assignments.json` via `src/mockData.ts`, so manual official assignments are the scoring source-of-truth.
+The app leaderboard currently reads assignment data from `src/data/assignments/official-assignments.json` via `src/productionData.ts`, so manual official assignments are the scoring source-of-truth.

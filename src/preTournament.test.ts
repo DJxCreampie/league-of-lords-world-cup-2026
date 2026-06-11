@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { assignments, managers, matchScoreOverrides, matches, teamGoalAdjustments, teamManualOverrides, teams } from './mockData'
+import { assignments, dataDiagnostics, managers, matchScoreOverrides, matches, teamGoalAdjustments, teamManualOverrides, teams } from './mockData'
 import generatedData from './data/normalized/generated-data.json'
 import assignableTeams from './data/assignments/assignable-teams-2026.json'
 import { deriveGeneratedTeamPool } from './lib/teamPool'
@@ -45,6 +45,15 @@ describe('assignment integrity and pre-tournament behavior', () => {
 
   it('generated-data source is not mock-api in production path', () => {
     expect(generatedData.source).not.toBe('mock-api')
+  })
+
+  it('production diagnostics reflect committed generated-data', () => {
+    expect(dataDiagnostics.source).toBe(generatedData.source)
+    expect(dataDiagnostics.generatedAt).toBe(generatedData.generatedAt)
+    expect(dataDiagnostics.totalMatchesLoaded).toBe(generatedData.matches.length)
+    expect(dataDiagnostics.countedMatches).toBe(
+      generatedData.matches.filter((match) => match.status === 'final' || match.status === 'live').length,
+    )
   })
 
   it('manual override sample data is inactive by default', () => {
