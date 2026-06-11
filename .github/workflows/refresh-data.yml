@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       source_mode:
-        description: 'Data source mode (default mock; football-data requires secrets)'
+        description: 'Data source mode (football-data is the default production source; mock is optional/testing only)'
         required: false
-        default: 'mock'
+        default: 'football-data'
         type: choice
         options:
           - mock
@@ -20,7 +20,7 @@ on:
         required: false
         default: '2026'
   schedule:
-    # Conservative default schedule; keep mock as scheduled source.
+    # Scheduled production refreshes use football-data by default.
     - cron: '*/30 * * * *'
 
 permissions:
@@ -48,7 +48,7 @@ jobs:
         run: npm ci
 
       - name: Refresh normalized data
-        # Scheduled runs use football-data. Manual runs can select mode explicitly.
+        # Scheduled runs use football-data. Manual runs default to football-data; mock must be selected explicitly for testing.
         run: npm run update:data
 
       - name: Build app
