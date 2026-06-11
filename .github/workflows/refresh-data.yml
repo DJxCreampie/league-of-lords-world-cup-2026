@@ -3,34 +3,35 @@ name: Refresh Data
 on:
   workflow_dispatch:
     inputs:
-      source_mode:
-        description: 'Data source mode (default mock; football-data requires secrets)'
-        required: false
-        default: 'mock'
-        type: choice
-        options:
-          - mock
-          - football-data
       competition_code:
-        description: 'football-data competition code (used only when source_mode=football-data)'
+        description: 'football-data competition code'
         required: false
         default: 'WC'
       season_year:
-        description: 'football-data season year (used only when source_mode=football-data)'
+        description: 'football-data season year'
         required: false
         default: '2026'
   schedule:
-    # Conservative default schedule; keep mock as scheduled source.
+    # Scheduled production refreshes use football-data.
     - cron: '*/30 * * * *'
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  refresh:
+  refresh-build-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     env:
-      DATA_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_mode || 'football-data' }}
+      DATA_SOURCE: football-data
       FOOTBALL_DATA_COMPETITION_CODE: ${{ github.event.inputs.competition_code || 'WC' }}
       FOOTBALL_DATA_SEASON_YEAR: ${{ github.event.inputs.season_year || '2026' }}
       FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
@@ -47,9 +48,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Refresh normalized data
-        # Scheduled runs use football-data. Manual runs can select mode explicitly.
-        run: npm run update:data
+      - name: Refresh normalized data from football-data
+        run: npm run update:data:football-data
 
       - name: Build app
         run: npm run build
@@ -65,3 +65,15 @@ jobs:
           git add src/data/normalized
           git commit -m "chore(data): refresh normalized data (${DATA_SOURCE})"
           git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

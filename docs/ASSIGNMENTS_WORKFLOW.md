@@ -74,17 +74,10 @@ Draft behavior:
 1. Open **Actions → Validate Assignments → Run workflow**.
 2. Choose `refresh_source`:
    - `football-data` (recommended)
-   - `mock`
    - `none`
-3. Workflow runs `npm run validate:assignments` against `src/data/assignments/official-assignments.json`.
+3. Workflow runs `npm run validate:assignments` against `src/data/assignments/official-assignments.json` and the generated-data-derived 48-team pool.
 
-### Generate assignment draft (optional)
-1. Open **Actions → Generate Assignment Draft → Run workflow**.
-2. Choose `refresh_source` (`football-data` recommended).
-3. Workflow runs `npm run generate:assignments`.
-4. If changed, it commits only `data/assignment-drafts/generated-assignment-draft.json`.
-
-`FOOTBALL_DATA_API_KEY` must be configured in repository secrets when using `football-data` refresh mode.
+`FOOTBALL_DATA_API_KEY` must be configured in repository secrets when using `football-data` refresh mode. The old assignment-draft workflow has been removed; draft generation remains a local script only.
 
 ## Leaderboard connection
-The app leaderboard currently reads assignment data from `src/data/assignments/official-assignments.json` via `src/mockData.ts`, so manual official assignments are the scoring source-of-truth.
+The app leaderboard currently reads assignment data from `src/data/assignments/official-assignments.json` via `src/productionData.ts`, so manual official assignments are the scoring source-of-truth.

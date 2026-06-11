@@ -16,15 +16,9 @@ npm run discover:football-data
 > Keep secrets in local `.env` only. Do not commit real keys.
 
 
-## Run from GitHub Actions (manual)
+## Run locally
 
-A manual workflow is available at `.github/workflows/football-data-discovery.yml`.
-
-1. In GitHub, set repository secret `FOOTBALL_DATA_API_KEY` under **Settings → Secrets and variables → Actions**.
-2. Go to **Actions → Football Data Field Discovery → Run workflow**.
-3. The workflow installs dependencies and runs `npm run discover:football-data`.
-
-The API key is injected as an environment variable and is not printed by the workflow.
+The dedicated GitHub Actions discovery workflow has been removed to keep production workflows focused. Run `npm run discover:football-data` locally with `FOOTBALL_DATA_API_KEY` in your environment when field discovery is needed.
 
 ## Endpoints checked
 
