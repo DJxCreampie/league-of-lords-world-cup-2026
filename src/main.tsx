@@ -2,6 +2,7 @@ import { StrictMode, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   assignments,
+  dataDiagnostics,
   lastUpdated,
   managers,
   matches,
@@ -9,7 +10,7 @@ import {
   teamGoalAdjustments,
   teamManualOverrides,
   teams,
-} from './mockData'
+} from './productionData'
 import { rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
 import './style.css'
@@ -236,6 +237,11 @@ function App() {
       <header className="page-header">
         <h1>League of Lords World Cup 2026</h1>
         <span>Last updated: {lastUpdated}</span>
+        <small className="data-diagnostic">
+          Data: {dataDiagnostics.source} · generatedAt: {dataDiagnostics.generatedAt} ·{' '}
+          matches loaded: {dataDiagnostics.totalMatchesLoaded} · live/final counted:{' '}
+          {dataDiagnostics.countedMatches}
+        </small>
         {hasManualOverrides && <small>Manual scoring corrections applied</small>}
       </header>
 

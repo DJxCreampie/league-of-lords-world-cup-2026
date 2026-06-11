@@ -5,6 +5,7 @@ body { margin: 0; }
 .page-header h1 { margin: 0; font-size: 1.8rem; line-height: 1.2; }
 .page-header span { display:block; margin-top:8px; font-weight:600; }
 .page-header small { color:#6b5b14; font-weight:700; }
+.page-header .data-diagnostic { display:block; margin-top:4px; color:#64748b; font-weight:600; }
 .panel { background:#fff; border:1px solid #dfe6dc; border-radius:10px; padding:12px; box-shadow:0 8px 20px rgb(23 32 51 / 0.05); }
 h2 { margin:0 0 10px; font-size:1.1rem; }
 .leaderboard-list,.detail-team-list,.feed-list,.rules-list,.impact-list,.expanded-teams { margin:0; padding:0; list-style:none; }
