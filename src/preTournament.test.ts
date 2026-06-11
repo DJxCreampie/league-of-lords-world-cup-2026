@@ -1,9 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { assignments, dataDiagnostics, managers, matchScoreOverrides, matches, teamGoalAdjustments, teamManualOverrides, teams } from './mockData'
 import generatedData from './data/normalized/generated-data.json'
-import assignableTeams from './data/assignments/assignable-teams-2026.json'
 import { deriveGeneratedTeamPool } from './lib/teamPool'
-import { getAssignedTeams, rankManagers } from './scoring'
+import { getAssignedTeams, getManagerTotal, getTeamGoals, rankManagers } from './scoring'
 
 describe('assignment integrity and pre-tournament behavior', () => {
   it('generated-data-derived team pool includes 48 real teams', () => {
@@ -11,22 +10,8 @@ describe('assignment integrity and pre-tournament behavior', () => {
     expect(generatedPool).toHaveLength(48)
   })
 
-  it('stale fallback teams do not override generated-data team pool', () => {
-    const { teams: generatedPool } = deriveGeneratedTeamPool()
-    const generatedIds = new Set(generatedPool.map((team) => team.id))
-
-    expect(generatedIds.has('team-italy')).toBe(false)
-    expect(assignableTeams.some((team) => team.id === 'team-italy')).toBe(true)
-  })
-
-  it('valid generated team missing from stale list can still be assigned and displayed', () => {
-    const { teams: generatedPool } = deriveGeneratedTeamPool()
-    const staleIds = new Set(assignableTeams.map((team) => team.id))
-    const generatedOnlyTeam = generatedPool.find((team) => !staleIds.has(team.id))
-
-    expect(generatedOnlyTeam).toBeDefined()
-    expect(teams.some((team) => team.id === generatedOnlyTeam?.id)).toBe(true)
-    expect(assignments.some((assignment) => assignment.teamId === generatedOnlyTeam?.id)).toBe(true)
+  it('football-data generated teams do not contain stale mock standings goals', () => {
+    expect('teams' in generatedData).toBe(false)
   })
 
   it('all 48 teams are present and exactly 8 are unassigned', () => {
@@ -40,6 +25,51 @@ describe('assignment integrity and pre-tournament behavior', () => {
     for (const manager of managers) {
       const assigned = getAssignedTeams(manager, teams, assignments, matches, matchScoreOverrides, teamGoalAdjustments, teamManualOverrides)
       expect(assigned).toHaveLength(4)
+    }
+  })
+
+  it('scores the current Mexico 2-0 South Africa result from matches only', () => {
+    const mexico = teams.find((team) => team.id === 'team-mexico')
+    const southAfrica = teams.find((team) => team.id === 'team-south-africa')
+
+    expect(mexico).toBeDefined()
+    expect(southAfrica).toBeDefined()
+    expect(getTeamGoals(mexico!, matches)).toBe(2)
+    expect(getTeamGoals(southAfrica!, matches)).toBe(0)
+  })
+
+  it('gives Graham 2 total goals from Mexico without stale generated team goals', () => {
+    const graham = managers.find((manager) => manager.name === 'Graham')
+
+    expect(graham).toBeDefined()
+    expect(getManagerTotal(graham!, teams, assignments, matches)).toBe(2)
+  })
+
+  it('does not score stale generated-data team goals for Brazil, France, United States, or Japan', () => {
+    const staleGoalTeamIds = [
+      'team-brazil',
+      'team-france',
+      'team-united-states',
+      'team-japan',
+    ]
+
+    for (const teamId of staleGoalTeamIds) {
+      const team = teams.find((candidate) => candidate.id === teamId)
+      expect(team).toBeDefined()
+      expect(team?.goalsFor).toBe(0)
+      expect(getTeamGoals(team!, matches)).toBe(0)
+    }
+  })
+
+  it('manager totals equal the sum of match-calculated assigned team goals only', () => {
+    for (const manager of managers) {
+      const assigned = getAssignedTeams(manager, teams, assignments, matches)
+      const matchCalculatedTotal = assigned.reduce(
+        (sum, team) => sum + getTeamGoals(team, matches),
+        0,
+      )
+
+      expect(getManagerTotal(manager, teams, assignments, matches)).toBe(matchCalculatedTotal)
     }
   })
 

@@ -26,7 +26,6 @@ function applyTeamOverrides(teams: Team[], teamManualOverrides: TeamManualOverri
 
     return {
       ...team,
-      goalsFor: override.goalsFor ?? team.goalsFor,
       status: override.status ?? team.status,
     }
   })
@@ -51,8 +50,7 @@ export function getTeamGoals(team: Team, matches: Match[], matchScoreOverrides: 
     return total
   }, 0)
 
-  const baseGoals = team.goalsFor ?? fromMatches
-  return baseGoals + getTeamGoalAdjustment(team, teamGoalAdjustments)
+  return fromMatches + getTeamGoalAdjustment(team, teamGoalAdjustments)
 }
 
 export function getAssignedTeams(

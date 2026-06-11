@@ -11,7 +11,7 @@ import {
   teamManualOverrides,
   teams,
 } from './productionData'
-import { rankManagers } from './scoring'
+import { getTeamGoals, rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
 import './style.css'
 
@@ -35,6 +35,12 @@ const hasManualOverrides =
   teamManualOverrides.length > 0
 
 const teamById = new Map(teams.map((team) => [team.id, team]))
+const teamGoalsById = new Map(
+  teams.map((team) => [
+    team.id,
+    getTeamGoals(team, matches, matchScoreOverrides, teamGoalAdjustments),
+  ]),
+)
 const managerById = new Map(managers.map((manager) => [manager.id, manager]))
 
 const managerNamesByTeamId = assignments.reduce<Record<string, string[]>>(
@@ -156,7 +162,7 @@ function App() {
             ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager'
             : 'Unassigned'
 
-          return { ...team, managerName }
+          return { ...team, goals: teamGoalsById.get(team.id) ?? 0, managerName }
         }),
     [],
   )
@@ -166,7 +172,7 @@ function App() {
       if (teamsSortKey === 'team') return a.name.localeCompare(b.name)
       if (teamsSortKey === 'manager') return a.managerName.localeCompare(b.managerName)
       if (teamsSortKey === 'status') return a.status.localeCompare(b.status)
-      return (a.goalsFor ?? 0) - (b.goalsFor ?? 0)
+      return a.goals - b.goals
     })
 
     return teamsSortDirection === 'asc' ? sorted : sorted.reverse()
@@ -361,7 +367,7 @@ function App() {
                 <span className={`status ${team.status}`}>{team.status}</span>
                 <span>{team.name}</span>
                 <span>{team.managerName}</span>
-                <span>{team.goalsFor ?? 0}</span>
+                <span>{team.goals}</span>
               </li>
             ))}
           </ul>
