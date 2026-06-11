@@ -1,6 +1,6 @@
-# API Provider Spike (No production integration yet)
+# API Provider Spike
 
-This spike is intentionally isolated from app runtime. The production app still uses the mock pipeline.
+These spike scripts are isolated utilities. The production app uses `src/data/normalized/generated-data.json`, refreshed from football-data by the Refresh Data workflow.
 
 ## Candidates compared (high-level)
 - **BALLDONTLIE World Cup API**: focused World Cup dataset and purpose-built tournament coverage.

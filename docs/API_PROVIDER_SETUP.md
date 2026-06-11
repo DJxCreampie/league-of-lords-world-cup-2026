@@ -1,12 +1,13 @@
-# API Provider Setup (Mock Default + Optional football-data Mode)
+# API Provider Setup (football-data Production Mode)
 
-## Current default behavior
-- `npm run update:data` still defaults to `DATA_SOURCE=mock`.
-- Scheduled refresh workflow still runs mock mode by default.
-- Production app behavior remains unchanged and continues consuming normalized data output.
+## Current production behavior
+- The **Refresh Data** workflow always refreshes with `football-data`.
+- Scheduled and manual refreshes use `football-data` by default.
+- The production app consumes `src/data/normalized/generated-data.json`.
+- `npm run update:data:football-data` is the production refresh command.
 
-## football-data.org provider mode (opt-in)
-The update script can now fetch and normalize football-data.org matches when explicitly enabled.
+## football-data.org provider mode
+The update script fetches and normalizes football-data.org matches when `DATA_SOURCE=football-data` is set.
 
 ### Required environment variables for provider mode
 - `FOOTBALL_DATA_API_KEY` (required)
@@ -15,9 +16,7 @@ The update script can now fetch and normalize football-data.org matches when exp
 - `FOOTBALL_DATA_SEASON_YEAR` (optional, default `2026`; use `2022` for historical validation)
 
 ### Run commands
-- Mock/default mode:
-  - `npm run update:data`
-- football-data mode:
+- Production football-data mode:
   - `npm run update:data:football-data`
   - or `DATA_SOURCE=football-data FOOTBALL_DATA_SEASON_YEAR=2022 npm run update:data`
 
@@ -71,18 +70,16 @@ It tolerates:
 - unknown teams (`unmapped:*` IDs)
 
 ## Manual workflow run (GitHub Actions)
-Use **Actions → Refresh Data → Run workflow** and select:
-- `source_mode=football-data`
-- optional `competition_code` and `season_year`
+Use **Actions → Refresh Data → Run workflow**. Manual runs use `football-data`; optionally override `competition_code` and `season_year`.
 
-`FOOTBALL_DATA_API_KEY` must be configured in repository secrets.
+`FOOTBALL_DATA_API_KEY` must be configured in repository secrets. The workflow refreshes data, builds the app, and deploys GitHub Pages directly.
 
 ## Delayed scores + live minute
 - Free-tier scores may be delayed; this is acceptable for current app goals.
 - Live minute is not required by the app and is currently set to `null` in provider mode.
 
-## Before making football-data the default source
+## Operational notes
 1. Validate season coverage for your target year (2026 later, 2022 for back-testing now).
-2. Expand team mappings to all required World Cup teams.
+2. Expand team mappings to all required World Cup teams when provider naming differs.
 3. Optionally add retry/backoff for rate limits.
-4. Decide schedule/commit policy for provider-updated data.
+4. Refresh Data commits provider-updated normalized data when it changes.

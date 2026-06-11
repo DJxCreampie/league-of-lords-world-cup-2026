@@ -10,7 +10,7 @@ This app uses a single production data path.
 
 ## Refresh and validation workflow
 - `generated-data.json` is refreshed by GitHub Actions **Refresh Data** workflow (`.github/workflows/refresh-data.yml`).
-- Run **Refresh Data** before checking current scores.
+- Run **Refresh Data** before checking current scores; it refreshes from football-data, builds the app, and deploys GitHub Pages directly.
 - Run `npm run validate:assignments` after editing official assignments.
 
 ## Manual overrides
@@ -18,5 +18,5 @@ This app uses a single production data path.
 - Default override arrays are empty/inactive by default in `src/productionData.ts`.
 
 ## Assignment draft generation
-- **Generate Assignment Draft** workflow/script is optional utility only.
-- It is not the official/final assignment workflow.
+- Assignment draft generation is a local script utility only.
+- It is not the official/final assignment workflow and no dedicated draft workflow is kept in production CI.

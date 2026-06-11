@@ -10,7 +10,6 @@ on:
         type: choice
         options:
           - none
-          - mock
           - football-data
       competition_code:
         description: 'football-data competition code (if refresh_source=football-data)'
@@ -47,10 +46,6 @@ jobs:
       - name: Refresh normalized data (football-data)
         if: ${{ github.event.inputs.refresh_source == 'football-data' }}
         run: npm run update:data:football-data
-
-      - name: Refresh normalized data (mock)
-        if: ${{ github.event.inputs.refresh_source == 'mock' }}
-        run: npm run update:data
 
       - name: Validate official assignments
         run: npm run validate:assignments
