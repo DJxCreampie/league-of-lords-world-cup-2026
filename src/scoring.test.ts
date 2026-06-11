@@ -215,6 +215,17 @@ describe('scoring', () => {
     ).toBe(totalBefore)
   })
 
+  it('ignores team goalsFor fields when calculating match-based team totals', () => {
+    const teamsWithStaleGoals = testTeams.map((team) =>
+      team.id === 'team-a' ? { ...team, goalsFor: 99 } : team,
+    )
+
+    expect(getTeamGoals(teamsWithStaleGoals[0], testMatches)).toBe(4)
+    expect(
+      getManagerTotal(testManagers[0], teamsWithStaleGoals, testAssignments, testMatches),
+    ).toBe(8)
+  })
+
   it('uses manual match overrides to change team totals', () => {
     expect(getTeamGoals(testTeams[0], testMatches, testMatchScoreOverrides)).toBe(6)
     expect(getTeamGoals(testTeams[1], testMatches, testMatchScoreOverrides)).toBe(1)

@@ -1,12 +1,8 @@
 import fs from 'node:fs/promises'
-import upcoming from '../src/data/mock-api/upcoming-match.json' with { type: 'json' }
-import live from '../src/data/mock-api/live-match.json' with { type: 'json' }
-import completed from '../src/data/mock-api/completed-match.json' with { type: 'json' }
-import standings from '../src/data/mock-api/team-standings.json' with { type: 'json' }
 import { TEAM_ID_BY_API_ID, TEAM_ID_BY_API_NAME } from '../src/data/mappings/teamMapping.js'
 
 const outputPath = 'src/data/normalized/generated-data.json'
-const sourceMode = process.env.DATA_SOURCE ?? 'mock'
+const sourceMode = process.env.DATA_SOURCE ?? 'football-data'
 
 const FOOTBALL_DATA_BASE_URL = process.env.FOOTBALL_DATA_BASE_URL ?? 'https://api.football-data.org/v4'
 const FOOTBALL_DATA_API_KEY = process.env.FOOTBALL_DATA_API_KEY
@@ -35,51 +31,6 @@ const normalizeStatus = (raw) => {
 
 const resolveTeamId = (apiId, name) => TEAM_ID_BY_API_ID[String(apiId)] ?? TEAM_ID_BY_API_NAME[String(name).toLowerCase()] ?? `unmapped:${apiId}`
 
-const normalizeMockStatus = (raw) => (raw === 'NS' ? 'upcoming' : raw === 'LIVE' ? 'live' : raw === 'FT' ? 'final' : raw === 'PST' ? 'postponed' : 'canceled')
-
-const normalizeMockMatch = (raw) => {
-  const homeTeamId = resolveTeamId(raw.teams.home.id, raw.teams.home.name)
-  const awayTeamId = resolveTeamId(raw.teams.away.id, raw.teams.away.name)
-  const homeGoals = Number(raw.goals?.home ?? 0)
-  const awayGoals = Number(raw.goals?.away ?? 0)
-  const status = normalizeMockStatus(raw.fixture.status)
-
-  return {
-    matchId: String(raw.fixture.id),
-    competitionId: String(raw.fixture.competition ?? 'unknown-competition'),
-    competitionCode: 'MOCK',
-    competitionName: 'Mock Competition',
-    seasonYear: 2026,
-    kickoffTime: String(raw.fixture.date),
-    status,
-    matchday: null,
-    stage: null,
-    group: null,
-    minute: raw.fixture.minute == null ? null : Number(raw.fixture.minute),
-    homeTeamId,
-    awayTeamId,
-    homeTeamName: String(raw.teams.home.name),
-    awayTeamName: String(raw.teams.away.name),
-    homeGoals,
-    awayGoals,
-    winnerTeamId: status === 'final' ? (homeGoals > awayGoals ? homeTeamId : awayGoals > homeGoals ? awayTeamId : undefined) : undefined,
-    sourceProvider: 'mock-api',
-    sourceStatus: String(raw.fixture.status ?? ''),
-    lastUpdated: new Date().toISOString(),
-  }
-}
-
-const normalizeMockTeam = (row, updatedAt) => ({
-  teamId: resolveTeamId(String(row.apiTeamId), String(row.teamName)),
-  teamName: String(row.teamName),
-  apiTeamId: String(row.apiTeamId),
-  group: String(row.group ?? ''),
-  goalsFor: Number(row.goalsFor ?? 0),
-  status: ['active', 'eliminated', 'champion', 'unassigned'].includes(row.status) ? row.status : 'unassigned',
-  matchesPlayed: Number(row.matchesPlayed ?? 0),
-  lastUpdated: String(updatedAt),
-})
-
 async function fetchFootballData(path) {
   if (!FOOTBALL_DATA_API_KEY) {
     throw new Error('Missing FOOTBALL_DATA_API_KEY for football-data mode')
@@ -89,7 +40,7 @@ async function fetchFootballData(path) {
     headers: {
       'X-Auth-Token': FOOTBALL_DATA_API_KEY,
       Accept: 'application/json',
-    }
+    },
   })
 
   const payload = await response.json().catch(() => ({}))
@@ -98,7 +49,7 @@ async function fetchFootballData(path) {
     if (response.status === 401) throw new Error('football-data unauthorized (401): invalid/missing API key')
     if (response.status === 403) throw new Error('football-data forbidden (403): plan restriction')
     if (response.status === 429) throw new Error('football-data rate-limited (429): retry later')
-    throw new Error(`football-data request failed (${response.status})`) 
+    throw new Error(`football-data request failed (${response.status})`)
   }
 
   return payload
@@ -151,15 +102,6 @@ function normalizeFootballDataMatch(match, competition) {
   }
 }
 
-async function buildFromMock() {
-  return {
-    generatedAt: new Date().toISOString(),
-    source: 'mock-api',
-    matches: [upcoming, live, completed].map(normalizeMockMatch),
-    teams: standings.table.map((row) => normalizeMockTeam(row, standings.updatedAt ?? new Date().toISOString())),
-  }
-}
-
 async function buildFromFootballData() {
   const competition = await fetchFootballData(`/competitions/${FOOTBALL_DATA_COMPETITION_CODE}`)
   const matchesPayload = await fetchFootballData(`/competitions/${FOOTBALL_DATA_COMPETITION_CODE}/matches?season=${FOOTBALL_DATA_SEASON_YEAR}`)
@@ -180,13 +122,17 @@ async function buildFromFootballData() {
       seasonYear: FOOTBALL_DATA_SEASON_YEAR,
       scoreFreshness: 'free-tier may be delayed',
       liveMinuteAvailable: false,
+      scoringSource: 'matches-only',
     },
     matches: matchesPayload.matches.map((match) => normalizeFootballDataMatch(match, competition)),
-    teams: standings.table.map((row) => normalizeMockTeam(row, standings.updatedAt ?? new Date().toISOString())),
   }
 }
 
-const output = sourceMode === 'football-data' ? await buildFromFootballData() : await buildFromMock()
+if (sourceMode !== 'football-data') {
+  throw new Error(`Unsupported DATA_SOURCE "${sourceMode}". Production refresh supports only football-data.`)
+}
+
+const output = await buildFromFootballData()
 
 await fs.mkdir('src/data/normalized', { recursive: true })
 await fs.writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`)

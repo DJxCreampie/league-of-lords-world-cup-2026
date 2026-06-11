@@ -1,9 +1,0 @@
-{
-  "updatedAt": "2026-06-18T21:15:00Z",
-  "table": [
-    { "apiTeamId": "api-usa", "teamName": "United States", "group": "D", "goalsFor": 5, "matchesPlayed": 2, "status": "active" },
-    { "apiTeamId": "api-bra", "teamName": "Brazil", "group": "B", "goalsFor": 7, "matchesPlayed": 2, "status": "active" },
-    { "apiTeamId": "api-fra", "teamName": "France", "group": "E", "goalsFor": 6, "matchesPlayed": 2, "status": "active" },
-    { "apiTeamId": "api-jpn", "teamName": "Japan", "group": "C", "goalsFor": 1, "matchesPlayed": 2, "status": "eliminated" }
-  ]
-}
