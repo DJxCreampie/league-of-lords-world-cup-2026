@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T20:40:32.681Z",
+  "generatedAt": "2026-06-12T20:50:32.685Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -71,11 +71,11 @@
       "homeTeamName": "Canada",
       "awayTeamId": "team-bosnia-herzegovina",
       "awayTeamName": "Bosnia-Herzegovina",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-12T22:40:32Z"
+      "lastUpdated": "2026-06-12T22:50:32Z"
     },
     {
       "matchId": "537345",
