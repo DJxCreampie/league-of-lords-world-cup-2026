@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T23:44:43.976Z",
+  "generatedAt": "2026-06-12T03:15:08.969Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -30,7 +30,7 @@
       "winnerTeamId": "team-mexico",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-12T00:20:17Z"
+      "lastUpdated": "2026-06-12T02:16:43Z"
     },
     {
       "matchId": "537328",
@@ -39,7 +39,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-12T02:00:00Z",
-      "status": "upcoming",
+      "status": "live",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
@@ -51,8 +51,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-12T01:32:00Z"
+      "sourceStatus": "IN_PLAY",
+      "lastUpdated": "2026-06-12T05:15:08Z"
     },
     {
       "matchId": "537333",
