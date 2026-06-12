@@ -1,4 +1,4 @@
-name: Refresh Data
+name: Refresh Build Deploy
 
 on:
   workflow_dispatch:
@@ -12,8 +12,9 @@ on:
         required: false
         default: '2026'
   schedule:
-    # Scheduled production refreshes use football-data.
-    - cron: '*/30 * * * *'
+    # Scheduled production refreshes use football-data every 10 minutes.
+    # Offset away from the top of the hour to reduce GitHub Actions congestion.
+    - cron: '3,13,23,33,43,53 * * * *'
 
 permissions:
   contents: write
@@ -35,7 +36,17 @@ jobs:
       FOOTBALL_DATA_COMPETITION_CODE: ${{ github.event.inputs.competition_code || 'WC' }}
       FOOTBALL_DATA_SEASON_YEAR: ${{ github.event.inputs.season_year || '2026' }}
       FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+
     steps:
+      - name: Log workflow context
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "UTC time: $(date -u)"
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "DATA_SOURCE: ${DATA_SOURCE}"
+          echo "Competition: ${FOOTBALL_DATA_COMPETITION_CODE}"
+          echo "Season: ${FOOTBALL_DATA_SEASON_YEAR}"
+
       - name: Checkout
         uses: actions/checkout@v4
 
