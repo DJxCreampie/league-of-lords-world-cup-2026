@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T19:20:31.684Z",
+  "generatedAt": "2026-06-12T19:30:08.091Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -72,10 +72,10 @@
       "awayTeamId": "team-bosnia-herzegovina",
       "awayTeamName": "Bosnia-Herzegovina",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-12T21:20:29Z"
+      "lastUpdated": "2026-06-12T21:30:05Z"
     },
     {
       "matchId": "537345",
