@@ -4,7 +4,6 @@ type GeneratedTeam = {
   teamId?: string
   teamName?: string
   group?: string
-  goalsFor?: number
   status?: string
 }
 
@@ -23,7 +22,6 @@ export type PoolTeam = {
   id: string
   name: string
   group?: string
-  goalsFor?: number
   status?: string
 }
 
@@ -31,7 +29,9 @@ export const deriveGeneratedTeamPool = (): { teams: PoolTeam[]; ignoredPlacehold
   const pool = new Map<string, PoolTeam>()
   const ignoredPlaceholders = new Map<string, string>()
 
-  for (const team of (generatedData.teams ?? []) as GeneratedTeam[]) {
+  const generatedTeams = ((generatedData as { teams?: GeneratedTeam[] }).teams ?? [])
+
+  for (const team of generatedTeams) {
     const id = String(team.teamId ?? '')
     const name = String(team.teamName ?? '')
     if (!id) continue
@@ -44,7 +44,6 @@ export const deriveGeneratedTeamPool = (): { teams: PoolTeam[]; ignoredPlacehold
       id,
       name: name || id,
       group: team.group,
-      goalsFor: Number(team.goalsFor ?? 0),
       status: team.status,
     })
   }

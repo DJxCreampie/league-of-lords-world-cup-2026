@@ -5,7 +5,8 @@
     "competitionCode": "WC",
     "seasonYear": 2026,
     "scoreFreshness": "free-tier may be delayed",
-    "liveMinuteAvailable": false
+    "liveMinuteAvailable": false,
+    "scoringSource": "matches-only"
   },
   "matches": [
     {
@@ -200,7 +201,7 @@
       "homeTeamId": "team-germany",
       "homeTeamName": "Germany",
       "awayTeamId": "team-curacao",
-      "awayTeamName": "Curaçao",
+      "awayTeamName": "Cura\u00e7ao",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
@@ -772,7 +773,7 @@
       "homeTeamId": "team-ecuador",
       "homeTeamName": "Ecuador",
       "awayTeamId": "team-curacao",
-      "awayTeamName": "Curaçao",
+      "awayTeamName": "Cura\u00e7ao",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
@@ -1232,7 +1233,7 @@
       "group": "GROUP_E",
       "minute": null,
       "homeTeamId": "team-curacao",
-      "homeTeamName": "Curaçao",
+      "homeTeamName": "Cura\u00e7ao",
       "awayTeamId": "team-ivory-coast",
       "awayTeamName": "Ivory Coast",
       "homeGoals": 0,
@@ -2296,48 +2297,6 @@
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
       "lastUpdated": "2026-06-11T15:20:18Z"
-    }
-  ],
-  "teams": [
-    {
-      "teamId": "team-united-states",
-      "teamName": "United States",
-      "apiTeamId": "api-usa",
-      "group": "D",
-      "goalsFor": 5,
-      "status": "active",
-      "matchesPlayed": 2,
-      "lastUpdated": "2026-06-18T21:15:00Z"
-    },
-    {
-      "teamId": "team-brazil",
-      "teamName": "Brazil",
-      "apiTeamId": "api-bra",
-      "group": "B",
-      "goalsFor": 7,
-      "status": "active",
-      "matchesPlayed": 2,
-      "lastUpdated": "2026-06-18T21:15:00Z"
-    },
-    {
-      "teamId": "team-france",
-      "teamName": "France",
-      "apiTeamId": "api-fra",
-      "group": "E",
-      "goalsFor": 6,
-      "status": "active",
-      "matchesPlayed": 2,
-      "lastUpdated": "2026-06-18T21:15:00Z"
-    },
-    {
-      "teamId": "team-japan",
-      "teamName": "Japan",
-      "apiTeamId": "api-jpn",
-      "group": "C",
-      "goalsFor": 1,
-      "status": "eliminated",
-      "matchesPlayed": 2,
-      "lastUpdated": "2026-06-18T21:15:00Z"
     }
   ]
 }

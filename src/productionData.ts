@@ -30,7 +30,8 @@ export const managers: Manager[] = managerSource.map((manager) => ({
 }))
 
 const { teams: derivedPool } = deriveGeneratedTeamPool()
-const generatedTeamsById = new Map((generatedData.teams ?? []).map((team) => [team.teamId, team]))
+const generatedTeams = ((generatedData as { teams?: Array<{ teamId: string; group?: string; status?: TeamStatus }> }).teams ?? [])
+const generatedTeamsById = new Map(generatedTeams.map((team) => [team.teamId, team]))
 const hasAnyFinishedMatches = (generatedData.matches ?? []).some((match) => match.status === 'final')
 
 export const teams: Team[] = derivedPool.map((team) => {
@@ -45,7 +46,7 @@ export const teams: Team[] = derivedPool.map((team) => {
       .slice(0, 3)
       .toUpperCase(),
     group: team.group ?? generated?.group,
-    goalsFor: hasAnyFinishedMatches ? Number(generated?.goalsFor ?? team.goalsFor ?? 0) : 0,
+    goalsFor: 0,
     knockoutGoals: 0,
     status: (hasAnyFinishedMatches ? (generated?.status ?? team.status ?? 'active') : 'active') as TeamStatus,
   }

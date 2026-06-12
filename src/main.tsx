@@ -11,8 +11,9 @@ import {
   teamManualOverrides,
   teams,
 } from './productionData'
-import { rankManagers } from './scoring'
+import { getTeamGoals, rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
+import { formatEasternDateTime, formatEasternDayLabel, getEasternDateKey } from './lib/time'
 import './style.css'
 
 const leaderboard = rankManagers(
@@ -35,6 +36,12 @@ const hasManualOverrides =
   teamManualOverrides.length > 0
 
 const teamById = new Map(teams.map((team) => [team.id, team]))
+const teamGoalsById = new Map(
+  teams.map((team) => [
+    team.id,
+    getTeamGoals(team, matches, matchScoreOverrides, teamGoalAdjustments),
+  ]),
+)
 const managerById = new Map(managers.map((manager) => [manager.id, manager]))
 
 const managerNamesByTeamId = assignments.reduce<Record<string, string[]>>(
@@ -72,23 +79,6 @@ const visibleMatches = matches.filter((match) => {
 
   return !isPlaceholder
 })
-
-function formatKickoff(kickoffTime?: string): string {
-  if (!kickoffTime) return 'Kickoff TBD'
-
-  const date = new Date(kickoffTime)
-
-  return Number.isNaN(date.getTime()) ? 'Kickoff TBD' : date.toLocaleString()
-}
-
-function getMatchDayKey(kickoffTime?: string): string | null {
-  if (!kickoffTime) return null
-
-  const date = new Date(kickoffTime)
-  if (Number.isNaN(date.getTime())) return null
-
-  return date.toISOString().slice(0, 10)
-}
 
 function App() {
   const [activeTab, setActiveTab] = useState<'leaderboard' | 'teams'>(
@@ -156,7 +146,7 @@ function App() {
             ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager'
             : 'Unassigned'
 
-          return { ...team, managerName }
+          return { ...team, goals: teamGoalsById.get(team.id) ?? 0, managerName }
         }),
     [],
   )
@@ -166,7 +156,7 @@ function App() {
       if (teamsSortKey === 'team') return a.name.localeCompare(b.name)
       if (teamsSortKey === 'manager') return a.managerName.localeCompare(b.managerName)
       if (teamsSortKey === 'status') return a.status.localeCompare(b.status)
-      return (a.goalsFor ?? 0) - (b.goalsFor ?? 0)
+      return a.goals - b.goals
     })
 
     return teamsSortDirection === 'asc' ? sorted : sorted.reverse()
@@ -194,7 +184,7 @@ function App() {
   const matchDays = useMemo(() => {
     const daySet = new Set<string>()
     visibleMatches.forEach((match) => {
-      const dayKey = getMatchDayKey(match.kickoffTime)
+      const dayKey = getEasternDateKey(match.kickoffTime)
       if (dayKey) daySet.add(dayKey)
     })
 
@@ -202,13 +192,7 @@ function App() {
   }, [])
 
   const [selectedDay, setSelectedDay] = useState<string | null>(() => {
-    const scheduledDay = visibleMatches
-      .filter((match) => match.status === 'scheduled')
-      .map((match) => getMatchDayKey(match.kickoffTime))
-      .filter((day): day is string => Boolean(day))
-      .sort((a, b) => a.localeCompare(b))[0]
-
-    return scheduledDay ?? matchDays[0] ?? null
+    return matchDays[0] ?? null
   })
 
   const selectedDayIndex = selectedDay ? matchDays.indexOf(selectedDay) : -1
@@ -222,7 +206,7 @@ function App() {
 
   const matchesForSelectedDay = visibleMatches.filter((match) => {
     if (!selectedDay) return false
-    if (getMatchDayKey(match.kickoffTime) !== selectedDay) return false
+    if (getEasternDateKey(match.kickoffTime) !== selectedDay) return false
 
     if (selectedManager === 'all') return true
 
@@ -236,9 +220,9 @@ function App() {
     <main className="app-shell">
       <header className="page-header">
         <h1>League of Lords World Cup 2026</h1>
-        <span>Last updated: {lastUpdated}</span>
+        <span>Last updated: {formatEasternDateTime(lastUpdated, 'Last updated TBD')}</span>
         <small className="data-diagnostic">
-          Data: {dataDiagnostics.source} · generatedAt: {dataDiagnostics.generatedAt} ·{' '}
+          Data: {dataDiagnostics.source} · generatedAt: {formatEasternDateTime(dataDiagnostics.generatedAt, 'unknown')} ·{' '}
           matches loaded: {dataDiagnostics.totalMatchesLoaded} · live/final counted:{' '}
           {dataDiagnostics.countedMatches}
         </small>
@@ -361,7 +345,7 @@ function App() {
                 <span className={`status ${team.status}`}>{team.status}</span>
                 <span>{team.name}</span>
                 <span>{team.managerName}</span>
-                <span>{team.goalsFor ?? 0}</span>
+                <span>{team.goals}</span>
               </li>
             ))}
           </ul>
@@ -384,9 +368,7 @@ function App() {
             Previous day
           </button>
           <span className="feed-day-label">
-            {selectedDay
-              ? new Date(`${selectedDay}T00:00:00Z`).toLocaleDateString()
-              : 'No dated matches'}
+            {formatEasternDayLabel(selectedDay)}
           </span>
           <label className="feed-filter">
             <span>Manager</span>
@@ -433,7 +415,7 @@ function App() {
                     ? `Upcoming · ${homeTeam?.name} vs ${awayTeam?.name}`
                     : `${match.status.toUpperCase()} · ${homeTeam?.name} ${match.homeGoals} - ${match.awayGoals} ${awayTeam?.name}`}
                 </strong>
-                <p>{formatKickoff(match.kickoffTime)}</p>
+                <p>{formatEasternDateTime(match.kickoffTime, 'Kickoff TBD')}</p>
                 <ul className="impact-list">
                   <li>
                     {homeTeam?.name} → {homeManagers.join(', ') || 'Unassigned'}
