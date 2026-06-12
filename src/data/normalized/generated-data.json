@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T03:15:08.969Z",
+  "generatedAt": "2026-06-12T08:11:11.958Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -39,7 +39,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-12T02:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
@@ -48,11 +48,12 @@
       "homeTeamName": "South Korea",
       "awayTeamId": "team-czechia",
       "awayTeamName": "Czechia",
-      "homeGoals": 0,
-      "awayGoals": 0,
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "winnerTeamId": "team-south-korea",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-12T05:15:08Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-12T06:28:11Z"
     },
     {
       "matchId": "537333",
