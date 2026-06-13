@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T01:10:27.679Z",
+  "generatedAt": "2026-06-13T01:20:24.889Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -93,11 +93,11 @@
       "homeTeamName": "United States",
       "awayTeamId": "team-paraguay",
       "awayTeamName": "Paraguay",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-13T03:10:26Z"
+      "lastUpdated": "2026-06-13T03:20:23Z"
     },
     {
       "matchId": "537334",
