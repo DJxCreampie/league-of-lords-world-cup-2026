@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T21:20:29.443Z",
+  "generatedAt": "2026-06-14T21:30:34.439Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -229,11 +229,11 @@
       "homeTeamName": "Netherlands",
       "awayTeamId": "team-japan",
       "awayTeamName": "Japan",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-14T23:20:28Z"
+      "lastUpdated": "2026-06-14T23:30:34Z"
     },
     {
       "matchId": "537352",
