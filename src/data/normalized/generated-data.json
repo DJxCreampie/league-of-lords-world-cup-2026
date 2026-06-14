@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T03:00:39.251Z",
+  "generatedAt": "2026-06-14T03:10:25.101Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -151,7 +151,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-14T01:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
@@ -162,9 +162,10 @@
       "awayTeamName": "Scotland",
       "homeGoals": 0,
       "awayGoals": 1,
+      "winnerTeamId": "team-scotland",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-14T05:00:38Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-14T05:04:14Z"
     },
     {
       "matchId": "537346",
@@ -186,7 +187,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-14T04:00:02Z"
+      "lastUpdated": "2026-06-14T05:01:11Z"
     },
     {
       "matchId": "537351",
