@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T20:00:28.852Z",
+  "generatedAt": "2026-06-14T20:10:30.811Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -211,7 +211,7 @@
       "winnerTeamId": "team-germany",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-14T20:58:57Z"
+      "lastUpdated": "2026-06-14T22:02:14Z"
     },
     {
       "matchId": "537357",
@@ -220,7 +220,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-14T20:00:00Z",
-      "status": "upcoming",
+      "status": "live",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_F",
@@ -232,8 +232,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-14T21:19:05Z"
+      "sourceStatus": "IN_PLAY",
+      "lastUpdated": "2026-06-14T22:10:29Z"
     },
     {
       "matchId": "537352",
