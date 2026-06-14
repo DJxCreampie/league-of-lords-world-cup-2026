@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T01:30:29.399Z",
+  "generatedAt": "2026-06-14T01:40:28.206Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -161,10 +161,10 @@
       "awayTeamId": "team-scotland",
       "awayTeamName": "Scotland",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-14T03:30:29Z"
+      "lastUpdated": "2026-06-14T03:40:26Z"
     },
     {
       "matchId": "537346",
