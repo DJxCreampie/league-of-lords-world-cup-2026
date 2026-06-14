@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T18:00:37.753Z",
+  "generatedAt": "2026-06-14T18:10:27.863Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -206,11 +206,11 @@
       "homeTeamName": "Germany",
       "awayTeamId": "team-curacao",
       "awayTeamName": "Curaçao",
-      "homeGoals": 3,
+      "homeGoals": 4,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "PAUSED",
-      "lastUpdated": "2026-06-14T20:00:35Z"
+      "sourceStatus": "IN_PLAY",
+      "lastUpdated": "2026-06-14T20:10:05Z"
     },
     {
       "matchId": "537357",
