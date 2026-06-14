@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T18:50:25.669Z",
+  "generatedAt": "2026-06-14T19:00:57.586Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -197,7 +197,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-14T17:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_E",
@@ -206,11 +206,12 @@
       "homeTeamName": "Germany",
       "awayTeamId": "team-curacao",
       "awayTeamName": "Curaçao",
-      "homeGoals": 6,
+      "homeGoals": 7,
       "awayGoals": 1,
+      "winnerTeamId": "team-germany",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-14T20:50:23Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-14T20:58:57Z"
     },
     {
       "matchId": "537357",
@@ -232,7 +233,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-14T20:00:03Z"
+      "lastUpdated": "2026-06-14T20:53:23Z"
     },
     {
       "matchId": "537352",
