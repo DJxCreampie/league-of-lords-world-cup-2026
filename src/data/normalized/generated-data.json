@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T17:20:30.764Z",
+  "generatedAt": "2026-06-14T17:30:36.169Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -207,10 +207,10 @@
       "awayTeamId": "team-curacao",
       "awayTeamName": "Curaçao",
       "homeGoals": 1,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-14T19:20:29Z"
+      "lastUpdated": "2026-06-14T19:30:35Z"
     },
     {
       "matchId": "537357",
