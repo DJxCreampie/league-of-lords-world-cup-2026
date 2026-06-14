@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T04:10:27.127Z",
+  "generatedAt": "2026-06-14T04:30:34.483Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -183,11 +183,11 @@
       "homeTeamName": "Australia",
       "awayTeamId": "team-turkey",
       "awayTeamName": "Turkey",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-14T06:10:26Z"
+      "lastUpdated": "2026-06-14T06:30:32Z"
     },
     {
       "matchId": "537351",
