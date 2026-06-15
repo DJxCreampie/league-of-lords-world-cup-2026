@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T02:30:30.880Z",
+  "generatedAt": "2026-06-15T02:40:30.520Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -274,11 +274,11 @@
       "homeTeamName": "Sweden",
       "awayTeamId": "team-tunisia",
       "awayTeamName": "Tunisia",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-15T04:30:28Z"
+      "lastUpdated": "2026-06-15T04:40:28Z"
     },
     {
       "matchId": "537369",
