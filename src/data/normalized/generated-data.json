@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T00:40:30.247Z",
+  "generatedAt": "2026-06-15T01:00:35.398Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -251,11 +251,11 @@
       "homeTeamName": "Ivory Coast",
       "awayTeamId": "team-ecuador",
       "awayTeamName": "Ecuador",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-15T02:39:31Z"
+      "lastUpdated": "2026-06-15T03:00:31Z"
     },
     {
       "matchId": "537358",
