@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T01:00:35.398Z",
+  "generatedAt": "2026-06-15T01:10:30.998Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -242,7 +242,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-14T23:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_E",
@@ -253,9 +253,10 @@
       "awayTeamName": "Ecuador",
       "homeGoals": 1,
       "awayGoals": 0,
+      "winnerTeamId": "team-ivory-coast",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-15T03:00:31Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-15T03:05:59Z"
     },
     {
       "matchId": "537358",
@@ -277,7 +278,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-14T15:20:16Z"
+      "lastUpdated": "2026-06-15T03:06:34Z"
     },
     {
       "matchId": "537369",
