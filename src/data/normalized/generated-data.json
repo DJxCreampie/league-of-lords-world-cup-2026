@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T02:40:30.520Z",
+  "generatedAt": "2026-06-15T02:50:27.129Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -275,10 +275,10 @@
       "awayTeamId": "team-tunisia",
       "awayTeamName": "Tunisia",
       "homeGoals": 2,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-15T04:40:28Z"
+      "lastUpdated": "2026-06-15T04:50:25Z"
     },
     {
       "matchId": "537369",
