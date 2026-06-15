@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T23:40:30.893Z",
+  "generatedAt": "2026-06-15T23:50:32.095Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -342,10 +342,10 @@
       "awayTeamId": "team-uruguay",
       "awayTeamName": "Uruguay",
       "homeGoals": 1,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-16T01:40:28Z"
+      "lastUpdated": "2026-06-16T01:50:31Z"
     },
     {
       "matchId": "537364",
