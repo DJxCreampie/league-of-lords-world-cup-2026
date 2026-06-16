@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T21:00:41.108Z",
+  "generatedAt": "2026-06-16T21:10:38.227Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -376,7 +376,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-16T19:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_I",
@@ -385,11 +385,12 @@
       "homeTeamName": "France",
       "awayTeamId": "team-senegal",
       "awayTeamName": "Senegal",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 1,
+      "winnerTeamId": "team-france",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-16T22:59:47Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-16T23:07:52Z"
     },
     {
       "matchId": "537392",
@@ -411,7 +412,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-16T22:00:01Z"
+      "lastUpdated": "2026-06-16T23:08:04Z"
     },
     {
       "matchId": "537397",
