@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T01:30:27.181Z",
+  "generatedAt": "2026-06-16T01:40:24.655Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -363,11 +363,11 @@
       "homeTeamName": "Iran",
       "awayTeamId": "team-new-zealand",
       "awayTeamName": "New Zealand",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-16T03:30:25Z"
+      "lastUpdated": "2026-06-16T03:40:22Z"
     },
     {
       "matchId": "537391",
