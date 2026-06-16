@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T02:20:31.155Z",
+  "generatedAt": "2026-06-16T02:30:36.526Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -364,10 +364,10 @@
       "awayTeamId": "team-new-zealand",
       "awayTeamName": "New Zealand",
       "homeGoals": 1,
-      "awayGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-16T04:20:28Z"
+      "lastUpdated": "2026-06-16T04:30:34Z"
     },
     {
       "matchId": "537391",
