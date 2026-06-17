@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T05:40:26.534Z",
+  "generatedAt": "2026-06-17T05:50:25.904Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -454,11 +454,11 @@
       "homeTeamName": "Austria",
       "awayTeamId": "team-jordan",
       "awayTeamName": "Jordan",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-17T07:40:25Z"
+      "lastUpdated": "2026-06-17T07:50:25Z"
     },
     {
       "matchId": "537403",
