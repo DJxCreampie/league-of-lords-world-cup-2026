@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T02:20:25.500Z",
+  "generatedAt": "2026-06-17T02:30:30.352Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -431,11 +431,11 @@
       "homeTeamName": "Argentina",
       "awayTeamId": "team-algeria",
       "awayTeamName": "Algeria",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-17T04:20:25Z"
+      "lastUpdated": "2026-06-17T04:30:28Z"
     },
     {
       "matchId": "537398",
