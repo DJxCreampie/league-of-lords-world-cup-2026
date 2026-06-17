@@ -13,6 +13,7 @@ import {
 } from './productionData'
 import { getTeamGoals, rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
+import { formatNewYorkDateTime, formatNewYorkDayLabel, getNewYorkDayKey } from './lib/time'
 import './style.css'
 
 const leaderboard = rankManagers(
@@ -78,23 +79,6 @@ const visibleMatches = matches.filter((match) => {
 
   return !isPlaceholder
 })
-
-function formatKickoff(kickoffTime?: string): string {
-  if (!kickoffTime) return 'Kickoff TBD'
-
-  const date = new Date(kickoffTime)
-
-  return Number.isNaN(date.getTime()) ? 'Kickoff TBD' : date.toLocaleString()
-}
-
-function getMatchDayKey(kickoffTime?: string): string | null {
-  if (!kickoffTime) return null
-
-  const date = new Date(kickoffTime)
-  if (Number.isNaN(date.getTime())) return null
-
-  return date.toISOString().slice(0, 10)
-}
 
 function App() {
   const [activeTab, setActiveTab] = useState<'leaderboard' | 'teams'>(
@@ -205,22 +189,14 @@ function App() {
   const matchDays = useMemo(() => {
     const daySet = new Set<string>()
     visibleMatches.forEach((match) => {
-      const dayKey = getMatchDayKey(match.kickoffTime)
+      const dayKey = getNewYorkDayKey(match.kickoffTime)
       if (dayKey) daySet.add(dayKey)
     })
 
     return [...daySet].sort((a, b) => a.localeCompare(b))
   }, [])
 
-  const [selectedDay, setSelectedDay] = useState<string | null>(() => {
-    const scheduledDay = visibleMatches
-      .filter((match) => match.status === 'scheduled')
-      .map((match) => getMatchDayKey(match.kickoffTime))
-      .filter((day): day is string => Boolean(day))
-      .sort((a, b) => a.localeCompare(b))[0]
-
-    return scheduledDay ?? matchDays[0] ?? null
-  })
+  const [selectedDay, setSelectedDay] = useState<string | null>(() => matchDays[0] ?? null)
 
   const selectedDayIndex = selectedDay ? matchDays.indexOf(selectedDay) : -1
 
@@ -233,7 +209,7 @@ function App() {
 
   const matchesForSelectedDay = visibleMatches.filter((match) => {
     if (!selectedDay) return false
-    if (getMatchDayKey(match.kickoffTime) !== selectedDay) return false
+    if (getNewYorkDayKey(match.kickoffTime) !== selectedDay) return false
 
     if (selectedManager === 'all') return true
 
@@ -247,9 +223,9 @@ function App() {
     <main className="app-shell">
       <header className="page-header">
         <h1>League of Lords World Cup 2026</h1>
-        <span>Last updated: {lastUpdated}</span>
+        <span>Last updated: {formatNewYorkDateTime(lastUpdated, 'Last updated unavailable')}</span>
         <small className="data-diagnostic">
-          Data: {dataDiagnostics.source} · generatedAt: {dataDiagnostics.generatedAt} ·{' '}
+          Data: {dataDiagnostics.source} · generatedAt: {formatNewYorkDateTime(dataDiagnostics.generatedAt, 'unavailable')} ·{' '}
           matches loaded: {dataDiagnostics.totalMatchesLoaded} · live/final counted:{' '}
           {dataDiagnostics.countedMatches}
         </small>
@@ -401,9 +377,7 @@ function App() {
             Previous day
           </button>
           <span className="feed-day-label">
-            {selectedDay
-              ? new Date(`${selectedDay}T00:00:00Z`).toLocaleDateString()
-              : 'No dated matches'}
+            {formatNewYorkDayLabel(selectedDay)}
           </span>
           <label className="feed-filter">
             <span>Manager</span>
@@ -450,7 +424,7 @@ function App() {
                     ? `Upcoming · ${homeTeam?.name} vs ${awayTeam?.name}`
                     : `${match.status.toUpperCase()} · ${homeTeam?.name} ${match.homeGoals} - ${match.awayGoals} ${awayTeam?.name}`}
                 </strong>
-                <p>{formatKickoff(match.kickoffTime)}</p>
+                <p>{formatNewYorkDateTime(match.kickoffTime)}</p>
                 <ul className="impact-list">
                   <li>
                     {homeTeam?.name} → {homeManagers.join(', ') || 'Unassigned'}
