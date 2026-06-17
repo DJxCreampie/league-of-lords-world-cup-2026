@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T13:10:36.667Z",
+  "generatedAt": "2026-06-17T13:20:39.881Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -30,7 +30,7 @@
       "winnerTeamId": "team-mexico",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537328",
@@ -53,7 +53,7 @@
       "winnerTeamId": "team-south-korea",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537333",
@@ -75,7 +75,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537345",
@@ -98,7 +98,7 @@
       "winnerTeamId": "team-united-states",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537334",
@@ -120,7 +120,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537339",
@@ -142,7 +142,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537340",
@@ -165,7 +165,7 @@
       "winnerTeamId": "team-scotland",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537346",
@@ -188,7 +188,7 @@
       "winnerTeamId": "team-australia",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537351",
@@ -211,7 +211,7 @@
       "winnerTeamId": "team-germany",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537357",
@@ -233,7 +233,7 @@
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537352",
@@ -256,7 +256,7 @@
       "winnerTeamId": "team-ivory-coast",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537358",
@@ -279,7 +279,7 @@
       "winnerTeamId": "team-sweden",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537369",
@@ -301,7 +301,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537363",
@@ -323,7 +323,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537370",
@@ -345,7 +345,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537364",
@@ -367,7 +367,7 @@
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537391",
@@ -390,7 +390,7 @@
       "winnerTeamId": "team-france",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537392",
@@ -413,7 +413,7 @@
       "winnerTeamId": "team-norway",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537397",
@@ -436,7 +436,7 @@
       "winnerTeamId": "team-argentina",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537398",
@@ -459,7 +459,7 @@
       "winnerTeamId": "team-austria",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537403",
@@ -481,7 +481,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537409",
@@ -503,7 +503,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537410",
@@ -525,7 +525,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537404",
@@ -547,7 +547,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537329",
@@ -569,7 +569,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537335",
@@ -591,7 +591,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537336",
@@ -613,7 +613,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537330",
@@ -635,7 +635,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537348",
@@ -657,7 +657,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537342",
@@ -679,7 +679,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537341",
@@ -701,7 +701,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537347",
@@ -723,7 +723,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537359",
@@ -745,7 +745,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537353",
@@ -767,7 +767,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537354",
@@ -789,7 +789,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537360",
@@ -811,7 +811,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537371",
@@ -833,7 +833,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537365",
@@ -855,7 +855,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537372",
@@ -877,7 +877,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537366",
@@ -899,7 +899,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537399",
@@ -921,7 +921,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537393",
@@ -943,7 +943,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537394",
@@ -965,7 +965,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537400",
@@ -987,7 +987,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537405",
@@ -1009,7 +1009,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537411",
@@ -1031,7 +1031,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537412",
@@ -1053,7 +1053,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537406",
@@ -1075,7 +1075,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537337",
@@ -1097,7 +1097,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537338",
@@ -1119,7 +1119,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537344",
@@ -1141,7 +1141,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537343",
@@ -1163,7 +1163,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537331",
@@ -1185,7 +1185,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537332",
@@ -1207,7 +1207,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537355",
@@ -1229,7 +1229,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537356",
@@ -1251,7 +1251,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537361",
@@ -1273,7 +1273,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537362",
@@ -1295,7 +1295,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537349",
@@ -1317,7 +1317,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537350",
@@ -1339,7 +1339,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537395",
@@ -1361,7 +1361,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537396",
@@ -1383,7 +1383,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537373",
@@ -1405,7 +1405,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537374",
@@ -1427,7 +1427,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537367",
@@ -1449,7 +1449,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537368",
@@ -1471,7 +1471,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537413",
@@ -1493,7 +1493,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537414",
@@ -1515,7 +1515,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537407",
@@ -1537,7 +1537,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537408",
@@ -1559,7 +1559,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537401",
@@ -1581,7 +1581,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537402",
@@ -1603,7 +1603,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537417",
@@ -1625,7 +1625,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537423",
@@ -1647,7 +1647,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537415",
@@ -1669,7 +1669,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537418",
@@ -1691,7 +1691,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537424",
@@ -1713,7 +1713,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537416",
@@ -1735,7 +1735,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537425",
@@ -1757,7 +1757,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537426",
@@ -1779,7 +1779,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537422",
@@ -1801,7 +1801,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537421",
@@ -1823,7 +1823,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537420",
@@ -1845,7 +1845,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537419",
@@ -1867,7 +1867,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537429",
@@ -1889,7 +1889,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537428",
@@ -1911,7 +1911,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537427",
@@ -1933,7 +1933,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537430",
@@ -1955,7 +1955,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537376",
@@ -1977,7 +1977,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537375",
@@ -1999,7 +1999,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537377",
@@ -2021,7 +2021,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537378",
@@ -2043,7 +2043,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537379",
@@ -2065,7 +2065,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537380",
@@ -2087,7 +2087,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537381",
@@ -2109,7 +2109,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537382",
@@ -2131,7 +2131,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537383",
@@ -2153,7 +2153,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537384",
@@ -2175,7 +2175,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537385",
@@ -2197,7 +2197,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537386",
@@ -2219,7 +2219,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537387",
@@ -2241,7 +2241,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537388",
@@ -2263,7 +2263,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537389",
@@ -2285,7 +2285,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     },
     {
       "matchId": "537390",
@@ -2307,7 +2307,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-17T10:20:15Z"
+      "lastUpdated": "2026-06-17T15:20:15Z"
     }
   ]
 }
