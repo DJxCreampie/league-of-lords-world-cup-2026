@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T22:10:32.353Z",
+  "generatedAt": "2026-06-17T22:20:29.693Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -504,7 +504,7 @@
       "winnerTeamId": "team-england",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-18T00:00:39Z"
+      "lastUpdated": "2026-06-18T00:20:09Z"
     },
     {
       "matchId": "537410",
