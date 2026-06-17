@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  formatLastUpdatedNewYork,
   formatNewYorkDateTime,
   getNewYorkDayKey,
   isOnNewYorkDay,
@@ -29,8 +30,20 @@ describe('America/New_York time utilities', () => {
     expect(formatNewYorkDateTime('2026-06-17T01:00:00Z')).toBe('6/16/2026, 9:00 PM ET')
   })
 
+  it('formats last updated display with Today when generatedAt is today in America/New_York', () => {
+    expect(
+      formatLastUpdatedNewYork(
+        '2026-06-17T23:10:00Z',
+        new Date('2026-06-18T01:00:00Z'),
+      ),
+    ).toBe('Today, 7:10 PM ET')
+  })
+
   it('formats last updated display without raw ISO text', () => {
-    const formatted = formatNewYorkDateTime('2026-06-11T21:45:00Z')
+    const formatted = formatLastUpdatedNewYork(
+      '2026-06-11T21:45:00Z',
+      new Date('2026-06-17T12:00:00Z'),
+    )
 
     expect(formatted).toBe('6/11/2026, 5:45 PM ET')
     expect(formatted).not.toContain('2026-06-11T21:45:00Z')

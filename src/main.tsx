@@ -2,7 +2,6 @@ import { StrictMode, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   assignments,
-  dataDiagnostics,
   lastUpdated,
   managers,
   matches,
@@ -13,7 +12,8 @@ import {
 } from './productionData'
 import { getTeamGoals, rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
-import { formatNewYorkDateTime, formatNewYorkDayLabel, getNewYorkDayKey } from './lib/time'
+import { addDaysToNewYorkDayKey, formatLastUpdatedNewYork, formatNewYorkDateTime, formatNewYorkDayLabel } from './lib/time'
+import { getDefaultMatchFeedDay, getMatchesForNewYorkDay } from './lib/matchFeed'
 import './style.css'
 
 const leaderboard = rankManagers(
@@ -186,19 +186,7 @@ function App() {
     (team) => team.managerName === 'Unassigned',
   ).length
 
-  const matchDays = useMemo(() => {
-    const daySet = new Set<string>()
-    visibleMatches.forEach((match) => {
-      const dayKey = getNewYorkDayKey(match.kickoffTime)
-      if (dayKey) daySet.add(dayKey)
-    })
-
-    return [...daySet].sort((a, b) => a.localeCompare(b))
-  }, [])
-
-  const [selectedDay, setSelectedDay] = useState<string | null>(() => matchDays[0] ?? null)
-
-  const selectedDayIndex = selectedDay ? matchDays.indexOf(selectedDay) : -1
+  const [selectedDay, setSelectedDay] = useState<string | null>(() => getDefaultMatchFeedDay())
 
   const [selectedManager, setSelectedManager] = useState<string>('all')
 
@@ -207,10 +195,7 @@ function App() {
     [],
   )
 
-  const matchesForSelectedDay = visibleMatches.filter((match) => {
-    if (!selectedDay) return false
-    if (getNewYorkDayKey(match.kickoffTime) !== selectedDay) return false
-
+  const matchesForSelectedDay = getMatchesForNewYorkDay(visibleMatches, selectedDay).filter((match) => {
     if (selectedManager === 'all') return true
 
     const homeManagers = managerNamesByTeamId[match.homeTeamId] ?? []
@@ -223,12 +208,7 @@ function App() {
     <main className="app-shell">
       <header className="page-header">
         <h1>League of Lords World Cup 2026</h1>
-        <span>Last updated: {formatNewYorkDateTime(lastUpdated, 'Last updated unavailable')}</span>
-        <small className="data-diagnostic">
-          Data: {dataDiagnostics.source} · generatedAt: {formatNewYorkDateTime(dataDiagnostics.generatedAt, 'unavailable')} ·{' '}
-          matches loaded: {dataDiagnostics.totalMatchesLoaded} · live/final counted:{' '}
-          {dataDiagnostics.countedMatches}
-        </small>
+        <span>Last updated: {formatLastUpdatedNewYork(lastUpdated)}</span>
         {hasManualOverrides && <small>Manual scoring corrections applied</small>}
       </header>
 
@@ -370,9 +350,8 @@ function App() {
             type="button"
             className="tab"
             onClick={() => {
-              if (selectedDayIndex > 0) setSelectedDay(matchDays[selectedDayIndex - 1])
+              setSelectedDay((current) => current ? addDaysToNewYorkDayKey(current, -1) : getDefaultMatchFeedDay())
             }}
-            disabled={selectedDayIndex <= 0}
           >
             Previous day
           </button>
@@ -397,11 +376,8 @@ function App() {
             type="button"
             className="tab"
             onClick={() => {
-              if (selectedDayIndex >= 0 && selectedDayIndex < matchDays.length - 1) {
-                setSelectedDay(matchDays[selectedDayIndex + 1])
-              }
+              setSelectedDay((current) => current ? addDaysToNewYorkDayKey(current, 1) : getDefaultMatchFeedDay())
             }}
-            disabled={selectedDayIndex === -1 || selectedDayIndex >= matchDays.length - 1}
           >
             Next day
           </button>
@@ -409,7 +385,7 @@ function App() {
 
         <ul className="feed-list">
           {matchesForSelectedDay.length === 0 && (
-            <li className="feed-empty">No matches for this manager on the selected day.</li>
+            <li className="feed-empty">No matches scheduled for this day.</li>
           )}
           {matchesForSelectedDay.map((match) => {
             const homeTeam = teamById.get(match.homeTeamId)

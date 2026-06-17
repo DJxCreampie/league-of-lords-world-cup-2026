@@ -43,6 +43,19 @@ export function isOnNewYorkDay(value: string | undefined, dayKey: string): boole
   return getNewYorkDayKey(value) === dayKey
 }
 
+export function getTodayNewYorkDayKey(now = new Date()): string {
+  const { year, month, day } = getNewYorkDateParts(now)
+  return `${year}-${month}-${day}`
+}
+
+export function addDaysToNewYorkDayKey(dayKey: string, days: number): string {
+  const [year, month, day] = dayKey.split('-').map(Number)
+  const utcNoon = new Date(Date.UTC(year, month - 1, day + days, 12))
+  const parts = getNewYorkDateParts(utcNoon)
+
+  return `${parts.year}-${parts.month}-${parts.day}`
+}
+
 export function formatNewYorkDayLabel(dayKey: string | null): string {
   if (!dayKey) return 'No dated matches'
 
@@ -52,11 +65,20 @@ export function formatNewYorkDayLabel(dayKey: string | null): string {
   return `${Number(month)}/${Number(day)}/${year}`
 }
 
+function formatNewYorkTime(date: Date): string {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: NEW_YORK_TIME_ZONE,
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  }).format(date)
+}
+
 export function formatNewYorkDateTime(value?: string, fallback = 'Kickoff TBD'): string {
   const date = parseDate(value)
   if (!date) return fallback
 
-  const formatted = new Intl.DateTimeFormat('en-US', {
+  const dateTime = new Intl.DateTimeFormat('en-US', {
     timeZone: NEW_YORK_TIME_ZONE,
     year: 'numeric',
     month: 'numeric',
@@ -66,5 +88,17 @@ export function formatNewYorkDateTime(value?: string, fallback = 'Kickoff TBD'):
     hour12: true,
   }).format(date)
 
-  return `${formatted} ${ET_LABEL}`
+  return `${dateTime} ${ET_LABEL}`
+}
+
+export function formatLastUpdatedNewYork(value?: string, now = new Date(), fallback = 'Last updated unavailable'): string {
+  const date = parseDate(value)
+  if (!date) return fallback
+
+  const time = `${formatNewYorkTime(date)} ${ET_LABEL}`
+  if (getNewYorkDayKey(value) === getTodayNewYorkDayKey(now)) {
+    return `Today, ${time}`
+  }
+
+  return `${formatNewYorkDayLabel(getNewYorkDayKey(value))}, ${time}`
 }
