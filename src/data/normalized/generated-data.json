@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T06:00:36.047Z",
+  "generatedAt": "2026-06-17T06:10:33.182Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -445,7 +445,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-17T04:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_J",
@@ -454,11 +454,12 @@
       "homeTeamName": "Austria",
       "awayTeamId": "team-jordan",
       "awayTeamName": "Jordan",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 1,
+      "winnerTeamId": "team-austria",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-17T08:00:34Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-17T08:09:52Z"
     },
     {
       "matchId": "537403",
