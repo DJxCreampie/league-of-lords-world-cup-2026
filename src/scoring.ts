@@ -8,12 +8,13 @@ import type {
   TeamManualOverride,
 } from './types'
 
-export type ScoredTeam = Team & { goals: number }
+export type ScoredTeam = Team & { goals: number; matchesPlayed: number }
 
 export type RankedManager = Manager & {
   teams: ScoredTeam[]
   totalGoals: number
   activeTeamsRemaining: number
+  totalMatchesPlayed: number
   totalKnockoutGoals: number
 }
 
@@ -39,6 +40,16 @@ function getTeamGoalAdjustment(team: Team, teamGoalAdjustments: TeamGoalAdjustme
   return teamGoalAdjustments
     .filter((adjustment) => adjustment.teamId === team.id)
     .reduce((total, adjustment) => total + adjustment.goals, 0)
+}
+
+function isPlayedMatch(match: Match): boolean {
+  return match.status === 'live' || match.status === 'finished'
+}
+
+export function getTeamMatchesPlayed(team: Team, matches: Match[]): number {
+  return matches.filter(
+    (match) => isPlayedMatch(match) && (match.homeTeamId === team.id || match.awayTeamId === team.id),
+  ).length
 }
 
 export function getTeamGoals(team: Team, matches: Match[], matchScoreOverrides: MatchScoreOverride[] = [], teamGoalAdjustments: TeamGoalAdjustment[] = []): number {
@@ -69,7 +80,11 @@ export function getAssignedTeams(
     .filter((assignment) => assignment.managerId === manager.id)
     .map((assignment) => teamById.get(assignment.teamId))
     .filter((team): team is Team => team !== undefined)
-    .map((team) => ({ ...team, goals: getTeamGoals(team, matches, matchScoreOverrides, teamGoalAdjustments) }))
+    .map((team) => ({
+      ...team,
+      goals: getTeamGoals(team, matches, matchScoreOverrides, teamGoalAdjustments),
+      matchesPlayed: getTeamMatchesPlayed(team, matches),
+    }))
 }
 
 
@@ -84,6 +99,19 @@ export function getManagerTotal(
 ): number {
   return getAssignedTeams(manager, teams, assignments, matches, matchScoreOverrides, teamGoalAdjustments, teamManualOverrides)
     .reduce((sum, team) => sum + team.goals, 0)
+}
+
+export function getManagerMatchesPlayed(
+  manager: Manager,
+  teams: Team[],
+  assignments: Assignment[],
+  matches: Match[],
+  matchScoreOverrides: MatchScoreOverride[] = [],
+  teamGoalAdjustments: TeamGoalAdjustment[] = [],
+  teamManualOverrides: TeamManualOverride[] = [],
+): number {
+  return getAssignedTeams(manager, teams, assignments, matches, matchScoreOverrides, teamGoalAdjustments, teamManualOverrides)
+    .reduce((sum, team) => sum + team.matchesPlayed, 0)
 }
 
 export function getActiveTeamsRemaining(
@@ -110,6 +138,7 @@ export function rankManagers(
       teams: assignedTeams,
       totalGoals: assignedTeams.reduce((sum, team) => sum + team.goals, 0),
       activeTeamsRemaining: assignedTeams.filter((team) => team.status === 'active' || team.status === 'champion').length,
+      totalMatchesPlayed: assignedTeams.reduce((sum, team) => sum + team.matchesPlayed, 0),
       totalKnockoutGoals: assignedTeams.reduce((sum, team) => sum + (team.knockoutGoals ?? 0), 0),
     }
   }).sort((a, b) => b.totalGoals - a.totalGoals

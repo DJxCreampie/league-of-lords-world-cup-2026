@@ -8,8 +8,10 @@ import {
 import {
   getActiveTeamsRemaining,
   getAssignedTeams,
+  getManagerMatchesPlayed,
   getManagerTotal,
   getTeamGoals,
+  getTeamMatchesPlayed,
   rankManagers,
 } from './scoring'
 import type { Assignment, Manager, Match, MatchScoreOverride, Team, TeamGoalAdjustment } from './types'
@@ -167,6 +169,40 @@ describe('scoring', () => {
   it('does not count scheduled match goals', () => {
     expect(getTeamGoals(testTeams[0], testMatches)).toBe(4)
   })
+
+  it('counts a finished match as 1 match played for each participating team', () => {
+    expect(getTeamMatchesPlayed(testTeams[0], testMatches)).toBe(1)
+    expect(getTeamMatchesPlayed(testTeams[1], testMatches)).toBe(1)
+  })
+
+  it('counts a live match as 1 match played for each participating team', () => {
+    expect(getTeamMatchesPlayed(testTeams[6], testMatches)).toBe(1)
+    expect(getTeamMatchesPlayed(testTeams[7], testMatches)).toBe(1)
+  })
+
+  it('does not count a scheduled match as played', () => {
+    expect(getTeamMatchesPlayed(testTeams[0], testMatches)).toBe(1)
+    expect(getTeamMatchesPlayed(testTeams[12], testMatches)).toBe(1)
+  })
+
+  it('sets manager total matches played to the sum of assigned team matches played', () => {
+    expect(getManagerMatchesPlayed(testManagers[0], testTeams, testAssignments, testMatches)).toBe(4)
+  })
+
+  it('adds each team matches played to expanded manager team data', () => {
+    expect(
+      getAssignedTeams(testManagers[1], testTeams, testAssignments, testMatches).map((team) => ({
+        id: team.id,
+        matchesPlayed: team.matchesPlayed,
+      })),
+    ).toEqual([
+      { id: 'team-e', matchesPlayed: 1 },
+      { id: 'team-f', matchesPlayed: 1 },
+      { id: 'team-g', matchesPlayed: 1 },
+      { id: 'team-h', matchesPlayed: 1 },
+    ])
+  })
+
 
   it('counts live match goals', () => {
     expect(getTeamGoals(testTeams[6], testMatches)).toBe(3)
