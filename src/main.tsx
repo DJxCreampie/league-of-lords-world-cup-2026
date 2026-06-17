@@ -25,7 +25,7 @@ const leaderboard = rankManagers(
   teamManualOverrides,
 )
 
-type SortKey = 'rank' | 'manager' | 'goals' | 'active'
+type SortKey = 'rank' | 'manager' | 'goals' | 'matches' | 'active'
 type SortDirection = 'asc' | 'desc'
 type TeamsSortKey = 'status' | 'team' | 'manager' | 'goals'
 
@@ -120,6 +120,11 @@ function App() {
 
       if (sortKey === 'goals') {
         const result = a.totalGoals - b.totalGoals
+        return sortDirection === 'asc' ? result : -result
+      }
+
+      if (sortKey === 'matches') {
+        const result = a.totalMatchesPlayed - b.totalMatchesPlayed
         return sortDirection === 'asc' ? result : -result
       }
 
@@ -294,6 +299,9 @@ function App() {
             <button type="button" className="header-cell" onClick={() => handleSortChange('goals')}>
               Goals{sortIndicator('goals')}
             </button>
+            <button type="button" className="header-cell" onClick={() => handleSortChange('matches')}>
+              Matches{sortIndicator('matches')}
+            </button>
             <button type="button" className="header-cell" onClick={() => handleSortChange('active')}>
               Active{sortIndicator('active')}
             </button>
@@ -317,6 +325,7 @@ function App() {
                     <span className="rank">#{manager.rank}</span>
                     <span className="manager-name">{manager.name}</span>
                     <span>{manager.totalGoals}</span>
+                    <span>{manager.totalMatchesPlayed}</span>
                     <span>{manager.activeTeamsRemaining}</span>
                   </button>
 
@@ -327,6 +336,7 @@ function App() {
                         <span>Team</span>
                         <span>Status</span>
                         <span>Goals</span>
+                        <span>Matches</span>
                       </div>
                       <ul className="expanded-teams">
                         {sortTeamsByTierThenName(manager.teams).map((team) => (
@@ -335,6 +345,7 @@ function App() {
                             <span>{team.name}</span>
                             <span className={`status ${team.status}`}>{team.status}</span>
                             <span>{team.goals}</span>
+                            <span>{team.matchesPlayed}</span>
                           </li>
                         ))}
                       </ul>

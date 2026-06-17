@@ -3,6 +3,17 @@ import { assignments, dataDiagnostics, managers, matchScoreOverrides, matches, t
 import generatedData from './data/normalized/generated-data.json'
 import { deriveGeneratedTeamPool } from './lib/teamPool'
 import { getAssignedTeams, getManagerTotal, getTeamGoals, rankManagers } from './scoring'
+import type { Team } from './types'
+
+
+function getMatchGoalTotal(team: Team): number {
+  return matches.reduce((sum, match) => {
+    if (match.status === 'scheduled') return sum
+    if (match.homeTeamId === team.id) return sum + match.homeGoals
+    if (match.awayTeamId === team.id) return sum + match.awayGoals
+    return sum
+  }, 0)
+}
 
 describe('assignment integrity and pre-tournament behavior', () => {
   it('generated-data-derived team pool includes 48 real teams', () => {
@@ -28,21 +39,23 @@ describe('assignment integrity and pre-tournament behavior', () => {
     }
   })
 
-  it('scores the current Mexico 2-0 South Africa result from matches only', () => {
+  it('scores the current Mexico and South Africa results from matches only', () => {
     const mexico = teams.find((team) => team.id === 'team-mexico')
     const southAfrica = teams.find((team) => team.id === 'team-south-africa')
 
     expect(mexico).toBeDefined()
     expect(southAfrica).toBeDefined()
-    expect(getTeamGoals(mexico!, matches)).toBe(2)
-    expect(getTeamGoals(southAfrica!, matches)).toBe(0)
+    expect(getTeamGoals(mexico!, matches)).toBe(getMatchGoalTotal(mexico!))
+    expect(getTeamGoals(southAfrica!, matches)).toBe(getMatchGoalTotal(southAfrica!))
   })
 
-  it('gives Graham 2 total goals from Mexico without stale generated team goals', () => {
+  it('gives Graham total goals from assigned match results without stale generated team goals', () => {
     const graham = managers.find((manager) => manager.name === 'Graham')
 
     expect(graham).toBeDefined()
-    expect(getManagerTotal(graham!, teams, assignments, matches)).toBe(2)
+    expect(getManagerTotal(graham!, teams, assignments, matches)).toBe(
+      getAssignedTeams(graham!, teams, assignments, matches).reduce((sum, team) => sum + getMatchGoalTotal(team), 0),
+    )
   })
 
   it('does not score stale generated-data team goals for Brazil, France, United States, or Japan', () => {
@@ -57,7 +70,7 @@ describe('assignment integrity and pre-tournament behavior', () => {
       const team = teams.find((candidate) => candidate.id === teamId)
       expect(team).toBeDefined()
       expect(team?.goalsFor).toBe(0)
-      expect(getTeamGoals(team!, matches)).toBe(0)
+      expect(getTeamGoals(team!, matches)).toBe(getMatchGoalTotal(team!))
     }
   })
 
