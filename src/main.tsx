@@ -2,7 +2,6 @@ import { StrictMode, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   assignments,
-  dataDiagnostics,
   lastUpdated,
   managers,
   matches,
@@ -13,6 +12,8 @@ import {
 } from './productionData'
 import { getTeamGoals, rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
+import { addDaysToNewYorkDayKey, formatLastUpdatedNewYork, formatNewYorkDateTime, formatNewYorkDayLabel } from './lib/time'
+import { getDefaultMatchFeedDay, getMatchesForNewYorkDay } from './lib/matchFeed'
 import './style.css'
 
 const leaderboard = rankManagers(
@@ -25,7 +26,7 @@ const leaderboard = rankManagers(
   teamManualOverrides,
 )
 
-type SortKey = 'rank' | 'manager' | 'goals' | 'active'
+type SortKey = 'rank' | 'manager' | 'goals' | 'matches' | 'active'
 type SortDirection = 'asc' | 'desc'
 type TeamsSortKey = 'status' | 'team' | 'manager' | 'goals'
 
@@ -79,23 +80,6 @@ const visibleMatches = matches.filter((match) => {
   return !isPlaceholder
 })
 
-function formatKickoff(kickoffTime?: string): string {
-  if (!kickoffTime) return 'Kickoff TBD'
-
-  const date = new Date(kickoffTime)
-
-  return Number.isNaN(date.getTime()) ? 'Kickoff TBD' : date.toLocaleString()
-}
-
-function getMatchDayKey(kickoffTime?: string): string | null {
-  if (!kickoffTime) return null
-
-  const date = new Date(kickoffTime)
-  if (Number.isNaN(date.getTime())) return null
-
-  return date.toISOString().slice(0, 10)
-}
-
 function App() {
   const [activeTab, setActiveTab] = useState<'leaderboard' | 'teams'>(
     'leaderboard',
@@ -120,6 +104,11 @@ function App() {
 
       if (sortKey === 'goals') {
         const result = a.totalGoals - b.totalGoals
+        return sortDirection === 'asc' ? result : -result
+      }
+
+      if (sortKey === 'matches') {
+        const result = a.totalMatchesPlayed - b.totalMatchesPlayed
         return sortDirection === 'asc' ? result : -result
       }
 
@@ -197,27 +186,7 @@ function App() {
     (team) => team.managerName === 'Unassigned',
   ).length
 
-  const matchDays = useMemo(() => {
-    const daySet = new Set<string>()
-    visibleMatches.forEach((match) => {
-      const dayKey = getMatchDayKey(match.kickoffTime)
-      if (dayKey) daySet.add(dayKey)
-    })
-
-    return [...daySet].sort((a, b) => a.localeCompare(b))
-  }, [])
-
-  const [selectedDay, setSelectedDay] = useState<string | null>(() => {
-    const scheduledDay = visibleMatches
-      .filter((match) => match.status === 'scheduled')
-      .map((match) => getMatchDayKey(match.kickoffTime))
-      .filter((day): day is string => Boolean(day))
-      .sort((a, b) => a.localeCompare(b))[0]
-
-    return scheduledDay ?? matchDays[0] ?? null
-  })
-
-  const selectedDayIndex = selectedDay ? matchDays.indexOf(selectedDay) : -1
+  const [selectedDay, setSelectedDay] = useState<string | null>(() => getDefaultMatchFeedDay())
 
   const [selectedManager, setSelectedManager] = useState<string>('all')
 
@@ -226,10 +195,7 @@ function App() {
     [],
   )
 
-  const matchesForSelectedDay = visibleMatches.filter((match) => {
-    if (!selectedDay) return false
-    if (getMatchDayKey(match.kickoffTime) !== selectedDay) return false
-
+  const matchesForSelectedDay = getMatchesForNewYorkDay(visibleMatches, selectedDay).filter((match) => {
     if (selectedManager === 'all') return true
 
     const homeManagers = managerNamesByTeamId[match.homeTeamId] ?? []
@@ -242,12 +208,7 @@ function App() {
     <main className="app-shell">
       <header className="page-header">
         <h1>League of Lords World Cup 2026</h1>
-        <span>Last updated: {lastUpdated}</span>
-        <small className="data-diagnostic">
-          Data: {dataDiagnostics.source} · generatedAt: {dataDiagnostics.generatedAt} ·{' '}
-          matches loaded: {dataDiagnostics.totalMatchesLoaded} · live/final counted:{' '}
-          {dataDiagnostics.countedMatches}
-        </small>
+        <span>Last updated: {formatLastUpdatedNewYork(lastUpdated)}</span>
         {hasManualOverrides && <small>Manual scoring corrections applied</small>}
       </header>
 
@@ -294,6 +255,9 @@ function App() {
             <button type="button" className="header-cell" onClick={() => handleSortChange('goals')}>
               Goals{sortIndicator('goals')}
             </button>
+            <button type="button" className="header-cell" onClick={() => handleSortChange('matches')}>
+              Matches{sortIndicator('matches')}
+            </button>
             <button type="button" className="header-cell" onClick={() => handleSortChange('active')}>
               Active{sortIndicator('active')}
             </button>
@@ -317,6 +281,7 @@ function App() {
                     <span className="rank">#{manager.rank}</span>
                     <span className="manager-name">{manager.name}</span>
                     <span>{manager.totalGoals}</span>
+                    <span>{manager.totalMatchesPlayed}</span>
                     <span>{manager.activeTeamsRemaining}</span>
                   </button>
 
@@ -327,6 +292,7 @@ function App() {
                         <span>Team</span>
                         <span>Status</span>
                         <span>Goals</span>
+                        <span>Matches</span>
                       </div>
                       <ul className="expanded-teams">
                         {sortTeamsByTierThenName(manager.teams).map((team) => (
@@ -335,6 +301,7 @@ function App() {
                             <span>{team.name}</span>
                             <span className={`status ${team.status}`}>{team.status}</span>
                             <span>{team.goals}</span>
+                            <span>{team.matchesPlayed}</span>
                           </li>
                         ))}
                       </ul>
@@ -383,16 +350,13 @@ function App() {
             type="button"
             className="tab"
             onClick={() => {
-              if (selectedDayIndex > 0) setSelectedDay(matchDays[selectedDayIndex - 1])
+              setSelectedDay((current) => current ? addDaysToNewYorkDayKey(current, -1) : getDefaultMatchFeedDay())
             }}
-            disabled={selectedDayIndex <= 0}
           >
             Previous day
           </button>
           <span className="feed-day-label">
-            {selectedDay
-              ? new Date(`${selectedDay}T00:00:00Z`).toLocaleDateString()
-              : 'No dated matches'}
+            {formatNewYorkDayLabel(selectedDay)}
           </span>
           <label className="feed-filter">
             <span>Manager</span>
@@ -412,11 +376,8 @@ function App() {
             type="button"
             className="tab"
             onClick={() => {
-              if (selectedDayIndex >= 0 && selectedDayIndex < matchDays.length - 1) {
-                setSelectedDay(matchDays[selectedDayIndex + 1])
-              }
+              setSelectedDay((current) => current ? addDaysToNewYorkDayKey(current, 1) : getDefaultMatchFeedDay())
             }}
-            disabled={selectedDayIndex === -1 || selectedDayIndex >= matchDays.length - 1}
           >
             Next day
           </button>
@@ -424,7 +385,7 @@ function App() {
 
         <ul className="feed-list">
           {matchesForSelectedDay.length === 0 && (
-            <li className="feed-empty">No matches for this manager on the selected day.</li>
+            <li className="feed-empty">No matches scheduled for this day.</li>
           )}
           {matchesForSelectedDay.map((match) => {
             const homeTeam = teamById.get(match.homeTeamId)
@@ -439,7 +400,7 @@ function App() {
                     ? `Upcoming · ${homeTeam?.name} vs ${awayTeam?.name}`
                     : `${match.status.toUpperCase()} · ${homeTeam?.name} ${match.homeGoals} - ${match.awayGoals} ${awayTeam?.name}`}
                 </strong>
-                <p>{formatKickoff(match.kickoffTime)}</p>
+                <p>{formatNewYorkDateTime(match.kickoffTime)}</p>
                 <ul className="impact-list">
                   <li>
                     {homeTeam?.name} → {homeManagers.join(', ') || 'Unassigned'}
