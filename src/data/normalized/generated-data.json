@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T20:50:29.696Z",
+  "generatedAt": "2026-06-18T21:00:35.551Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -581,7 +581,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-18T19:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_B",
@@ -590,11 +590,12 @@
       "homeTeamName": "Switzerland",
       "awayTeamId": "team-bosnia-herzegovina",
       "awayTeamName": "Bosnia-Herzegovina",
-      "homeGoals": 3,
-      "awayGoals": 0,
+      "homeGoals": 4,
+      "awayGoals": 1,
+      "winnerTeamId": "team-switzerland",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-18T22:50:22Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-18T22:57:45Z"
     },
     {
       "matchId": "537336",
@@ -615,8 +616,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-18T15:20:16Z"
+      "sourceStatus": "SCHEDULED",
+      "lastUpdated": "2026-06-18T22:59:59Z"
     },
     {
       "matchId": "537330",
