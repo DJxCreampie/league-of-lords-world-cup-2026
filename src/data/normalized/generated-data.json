@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T23:23:14.459Z",
+  "generatedAt": "2026-06-18T23:30:33.785Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -613,11 +613,11 @@
       "homeTeamName": "Canada",
       "awayTeamId": "team-qatar",
       "awayTeamName": "Qatar",
-      "homeGoals": 3,
+      "homeGoals": 4,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-19T01:23:13Z"
+      "lastUpdated": "2026-06-19T01:30:32Z"
     },
     {
       "matchId": "537330",
