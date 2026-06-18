@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T16:00:52.396Z",
+  "generatedAt": "2026-06-18T16:10:37.277Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -568,11 +568,11 @@
       "homeTeamName": "Czechia",
       "awayTeamId": "team-south-africa",
       "awayTeamName": "South Africa",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-18T18:00:20Z"
+      "lastUpdated": "2026-06-18T18:10:34Z"
     },
     {
       "matchId": "537335",
