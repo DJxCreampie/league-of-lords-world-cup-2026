@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T21:20:28.540Z",
+  "generatedAt": "2026-06-18T21:30:29.535Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -595,7 +595,7 @@
       "winnerTeamId": "team-switzerland",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-18T23:01:43Z"
+      "lastUpdated": "2026-06-18T23:20:31Z"
     },
     {
       "matchId": "537336",
