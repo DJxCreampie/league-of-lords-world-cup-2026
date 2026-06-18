@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T03:20:28.598Z",
+  "generatedAt": "2026-06-18T03:30:28.491Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -545,11 +545,11 @@
       "homeTeamName": "Uzbekistan",
       "awayTeamId": "team-colombia",
       "awayTeamName": "Colombia",
-      "homeGoals": 0,
-      "awayGoals": 1,
+      "homeGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-18T05:20:28Z"
+      "lastUpdated": "2026-06-18T05:30:28Z"
     },
     {
       "matchId": "537329",
