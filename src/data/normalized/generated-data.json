@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T17:40:28.230Z",
+  "generatedAt": "2026-06-18T17:50:30.355Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -569,10 +569,10 @@
       "awayTeamId": "team-south-africa",
       "awayTeamName": "South Africa",
       "homeGoals": 1,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-18T19:40:25Z"
+      "lastUpdated": "2026-06-18T19:50:28Z"
     },
     {
       "matchId": "537335",
@@ -594,7 +594,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-18T19:00:01Z"
+      "lastUpdated": "2026-06-18T19:47:01Z"
     },
     {
       "matchId": "537336",
