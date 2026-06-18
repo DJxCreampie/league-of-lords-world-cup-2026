@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T02:00:34.231Z",
+  "generatedAt": "2026-06-18T02:10:25.285Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -536,7 +536,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-18T02:00:00Z",
-      "status": "upcoming",
+      "status": "live",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_K",
@@ -548,8 +548,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-18T03:03:13Z"
+      "sourceStatus": "IN_PLAY",
+      "lastUpdated": "2026-06-18T04:10:25Z"
     },
     {
       "matchId": "537329",
