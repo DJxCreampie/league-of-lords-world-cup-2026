@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T21:00:35.551Z",
+  "generatedAt": "2026-06-18T21:10:30.170Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -595,7 +595,7 @@
       "winnerTeamId": "team-switzerland",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-18T22:57:45Z"
+      "lastUpdated": "2026-06-18T23:01:43Z"
     },
     {
       "matchId": "537336",
@@ -616,8 +616,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "SCHEDULED",
-      "lastUpdated": "2026-06-18T22:59:59Z"
+      "sourceStatus": "TIMED",
+      "lastUpdated": "2026-06-18T23:05:04Z"
     },
     {
       "matchId": "537330",
