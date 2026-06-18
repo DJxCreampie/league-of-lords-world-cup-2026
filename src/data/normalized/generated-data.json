@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T20:30:30.947Z",
+  "generatedAt": "2026-06-18T20:40:25.751Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -590,11 +590,11 @@
       "homeTeamName": "Switzerland",
       "awayTeamId": "team-bosnia-herzegovina",
       "awayTeamName": "Bosnia-Herzegovina",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-18T22:30:22Z"
+      "lastUpdated": "2026-06-18T22:40:22Z"
     },
     {
       "matchId": "537336",
