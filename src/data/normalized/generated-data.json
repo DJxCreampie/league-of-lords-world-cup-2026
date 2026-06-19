@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T02:10:29.903Z",
+  "generatedAt": "2026-06-19T02:17:42.385Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -636,11 +636,11 @@
       "homeTeamName": "Mexico",
       "awayTeamId": "team-south-korea",
       "awayTeamName": "South Korea",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-19T04:10:26Z"
+      "lastUpdated": "2026-06-19T04:17:41Z"
     },
     {
       "matchId": "537348",
