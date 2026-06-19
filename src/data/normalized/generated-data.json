@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T22:00:38.952Z",
+  "generatedAt": "2026-06-19T22:10:26.278Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -673,7 +673,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-19T22:00:00Z",
-      "status": "upcoming",
+      "status": "live",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
@@ -683,10 +683,10 @@
       "awayTeamId": "team-morocco",
       "awayTeamName": "Morocco",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-19T23:47:01Z"
+      "sourceStatus": "IN_PLAY",
+      "lastUpdated": "2026-06-20T00:10:25Z"
     },
     {
       "matchId": "537341",
