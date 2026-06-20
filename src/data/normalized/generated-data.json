@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T21:50:23.865Z",
+  "generatedAt": "2026-06-20T22:00:33.848Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -765,7 +765,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-20T20:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_E",
@@ -774,11 +774,12 @@
       "homeTeamName": "Germany",
       "awayTeamId": "team-ivory-coast",
       "awayTeamName": "Ivory Coast",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 1,
+      "winnerTeamId": "team-germany",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-20T23:50:22Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-21T00:00:03Z"
     },
     {
       "matchId": "537354",
@@ -800,7 +801,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-20T15:20:13Z"
+      "lastUpdated": "2026-06-21T00:00:04Z"
     },
     {
       "matchId": "537360",
