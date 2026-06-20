@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T20:20:31.669Z",
+  "generatedAt": "2026-06-20T20:30:31.196Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -775,10 +775,10 @@
       "awayTeamId": "team-ivory-coast",
       "awayTeamName": "Ivory Coast",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-20T22:20:31Z"
+      "lastUpdated": "2026-06-20T22:30:28Z"
     },
     {
       "matchId": "537354",
