@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T22:20:28.727Z",
+  "generatedAt": "2026-06-20T22:30:28.101Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -779,7 +779,7 @@
       "winnerTeamId": "team-germany",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-21T00:00:03Z"
+      "lastUpdated": "2026-06-21T00:26:19Z"
     },
     {
       "matchId": "537354",
