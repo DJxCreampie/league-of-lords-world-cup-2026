@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T02:30:30.870Z",
+  "generatedAt": "2026-06-20T02:40:24.413Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -696,7 +696,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-20T00:30:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
@@ -707,9 +707,10 @@
       "awayTeamName": "Haiti",
       "homeGoals": 3,
       "awayGoals": 0,
+      "winnerTeamId": "team-brazil",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-20T04:30:28Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-20T04:32:13Z"
     },
     {
       "matchId": "537347",
