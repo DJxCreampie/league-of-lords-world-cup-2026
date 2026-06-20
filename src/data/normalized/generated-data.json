@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T05:00:37.555Z",
+  "generatedAt": "2026-06-20T05:10:25.320Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -719,7 +719,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-20T03:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_D",
@@ -730,9 +730,10 @@
       "awayTeamName": "Paraguay",
       "homeGoals": 0,
       "awayGoals": 1,
+      "winnerTeamId": "team-paraguay",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-20T07:00:34Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-20T07:08:40Z"
     },
     {
       "matchId": "537359",
