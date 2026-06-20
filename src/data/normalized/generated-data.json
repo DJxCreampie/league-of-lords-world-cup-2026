@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T00:50:30.596Z",
+  "generatedAt": "2026-06-20T01:00:36.899Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -705,11 +705,11 @@
       "homeTeamName": "Brazil",
       "awayTeamId": "team-haiti",
       "awayTeamName": "Haiti",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-20T02:50:28Z"
+      "lastUpdated": "2026-06-20T03:00:34Z"
     },
     {
       "matchId": "537347",
@@ -731,7 +731,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-19T15:20:16Z"
+      "lastUpdated": "2026-06-20T03:00:01Z"
     },
     {
       "matchId": "537359",
