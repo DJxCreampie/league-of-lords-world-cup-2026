@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T18:12:36.294Z",
+  "generatedAt": "2026-06-20T18:20:34.545Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -751,11 +751,11 @@
       "homeTeamName": "Netherlands",
       "awayTeamId": "team-sweden",
       "awayTeamName": "Sweden",
-      "homeGoals": 3,
-      "awayGoals": 0,
+      "homeGoals": 4,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-20T20:12:34Z"
+      "lastUpdated": "2026-06-20T20:19:45Z"
     },
     {
       "matchId": "537353",
