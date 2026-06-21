@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T16:20:28.888Z",
+  "generatedAt": "2026-06-21T16:30:29.689Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -842,11 +842,11 @@
       "homeTeamName": "Spain",
       "awayTeamId": "team-saudi-arabia",
       "awayTeamName": "Saudi Arabia",
-      "homeGoals": 1,
+      "homeGoals": 3,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-21T18:20:28Z"
+      "lastUpdated": "2026-06-21T18:30:28Z"
     },
     {
       "matchId": "537365",
