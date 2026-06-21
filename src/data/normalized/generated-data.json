@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T23:20:29.268Z",
+  "generatedAt": "2026-06-21T23:30:29.416Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -888,10 +888,10 @@
       "awayTeamId": "team-cape-verde",
       "awayTeamName": "Cape Verde Islands",
       "homeGoals": 2,
-      "awayGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-22T01:20:28Z"
+      "lastUpdated": "2026-06-22T01:30:28Z"
     },
     {
       "matchId": "537366",
