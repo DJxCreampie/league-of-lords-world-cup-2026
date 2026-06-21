@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T20:30:33.534Z",
+  "generatedAt": "2026-06-21T20:40:27.454Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -847,7 +847,7 @@
       "winnerTeamId": "team-spain",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-21T20:02:46Z"
+      "lastUpdated": "2026-06-21T22:31:54Z"
     },
     {
       "matchId": "537365",
@@ -869,7 +869,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-21T22:30:31Z"
+      "lastUpdated": "2026-06-21T22:40:25Z"
     },
     {
       "matchId": "537372",
