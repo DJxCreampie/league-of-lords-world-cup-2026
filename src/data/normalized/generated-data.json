@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T05:20:28.569Z",
+  "generatedAt": "2026-06-21T05:30:31.149Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -820,10 +820,10 @@
       "awayTeamId": "team-japan",
       "awayTeamName": "Japan",
       "homeGoals": 0,
-      "awayGoals": 2,
+      "awayGoals": 3,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-21T07:20:28Z"
+      "lastUpdated": "2026-06-21T07:30:28Z"
     },
     {
       "matchId": "537371",
