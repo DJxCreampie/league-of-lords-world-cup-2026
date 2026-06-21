@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T05:50:29.955Z",
+  "generatedAt": "2026-06-21T06:00:31.360Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -810,7 +810,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-21T04:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_F",
@@ -821,9 +821,10 @@
       "awayTeamName": "Japan",
       "homeGoals": 0,
       "awayGoals": 4,
+      "winnerTeamId": "team-japan",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-21T07:50:28Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-21T07:58:01Z"
     },
     {
       "matchId": "537371",
