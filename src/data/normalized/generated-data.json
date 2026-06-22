@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T16:00:53.192Z",
+  "generatedAt": "2026-06-22T16:10:30.848Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1676,15 +1676,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-germany",
+      "homeTeamName": "Germany",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-22T15:20:14Z"
+      "lastUpdated": "2026-06-22T18:05:47Z"
     },
     {
       "matchId": "537418",
@@ -1764,15 +1764,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-mexico",
+      "homeTeamName": "Mexico",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-22T15:20:14Z"
+      "lastUpdated": "2026-06-22T18:08:34Z"
     },
     {
       "matchId": "537426",
@@ -1830,15 +1830,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-united-states",
+      "homeTeamName": "United States",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-22T15:20:14Z"
+      "lastUpdated": "2026-06-22T18:09:54Z"
     },
     {
       "matchId": "537420",
