@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T21:10:32.388Z",
+  "generatedAt": "2026-06-22T21:20:33.165Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -955,11 +955,11 @@
       "homeTeamName": "France",
       "awayTeamId": "team-iraq",
       "awayTeamName": "Iraq",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-22T23:10:31Z"
+      "lastUpdated": "2026-06-22T23:20:31Z"
     },
     {
       "matchId": "537394",
