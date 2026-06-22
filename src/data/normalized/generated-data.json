@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T19:00:46.836Z",
+  "generatedAt": "2026-06-22T19:10:33.500Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -923,7 +923,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-22T17:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_J",
@@ -934,9 +934,10 @@
       "awayTeamName": "Austria",
       "homeGoals": 2,
       "awayGoals": 0,
+      "winnerTeamId": "team-argentina",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-22T21:00:46Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-22T21:02:08Z"
     },
     {
       "matchId": "537393",
