@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T02:20:29.924Z",
+  "generatedAt": "2026-06-22T02:30:31.830Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -910,10 +910,10 @@
       "awayTeamId": "team-egypt",
       "awayTeamName": "Egypt",
       "homeGoals": 1,
-      "awayGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-22T04:20:28Z"
+      "lastUpdated": "2026-06-22T04:30:31Z"
     },
     {
       "matchId": "537399",
