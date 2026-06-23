@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T07:20:25.609Z",
+  "generatedAt": "2026-06-23T07:30:29.081Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1944,15 +1944,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-argentina",
+      "homeTeamName": "Argentina",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-22T15:20:14Z"
+      "lastUpdated": "2026-06-23T09:27:52Z"
     },
     {
       "matchId": "537430",
