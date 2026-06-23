@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T03:30:32.370Z",
+  "generatedAt": "2026-06-23T03:40:24.758Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1001,11 +1001,11 @@
       "homeTeamName": "Jordan",
       "awayTeamId": "team-algeria",
       "awayTeamName": "Algeria",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-23T05:30:31Z"
+      "lastUpdated": "2026-06-23T05:40:23Z"
     },
     {
       "matchId": "537405",
