@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T01:10:26.333Z",
+  "generatedAt": "2026-06-23T01:20:24.526Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -978,11 +978,11 @@
       "homeTeamName": "Norway",
       "awayTeamId": "team-senegal",
       "awayTeamName": "Senegal",
-      "homeGoals": 2,
-      "awayGoals": 0,
+      "homeGoals": 3,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-23T03:10:25Z"
+      "lastUpdated": "2026-06-23T03:20:22Z"
     },
     {
       "matchId": "537400",
