@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T11:50:26.167Z",
+  "generatedAt": "2026-06-23T12:00:40.396Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -756,7 +756,7 @@
       "winnerTeamId": "team-netherlands",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-23T10:20:18Z"
+      "lastUpdated": "2026-06-23T13:55:07Z"
     },
     {
       "matchId": "537353",
