@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T18:20:35.972Z",
+  "generatedAt": "2026-06-23T18:30:36.683Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1024,11 +1024,11 @@
       "homeTeamName": "Portugal",
       "awayTeamId": "team-uzbekistan",
       "awayTeamName": "Uzbekistan",
-      "homeGoals": 3,
+      "homeGoals": 4,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-23T20:20:33Z"
+      "lastUpdated": "2026-06-23T20:30:36Z"
     },
     {
       "matchId": "537411",
