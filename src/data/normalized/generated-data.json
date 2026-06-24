@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T03:30:30.369Z",
+  "generatedAt": "2026-06-24T03:40:25.167Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1092,11 +1092,11 @@
       "homeTeamName": "Colombia",
       "awayTeamId": "team-congo-dr",
       "awayTeamName": "Congo DR",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T05:30:21Z"
+      "lastUpdated": "2026-06-24T05:40:22Z"
     },
     {
       "matchId": "537337",
