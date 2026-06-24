@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T20:30:36.012Z",
+  "generatedAt": "2026-06-24T20:40:28.074Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1116,10 +1116,10 @@
       "awayTeamId": "team-canada",
       "awayTeamName": "Canada",
       "homeGoals": 2,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T22:30:34Z"
+      "lastUpdated": "2026-06-24T22:40:25Z"
     },
     {
       "matchId": "537338",
@@ -1141,7 +1141,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T22:30:34Z"
+      "lastUpdated": "2026-06-24T22:40:25Z"
     },
     {
       "matchId": "537344",
