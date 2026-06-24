@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T23:40:30.578Z",
+  "generatedAt": "2026-06-24T23:50:32.320Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1161,11 +1161,11 @@
       "homeTeamName": "Morocco",
       "awayTeamId": "team-haiti",
       "awayTeamName": "Haiti",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T01:40:28Z"
+      "lastUpdated": "2026-06-25T01:50:31Z"
     },
     {
       "matchId": "537343",
@@ -1187,7 +1187,7 @@
       "awayGoals": 3,
       "sourceProvider": "football-data.org",
       "sourceStatus": "PAUSED",
-      "lastUpdated": "2026-06-25T01:40:28Z"
+      "lastUpdated": "2026-06-25T01:50:31Z"
     },
     {
       "matchId": "537331",
