@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T00:10:23.632Z",
+  "generatedAt": "2026-06-24T00:20:27.881Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1070,10 +1070,10 @@
       "awayTeamId": "team-croatia",
       "awayTeamName": "Croatia",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T02:10:05Z"
+      "lastUpdated": "2026-06-24T02:20:05Z"
     },
     {
       "matchId": "537406",
