@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T00:50:24.787Z",
+  "generatedAt": "2026-06-24T01:00:32.154Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1060,7 +1060,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-23T23:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_L",
@@ -1071,9 +1071,10 @@
       "awayTeamName": "Croatia",
       "homeGoals": 0,
       "awayGoals": 1,
+      "winnerTeamId": "team-croatia",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T02:50:05Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-24T02:55:22Z"
     },
     {
       "matchId": "537406",
@@ -1094,8 +1095,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-23T15:20:15Z"
+      "sourceStatus": "SCHEDULED",
+      "lastUpdated": "2026-06-24T02:57:04Z"
     },
     {
       "matchId": "537337",
