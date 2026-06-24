@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T20:40:28.074Z",
+  "generatedAt": "2026-06-24T20:50:29.708Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1119,7 +1119,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T22:40:25Z"
+      "lastUpdated": "2026-06-24T22:50:28Z"
     },
     {
       "matchId": "537338",
@@ -1137,11 +1137,11 @@
       "homeTeamName": "Bosnia-Herzegovina",
       "awayTeamId": "team-qatar",
       "awayTeamName": "Qatar",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T22:40:25Z"
+      "lastUpdated": "2026-06-24T22:50:29Z"
     },
     {
       "matchId": "537344",
