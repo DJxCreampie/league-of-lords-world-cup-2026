@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T19:40:27.199Z",
+  "generatedAt": "2026-06-24T19:50:29.027Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1118,8 +1118,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T21:40:25Z"
+      "sourceStatus": "PAUSED",
+      "lastUpdated": "2026-06-24T21:50:25Z"
     },
     {
       "matchId": "537338",
@@ -1138,10 +1138,10 @@
       "awayTeamId": "team-qatar",
       "awayTeamName": "Qatar",
       "homeGoals": 2,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-24T21:40:25Z"
+      "lastUpdated": "2026-06-24T21:50:25Z"
     },
     {
       "matchId": "537344",
