@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T23:20:27.268Z",
+  "generatedAt": "2026-06-24T23:30:30.060Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1165,7 +1165,7 @@
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T01:20:25Z"
+      "lastUpdated": "2026-06-25T01:30:28Z"
     },
     {
       "matchId": "537343",
@@ -1184,10 +1184,10 @@
       "awayTeamId": "team-brazil",
       "awayTeamName": "Brazil",
       "homeGoals": 0,
-      "awayGoals": 2,
+      "awayGoals": 3,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T01:20:25Z"
+      "lastUpdated": "2026-06-25T01:30:28Z"
     },
     {
       "matchId": "537331",
