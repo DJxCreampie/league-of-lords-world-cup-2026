@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T02:50:27.127Z",
+  "generatedAt": "2026-06-25T03:00:37.130Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1198,7 +1198,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-25T01:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
@@ -1208,10 +1208,11 @@
       "awayTeamId": "team-mexico",
       "awayTeamName": "Mexico",
       "homeGoals": 0,
-      "awayGoals": 2,
+      "awayGoals": 3,
+      "winnerTeamId": "team-mexico",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T04:50:25Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-25T04:58:40Z"
     },
     {
       "matchId": "537332",
@@ -1220,7 +1221,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-25T01:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
@@ -1231,9 +1232,10 @@
       "awayTeamName": "South Korea",
       "homeGoals": 1,
       "awayGoals": 0,
+      "winnerTeamId": "team-south-africa",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T04:50:25Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-25T04:58:55Z"
     },
     {
       "matchId": "537355",
