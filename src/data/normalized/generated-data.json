@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T02:10:26.984Z",
+  "generatedAt": "2026-06-25T02:20:31.589Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1208,10 +1208,10 @@
       "awayTeamId": "team-mexico",
       "awayTeamName": "Mexico",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T04:10:25Z"
+      "lastUpdated": "2026-06-25T04:20:28Z"
     },
     {
       "matchId": "537332",
@@ -1233,7 +1233,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T04:10:25Z"
+      "lastUpdated": "2026-06-25T04:20:28Z"
     },
     {
       "matchId": "537355",
