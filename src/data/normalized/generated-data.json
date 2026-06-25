@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T11:20:30.633Z",
+  "generatedAt": "2026-06-25T11:21:50.474Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1713,13 +1713,13 @@
       "minute": null,
       "homeTeamId": "unmapped:unknown-home",
       "homeTeamName": "Unknown Home",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-morocco",
+      "awayTeamName": "Morocco",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-25T10:20:13Z"
+      "lastUpdated": "2026-06-25T13:20:34Z"
     },
     {
       "matchId": "537424",
@@ -1909,15 +1909,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-switzerland",
+      "homeTeamName": "Switzerland",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-25T10:20:13Z"
+      "lastUpdated": "2026-06-25T13:21:33Z"
     },
     {
       "matchId": "537428",
