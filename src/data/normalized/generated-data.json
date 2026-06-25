@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T21:30:29.031Z",
+  "generatedAt": "2026-06-25T21:40:29.316Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1253,11 +1253,11 @@
       "homeTeamName": "Ecuador",
       "awayTeamId": "team-germany",
       "awayTeamName": "Germany",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T23:30:25Z"
+      "lastUpdated": "2026-06-25T23:40:29Z"
     },
     {
       "matchId": "537356",
@@ -1279,7 +1279,7 @@
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T23:30:25Z"
+      "lastUpdated": "2026-06-25T23:40:28Z"
     },
     {
       "matchId": "537361",
