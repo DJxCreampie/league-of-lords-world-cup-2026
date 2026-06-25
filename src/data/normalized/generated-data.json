@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T02:20:31.589Z",
+  "generatedAt": "2026-06-25T02:30:33.475Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1208,10 +1208,10 @@
       "awayTeamId": "team-mexico",
       "awayTeamName": "Mexico",
       "homeGoals": 0,
-      "awayGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T04:20:28Z"
+      "lastUpdated": "2026-06-25T04:30:31Z"
     },
     {
       "matchId": "537332",
@@ -1229,11 +1229,11 @@
       "homeTeamName": "South Africa",
       "awayTeamId": "team-south-korea",
       "awayTeamName": "South Korea",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-25T04:20:28Z"
+      "lastUpdated": "2026-06-25T04:30:32Z"
     },
     {
       "matchId": "537355",
