@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T20:40:30.711Z",
+  "generatedAt": "2026-06-26T20:50:27.525Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1393,7 +1393,7 @@
       "awayGoals": 3,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T22:40:29Z"
+      "lastUpdated": "2026-06-26T22:50:25Z"
     },
     {
       "matchId": "537396",
@@ -1411,11 +1411,11 @@
       "homeTeamName": "Senegal",
       "awayTeamId": "team-iraq",
       "awayTeamName": "Iraq",
-      "homeGoals": 3,
+      "homeGoals": 4,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T22:40:29Z"
+      "lastUpdated": "2026-06-26T22:50:26Z"
     },
     {
       "matchId": "537373",
