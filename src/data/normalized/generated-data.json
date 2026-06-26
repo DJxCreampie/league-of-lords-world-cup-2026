@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T04:00:32.807Z",
+  "generatedAt": "2026-06-26T04:10:24.999Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1335,7 +1335,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-26T02:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_D",
@@ -1344,11 +1344,12 @@
       "homeTeamName": "Turkey",
       "awayTeamId": "team-united-states",
       "awayTeamName": "United States",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 2,
+      "winnerTeamId": "team-turkey",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T06:00:32Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-26T06:04:28Z"
     },
     {
       "matchId": "537350",
@@ -1370,7 +1371,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-26T05:58:55Z"
+      "lastUpdated": "2026-06-26T06:00:38Z"
     },
     {
       "matchId": "537395",
