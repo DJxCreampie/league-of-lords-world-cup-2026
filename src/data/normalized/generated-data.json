@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T03:10:28.479Z",
+  "generatedAt": "2026-06-26T03:20:23.460Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1345,10 +1345,10 @@
       "awayTeamId": "team-united-states",
       "awayTeamName": "United States",
       "homeGoals": 2,
-      "awayGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T05:10:25Z"
+      "lastUpdated": "2026-06-26T05:20:22Z"
     },
     {
       "matchId": "537350",
@@ -1370,7 +1370,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T05:10:25Z"
+      "lastUpdated": "2026-06-26T05:20:22Z"
     },
     {
       "matchId": "537395",
