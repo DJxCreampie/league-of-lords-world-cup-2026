@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T19:30:33.870Z",
+  "generatedAt": "2026-06-26T19:40:25.721Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1390,10 +1390,10 @@
       "awayTeamId": "team-france",
       "awayTeamName": "France",
       "homeGoals": 1,
-      "awayGoals": 2,
+      "awayGoals": 3,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T21:30:31Z"
+      "lastUpdated": "2026-06-26T21:40:22Z"
     },
     {
       "matchId": "537396",
@@ -1415,7 +1415,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T21:30:32Z"
+      "lastUpdated": "2026-06-26T21:40:22Z"
     },
     {
       "matchId": "537373",
