@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T00:50:24.565Z",
+  "generatedAt": "2026-06-26T01:00:34.249Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1290,7 +1290,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-25T23:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_F",
@@ -1301,9 +1301,10 @@
       "awayTeamName": "Netherlands",
       "homeGoals": 1,
       "awayGoals": 3,
+      "winnerTeamId": "team-netherlands",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T02:50:23Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-26T02:55:44Z"
     },
     {
       "matchId": "537362",
@@ -1312,7 +1313,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-25T23:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_F",
@@ -1324,8 +1325,8 @@
       "homeGoals": 1,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T02:50:23Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-26T02:59:59Z"
     },
     {
       "matchId": "537349",
@@ -1347,7 +1348,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-26T02:00:02Z"
+      "lastUpdated": "2026-06-26T02:59:07Z"
     },
     {
       "matchId": "537350",
