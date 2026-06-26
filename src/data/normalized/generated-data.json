@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T00:10:25.123Z",
+  "generatedAt": "2026-06-26T00:20:26.956Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1299,11 +1299,11 @@
       "homeTeamName": "Tunisia",
       "awayTeamId": "team-netherlands",
       "awayTeamName": "Netherlands",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T02:10:22Z"
+      "lastUpdated": "2026-06-26T02:20:25Z"
     },
     {
       "matchId": "537362",
@@ -1321,11 +1321,11 @@
       "homeTeamName": "Japan",
       "awayTeamId": "team-sweden",
       "awayTeamName": "Sweden",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-26T02:10:22Z"
+      "lastUpdated": "2026-06-26T02:20:25Z"
     },
     {
       "matchId": "537349",
