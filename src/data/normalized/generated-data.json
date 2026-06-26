@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T06:10:24.175Z",
+  "generatedAt": "2026-06-26T06:20:28.381Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1737,15 +1737,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-ivory-coast",
+      "homeTeamName": "Ivory Coast",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-26T07:48:25Z"
+      "lastUpdated": "2026-06-26T08:10:34Z"
     },
     {
       "matchId": "537416",
