@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T12:00:32.472Z",
+  "generatedAt": "2026-06-27T12:10:31.247Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1829,15 +1829,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-belgium",
+      "homeTeamName": "Belgium",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-27T10:20:14Z"
+      "lastUpdated": "2026-06-27T14:02:22Z"
     },
     {
       "matchId": "537421",
@@ -1873,15 +1873,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-spain",
+      "homeTeamName": "Spain",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-27T10:20:14Z"
+      "lastUpdated": "2026-06-27T14:01:17Z"
     },
     {
       "matchId": "537419",
