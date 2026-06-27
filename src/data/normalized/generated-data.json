@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T04:50:29.928Z",
+  "generatedAt": "2026-06-27T05:00:31.718Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1471,7 +1471,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-27T03:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_G",
@@ -1481,10 +1481,11 @@
       "awayTeamId": "team-belgium",
       "awayTeamName": "Belgium",
       "homeGoals": 1,
-      "awayGoals": 4,
+      "awayGoals": 5,
+      "winnerTeamId": "team-belgium",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-27T06:50:29Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-27T06:58:41Z"
     },
     {
       "matchId": "537368",
@@ -1506,7 +1507,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-27T06:50:29Z"
+      "lastUpdated": "2026-06-27T07:00:29Z"
     },
     {
       "matchId": "537413",
