@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T04:20:28.890Z",
+  "generatedAt": "2026-06-27T04:30:29.153Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1481,10 +1481,10 @@
       "awayTeamId": "team-belgium",
       "awayTeamName": "Belgium",
       "homeGoals": 0,
-      "awayGoals": 2,
+      "awayGoals": 3,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-27T06:20:25Z"
+      "lastUpdated": "2026-06-27T06:30:28Z"
     },
     {
       "matchId": "537368",
@@ -1506,7 +1506,7 @@
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-27T06:20:26Z"
+      "lastUpdated": "2026-06-27T06:30:25Z"
     },
     {
       "matchId": "537413",
