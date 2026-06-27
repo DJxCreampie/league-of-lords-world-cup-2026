@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T23:40:27.147Z",
+  "generatedAt": "2026-06-27T23:50:26.758Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1575,7 +1575,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T01:40:24Z"
+      "lastUpdated": "2026-06-28T01:50:24Z"
     },
     {
       "matchId": "537408",
@@ -1594,10 +1594,10 @@
       "awayTeamId": "team-uzbekistan",
       "awayTeamName": "Uzbekistan",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T01:40:24Z"
+      "lastUpdated": "2026-06-28T01:50:24Z"
     },
     {
       "matchId": "537401",
