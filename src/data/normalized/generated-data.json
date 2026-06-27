@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T23:20:32.107Z",
+  "generatedAt": "2026-06-27T23:30:44.080Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1562,7 +1562,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-27T23:30:00Z",
-      "status": "upcoming",
+      "status": "live",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_K",
@@ -1574,8 +1574,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-28T00:17:06Z"
+      "sourceStatus": "IN_PLAY",
+      "lastUpdated": "2026-06-28T01:30:42Z"
     },
     {
       "matchId": "537408",
@@ -1789,13 +1789,13 @@
       "minute": null,
       "homeTeamId": "team-mexico",
       "homeTeamName": "Mexico",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-ecuador",
+      "awayTeamName": "Ecuador",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-27T20:20:40Z"
+      "lastUpdated": "2026-06-28T01:27:21Z"
     },
     {
       "matchId": "537426",
@@ -1809,15 +1809,15 @@
       "stage": "LAST_32",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-england",
+      "homeTeamName": "England",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-27T20:20:40Z"
+      "lastUpdated": "2026-06-28T01:26:49Z"
     },
     {
       "matchId": "537422",
@@ -1899,13 +1899,13 @@
       "minute": null,
       "homeTeamId": "unmapped:unknown-home",
       "homeTeamName": "Unknown Home",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-croatia",
+      "awayTeamName": "Croatia",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-27T20:20:40Z"
+      "lastUpdated": "2026-06-28T01:28:10Z"
     },
     {
       "matchId": "537429",
@@ -1987,13 +1987,13 @@
       "minute": null,
       "homeTeamId": "unmapped:unknown-home",
       "homeTeamName": "Unknown Home",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-ghana",
+      "awayTeamName": "Ghana",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-27T20:20:40Z"
+      "lastUpdated": "2026-06-28T01:28:43Z"
     },
     {
       "matchId": "537376",
