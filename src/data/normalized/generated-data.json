@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T22:40:26.597Z",
+  "generatedAt": "2026-06-27T22:50:30.212Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1529,7 +1529,7 @@
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T00:40:24Z"
+      "lastUpdated": "2026-06-28T00:50:27Z"
     },
     {
       "matchId": "537414",
@@ -1547,11 +1547,11 @@
       "homeTeamName": "Croatia",
       "awayTeamId": "team-ghana",
       "awayTeamName": "Ghana",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T00:40:24Z"
+      "lastUpdated": "2026-06-28T00:50:27Z"
     },
     {
       "matchId": "537407",
@@ -1595,7 +1595,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-28T00:21:03Z"
+      "lastUpdated": "2026-06-28T00:42:30Z"
     },
     {
       "matchId": "537401",
