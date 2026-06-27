@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T03:10:26.815Z",
+  "generatedAt": "2026-06-27T03:20:29.775Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1484,7 +1484,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-27T05:10:25Z"
+      "lastUpdated": "2026-06-27T05:20:28Z"
     },
     {
       "matchId": "537368",
@@ -1503,10 +1503,10 @@
       "awayTeamId": "team-iran",
       "awayTeamName": "Iran",
       "homeGoals": 1,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-27T05:10:26Z"
+      "lastUpdated": "2026-06-27T05:20:28Z"
     },
     {
       "matchId": "537413",
