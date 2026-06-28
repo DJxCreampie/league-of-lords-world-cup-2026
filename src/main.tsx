@@ -10,7 +10,7 @@ import {
   teamManualOverrides,
   teams,
 } from './productionData'
-import { getTeamGoals, getTeamMatchesPlayed, rankManagers } from './scoring'
+import { deriveTeamStatuses, getTeamGoals, getTeamMatchesPlayed, rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
 import { addDaysToNewYorkDayKey, formatLastUpdatedNewYork, formatNewYorkDateTime, formatNewYorkDayLabel } from './lib/time'
 import { getDefaultMatchFeedDay, getMatchesForNewYorkDay } from './lib/matchFeed'
@@ -36,6 +36,8 @@ const hasManualOverrides =
   teamManualOverrides.length > 0
 
 const teamById = new Map(teams.map((team) => [team.id, team]))
+const derivedStatusByTeamId = deriveTeamStatuses(teams, matches, teamManualOverrides)
+
 const teamGoalsById = new Map(
   teams.map((team) => [
     team.id,
@@ -156,6 +158,7 @@ function App() {
 
           return {
             ...team,
+            status: derivedStatusByTeamId.get(team.id) ?? 'active',
             goals: teamGoalsById.get(team.id) ?? 0,
             matchesPlayed: getTeamMatchesPlayed(team, matches),
             managerName,

@@ -6,6 +6,7 @@ import {
   teams as mockTeams,
 } from './mockData'
 import {
+  deriveTeamStatuses,
   getActiveTeamsRemaining,
   getAssignedTeams,
   getManagerMatchesPlayed,
@@ -14,7 +15,59 @@ import {
   getTeamMatchesPlayed,
   rankManagers,
 } from './scoring'
-import type { Assignment, Manager, Match, MatchScoreOverride, Team, TeamGoalAdjustment } from './types'
+import type { Assignment, Manager, Match, MatchScoreOverride, Team, TeamGoalAdjustment, TeamManualOverride } from './types'
+
+
+const statusTestTeams: Team[] = [
+  { id: 'team-a', name: 'Team A', status: 'eliminated' },
+  { id: 'team-b', name: 'Team B', status: 'champion' },
+  { id: 'team-c', name: 'Team C', status: 'active' },
+  { id: 'team-d', name: 'Team D', status: 'active' },
+]
+
+const statusTestAssignments: Assignment[] = [
+  { managerId: 'middle', teamId: 'team-a' },
+  { managerId: 'middle', teamId: 'team-b' },
+  { managerId: 'middle', teamId: 'team-c' },
+  { managerId: 'middle', teamId: 'team-d' },
+]
+
+const groupOnlyMatches: Match[] = [
+  {
+    id: 'group-a-c',
+    stage: 'GROUP_STAGE',
+    status: 'finished',
+    homeTeamId: 'team-a',
+    awayTeamId: 'team-c',
+    homeGoals: 1,
+    awayGoals: 0,
+  },
+]
+
+const scheduledKnockoutMatches: Match[] = [
+  ...groupOnlyMatches,
+  {
+    id: 'last-32-a-b',
+    stage: 'LAST_32',
+    status: 'scheduled',
+    homeTeamId: 'team-a',
+    awayTeamId: 'team-b',
+    homeGoals: 0,
+    awayGoals: 0,
+  },
+]
+
+const finishedKnockoutMatches: Match[] = [
+  {
+    id: 'last-32-a-b',
+    stage: 'LAST_32',
+    status: 'finished',
+    homeTeamId: 'team-a',
+    awayTeamId: 'team-b',
+    homeGoals: 2,
+    awayGoals: 1,
+  },
+]
 
 const testManagers: Manager[] = [
   { id: 'middle', name: 'Middle' },
@@ -146,6 +199,72 @@ function getUnassignedTeams(teams: Team[], assignments: Assignment[]): Team[] {
 }
 
 describe('scoring', () => {
+
+  it('keeps all teams active before knockout fixtures exist', () => {
+    expect([...deriveTeamStatuses(statusTestTeams, groupOnlyMatches).entries()]).toEqual([
+      ['team-a', 'active'],
+      ['team-b', 'active'],
+      ['team-c', 'active'],
+      ['team-d', 'active'],
+    ])
+  })
+
+  it('eliminates teams absent from real knockout fixtures once knockout fixtures exist', () => {
+    const statuses = deriveTeamStatuses(statusTestTeams, scheduledKnockoutMatches)
+
+    expect(statuses.get('team-c')).toBe('eliminated')
+    expect(statuses.get('team-d')).toBe('eliminated')
+  })
+
+  it('keeps teams appearing in knockout fixtures active', () => {
+    const statuses = deriveTeamStatuses(statusTestTeams, scheduledKnockoutMatches)
+
+    expect(statuses.get('team-a')).toBe('active')
+    expect(statuses.get('team-b')).toBe('active')
+  })
+
+  it('eliminates the loser of a finished knockout match', () => {
+    expect(deriveTeamStatuses(statusTestTeams, finishedKnockoutMatches).get('team-b')).toBe('eliminated')
+  })
+
+  it('keeps the winner of a finished knockout match active', () => {
+    expect(deriveTeamStatuses(statusTestTeams, finishedKnockoutMatches).get('team-a')).toBe('active')
+  })
+
+  it('lets manual status overrides beat derived knockout statuses', () => {
+    const overrides: TeamManualOverride[] = [
+      { teamId: 'team-c', status: 'active', note: 'manual correction' },
+      { teamId: 'team-a', status: 'eliminated', note: 'manual correction' },
+    ]
+    const statuses = deriveTeamStatuses(statusTestTeams, scheduledKnockoutMatches, overrides)
+
+    expect(statuses.get('team-c')).toBe('active')
+    expect(statuses.get('team-a')).toBe('eliminated')
+  })
+
+  it('updates leaderboard active counts from derived statuses', () => {
+    expect(
+      rankManagers(testManagers.slice(0, 1), statusTestTeams, statusTestAssignments, scheduledKnockoutMatches)[0]
+        .activeTeamsRemaining,
+    ).toBe(2)
+  })
+
+  it('uses the same derived statuses for active counts and expanded manager team rows', () => {
+    const rankedManager = rankManagers(
+      testManagers.slice(0, 1),
+      statusTestTeams,
+      statusTestAssignments,
+      finishedKnockoutMatches,
+    )[0]
+
+    expect(rankedManager.activeTeamsRemaining).toBe(1)
+    expect(rankedManager.teams.map((team) => [team.id, team.status])).toEqual([
+      ['team-a', 'active'],
+      ['team-b', 'eliminated'],
+      ['team-c', 'eliminated'],
+      ['team-d', 'eliminated'],
+    ])
+  })
   it('calculates team goals from matches', () => {
     expect(getTeamGoals(testTeams[0], testMatches)).toBe(4)
   })
@@ -213,7 +332,7 @@ describe('scoring', () => {
     expect(getTeamGoals(testTeams[5], testMatches)).toBe(5)
   })
 
-  it('counts active and champion teams as active teams remaining', () => {
+  it('counts derived active teams as active teams remaining', () => {
     expect(getActiveTeamsRemaining(testManagers[1], testTeams, testAssignments, testMatches)).toBe(3)
   })
 
