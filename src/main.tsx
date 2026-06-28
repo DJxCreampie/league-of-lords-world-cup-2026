@@ -313,6 +313,9 @@ function App() {
                               {getDisplayStatus(team.status)}
                             </span>
                             <span>{formatTeamTier(team.name)}</span>
+                            <span className={`status ${getStatusClass(team.status)}`}>
+                              {getDisplayStatus(team.status)}
+                            </span>
                             <span>{team.name}</span>
                             <span>{team.goals}</span>
                             <span>{team.matchesPlayed}</span>
