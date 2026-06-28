@@ -10,6 +10,82 @@ import type {
 
 export type ScoredTeam = Team & { goals: number; matchesPlayed: number }
 
+const GROUP_STAGE_NAMES = new Set(['group', 'group_stage', 'group stage'])
+
+function isKnockoutMatch(match: Match): boolean {
+  return !GROUP_STAGE_NAMES.has(match.stage.trim().toLowerCase())
+}
+
+function getKnockoutWinnerAndLoser(match: Match): { winnerId: string; loserId: string } | null {
+  if (match.homeGoals > match.awayGoals) {
+    return { winnerId: match.homeTeamId, loserId: match.awayTeamId }
+  }
+
+  if (match.awayGoals > match.homeGoals) {
+    return { winnerId: match.awayTeamId, loserId: match.homeTeamId }
+  }
+
+  const homePenaltyGoals = match.homePenaltyShootoutGoals
+  const awayPenaltyGoals = match.awayPenaltyShootoutGoals
+
+  if (homePenaltyGoals === undefined || awayPenaltyGoals === undefined) return null
+
+  if (homePenaltyGoals > awayPenaltyGoals) {
+    return { winnerId: match.homeTeamId, loserId: match.awayTeamId }
+  }
+
+  if (awayPenaltyGoals > homePenaltyGoals) {
+    return { winnerId: match.awayTeamId, loserId: match.homeTeamId }
+  }
+
+  return null
+}
+
+export function deriveTeamStatuses(
+  teams: Team[],
+  matches: Match[],
+  teamManualOverrides: TeamManualOverride[] = [],
+): Map<string, Team['status']> {
+  const validTeamIds = new Set(teams.map((team) => team.id))
+  const knockoutMatches = matches.filter(
+    (match) =>
+      isKnockoutMatch(match) &&
+      validTeamIds.has(match.homeTeamId) &&
+      validTeamIds.has(match.awayTeamId),
+  )
+  const derivedStatuses = new Map<string, Team['status']>(
+    teams.map((team) => [team.id, 'active' as Team['status']]),
+  )
+
+  if (knockoutMatches.length > 0) {
+    const knockoutTeamIds = new Set(
+      knockoutMatches.flatMap((match) => [match.homeTeamId, match.awayTeamId]),
+    )
+
+    teams.forEach((team) => {
+      derivedStatuses.set(team.id, knockoutTeamIds.has(team.id) ? 'active' : 'eliminated')
+    })
+
+    knockoutMatches
+      .filter((match) => match.status === 'finished')
+      .forEach((match) => {
+        const result = getKnockoutWinnerAndLoser(match)
+        if (!result) return
+
+        derivedStatuses.set(result.winnerId, 'active')
+        derivedStatuses.set(result.loserId, 'eliminated')
+      })
+  }
+
+  teamManualOverrides.forEach((override) => {
+    if (override.status && validTeamIds.has(override.teamId)) {
+      derivedStatuses.set(override.teamId, override.status)
+    }
+  })
+
+  return derivedStatuses
+}
+
 export type RankedManager = Manager & {
   teams: ScoredTeam[]
   totalGoals: number
@@ -18,19 +94,15 @@ export type RankedManager = Manager & {
   totalKnockoutGoals: number
 }
 
-function applyTeamOverrides(teams: Team[], teamManualOverrides: TeamManualOverride[] = []): Team[] {
-  const overrideByTeamId = new Map(teamManualOverrides.map((override) => [override.teamId, override]))
+function applyTeamOverrides(teams: Team[], matches: Match[], teamManualOverrides: TeamManualOverride[] = []): Team[] {
+  const statusByTeamId = deriveTeamStatuses(teams, matches, teamManualOverrides)
 
-  return teams.map((team) => {
-    const override = overrideByTeamId.get(team.id)
-    if (!override) return team
-
-    return {
-      ...team,
-      status: override.status ?? team.status,
-    }
-  })
+  return teams.map((team) => ({
+    ...team,
+    status: statusByTeamId.get(team.id) ?? 'active',
+  }))
 }
+
 
 function getMatchGoals(match: Match, matchScoreOverrides: MatchScoreOverride[]): Pick<Match, 'homeGoals' | 'awayGoals'> {
   return matchScoreOverrides.find((scoreOverride) => scoreOverride.matchId === match.id) ?? match
@@ -73,7 +145,7 @@ export function getAssignedTeams(
   teamGoalAdjustments: TeamGoalAdjustment[] = [],
   teamManualOverrides: TeamManualOverride[] = [],
 ): ScoredTeam[] {
-  const effectiveTeams = applyTeamOverrides(teams, teamManualOverrides)
+  const effectiveTeams = applyTeamOverrides(teams, matches, teamManualOverrides)
   const teamById = new Map(effectiveTeams.map((team) => [team.id, team]))
 
   return assignments
@@ -124,7 +196,7 @@ export function getActiveTeamsRemaining(
   teamManualOverrides: TeamManualOverride[] = [],
 ): number {
   return getAssignedTeams(manager, teams, assignments, matches, matchScoreOverrides, teamGoalAdjustments, teamManualOverrides)
-    .filter((team) => team.status === 'active' || team.status === 'champion').length
+    .filter((team) => team.status === 'active').length
 }
 
 export function rankManagers(
@@ -137,7 +209,7 @@ export function rankManagers(
       ...manager,
       teams: assignedTeams,
       totalGoals: assignedTeams.reduce((sum, team) => sum + team.goals, 0),
-      activeTeamsRemaining: assignedTeams.filter((team) => team.status === 'active' || team.status === 'champion').length,
+      activeTeamsRemaining: assignedTeams.filter((team) => team.status === 'active').length,
       totalMatchesPlayed: assignedTeams.reduce((sum, team) => sum + team.matchesPlayed, 0),
       totalKnockoutGoals: assignedTeams.reduce((sum, team) => sum + (team.knockoutGoals ?? 0), 0),
     }

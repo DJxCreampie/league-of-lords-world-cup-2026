@@ -12,3 +12,15 @@ describe('app header and match feed display copy', () => {
     expect(source).not.toContain('live/final counted:')
   })
 })
+
+
+describe('team status display source', () => {
+  it('uses derived statuses for the teams tab rows', () => {
+    expect(source).toContain("status: derivedStatusByTeamId.get(team.id) ?? 'active'")
+  })
+
+  it('keeps expanded manager rows on scored team status values', () => {
+    expect(source).toContain("team.status === 'eliminated' ? 'is-eliminated' : ''")
+    expect(source).toContain('getDisplayStatus(team.status)')
+  })
+})
