@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T02:10:31.075Z",
+  "generatedAt": "2026-06-28T02:20:25.917Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1617,10 +1617,10 @@
       "awayTeamId": "team-argentina",
       "awayTeamName": "Argentina",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T04:10:30Z"
+      "lastUpdated": "2026-06-28T04:20:24Z"
     },
     {
       "matchId": "537402",
@@ -1642,7 +1642,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T04:10:30Z"
+      "lastUpdated": "2026-06-28T04:20:24Z"
     },
     {
       "matchId": "537417",
