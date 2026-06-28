@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T20:50:30.225Z",
+  "generatedAt": "2026-06-28T21:00:34.486Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1652,7 +1652,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-28T19:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1662,10 +1662,11 @@
       "awayTeamId": "team-canada",
       "awayTeamName": "Canada",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
+      "winnerTeamId": "team-canada",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T22:50:27Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-28T22:57:00Z"
     },
     {
       "matchId": "537423",
