@@ -297,9 +297,9 @@ function App() {
                   {isExpanded && (
                     <div className="expanded-teams-wrap">
                       <div className="expanded-teams-header">
+                        <span>Tier</span>
                         <span>Status</span>
                         <span>Team</span>
-                        <span>Tier</span>
                         <span>Goals</span>
                         <span>Matches</span>
                       </div>
@@ -309,11 +309,11 @@ function App() {
                             className={`detail-team-row ${team.status === 'eliminated' ? 'is-eliminated' : ''}`}
                             key={team.id}
                           >
+                            <span>{formatTeamTier(team.name)}</span>
                             <span className={`status ${getStatusClass(team.status)}`}>
                               {getDisplayStatus(team.status)}
                             </span>
                             <span>{team.name}</span>
-                            <span>{formatTeamTier(team.name)}</span>
                             <span>{team.goals}</span>
                             <span>{team.matchesPlayed}</span>
                           </li>
