@@ -10,7 +10,7 @@ import {
   teamManualOverrides,
   teams,
 } from './productionData'
-import { getTeamGoals, rankManagers } from './scoring'
+import { getTeamGoals, getTeamMatchesPlayed, rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
 import { addDaysToNewYorkDayKey, formatLastUpdatedNewYork, formatNewYorkDateTime, formatNewYorkDayLabel } from './lib/time'
 import { getDefaultMatchFeedDay, getMatchesForNewYorkDay } from './lib/matchFeed'
@@ -28,7 +28,7 @@ const leaderboard = rankManagers(
 
 type SortKey = 'rank' | 'manager' | 'goals' | 'matches' | 'active'
 type SortDirection = 'asc' | 'desc'
-type TeamsSortKey = 'status' | 'team' | 'manager' | 'goals'
+type TeamsSortKey = 'status' | 'team' | 'manager' | 'goals' | 'matches'
 
 const hasManualOverrides =
   matchScoreOverrides.length > 0 ||
@@ -67,6 +67,9 @@ const upcomingRatio =
 const isPreTournament =
   completedWithGoals.length === 0 &&
   (completedMatches.length === 0 || upcomingRatio >= 0.8)
+
+const getDisplayStatus = (status: string) => (status === 'eliminated' ? 'Eliminated' : 'Active')
+const getStatusClass = (status: string) => (status === 'eliminated' ? 'eliminated' : 'active')
 
 const visibleMatches = matches.filter((match) => {
   const homeTeam = teamById.get(match.homeTeamId)
@@ -151,7 +154,12 @@ function App() {
             ? managerById.get(assignment.managerId)?.name ?? 'Unknown Manager'
             : 'Unassigned'
 
-          return { ...team, goals: teamGoalsById.get(team.id) ?? 0, managerName }
+          return {
+            ...team,
+            goals: teamGoalsById.get(team.id) ?? 0,
+            matchesPlayed: getTeamMatchesPlayed(team, matches),
+            managerName,
+          }
         }),
     [],
   )
@@ -160,7 +168,8 @@ function App() {
     const sorted = [...teamsWithManager].sort((a, b) => {
       if (teamsSortKey === 'team') return a.name.localeCompare(b.name)
       if (teamsSortKey === 'manager') return a.managerName.localeCompare(b.managerName)
-      if (teamsSortKey === 'status') return a.status.localeCompare(b.status)
+      if (teamsSortKey === 'status') return getDisplayStatus(a.status).localeCompare(getDisplayStatus(b.status))
+      if (teamsSortKey === 'matches') return a.matchesPlayed - b.matchesPlayed
       return a.goals - b.goals
     })
 
@@ -174,7 +183,7 @@ function App() {
     }
 
     setTeamsSortKey(nextSortKey)
-    setTeamsSortDirection(nextSortKey === 'goals' ? 'desc' : 'asc')
+    setTeamsSortDirection(nextSortKey === 'goals' || nextSortKey === 'matches' ? 'desc' : 'asc')
   }
 
   const teamsSortIndicator = (column: TeamsSortKey) => {
@@ -289,17 +298,22 @@ function App() {
                     <div className="expanded-teams-wrap">
                       <div className="expanded-teams-header">
                         <span>Tier</span>
-                        <span>Team</span>
                         <span>Status</span>
+                        <span>Team</span>
                         <span>Goals</span>
                         <span>Matches</span>
                       </div>
                       <ul className="expanded-teams">
                         {sortTeamsByTierThenName(manager.teams).map((team) => (
-                          <li className="detail-team-row" key={team.id}>
+                          <li
+                            className={`detail-team-row ${team.status === 'eliminated' ? 'is-eliminated' : ''}`}
+                            key={team.id}
+                          >
                             <span>{formatTeamTier(team.name)}</span>
+                            <span className={`status ${getStatusClass(team.status)}`}>
+                              {getDisplayStatus(team.status)}
+                            </span>
                             <span>{team.name}</span>
-                            <span className={`status ${team.status}`}>{team.status}</span>
                             <span>{team.goals}</span>
                             <span>{team.matchesPlayed}</span>
                           </li>
@@ -326,15 +340,19 @@ function App() {
             <button type="button" className="teams-header-cell" onClick={() => handleTeamsSort('team')}>Team{teamsSortIndicator('team')}</button>
             <button type="button" className="teams-header-cell" onClick={() => handleTeamsSort('manager')}>Manager{teamsSortIndicator('manager')}</button>
             <button type="button" className="teams-header-cell" onClick={() => handleTeamsSort('goals')}>Goals{teamsSortIndicator('goals')}</button>
+            <button type="button" className="teams-header-cell" onClick={() => handleTeamsSort('matches')}>Matches{teamsSortIndicator('matches')}</button>
           </div>
 
           <ul className="teams-list">
             {sortedTeams.map((team) => (
-              <li className="teams-row" key={team.id}>
-                <span className={`status ${team.status}`}>{team.status}</span>
+              <li className={`teams-row ${team.status === 'eliminated' ? 'is-eliminated' : ''}`} key={team.id}>
+                <span className={`status ${getStatusClass(team.status)}`}>
+                  {getDisplayStatus(team.status)}
+                </span>
                 <span>{team.name}</span>
                 <span>{team.managerName}</span>
                 <span>{team.goals}</span>
+                <span>{team.matchesPlayed}</span>
               </li>
             ))}
           </ul>
