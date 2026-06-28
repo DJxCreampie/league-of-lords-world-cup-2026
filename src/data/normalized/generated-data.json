@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T04:30:36.735Z",
+  "generatedAt": "2026-06-28T04:40:29.188Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1621,7 +1621,7 @@
       "winnerTeamId": "team-argentina",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-28T06:02:40Z"
+      "lastUpdated": "2026-06-28T06:31:33Z"
     },
     {
       "matchId": "537402",
