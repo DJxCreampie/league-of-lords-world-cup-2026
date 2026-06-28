@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T01:20:33.716Z",
+  "generatedAt": "2026-06-28T01:30:34.211Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1562,7 +1562,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-27T23:30:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_K",
@@ -1574,8 +1574,8 @@
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T03:20:30Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-06-28T03:29:27Z"
     },
     {
       "matchId": "537408",
@@ -1593,11 +1593,11 @@
       "homeTeamName": "Congo DR",
       "awayTeamId": "team-uzbekistan",
       "awayTeamName": "Uzbekistan",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T03:20:30Z"
+      "lastUpdated": "2026-06-28T03:30:33Z"
     },
     {
       "matchId": "537401",
