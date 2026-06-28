@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T03:20:26.150Z",
+  "generatedAt": "2026-06-28T03:30:32.971Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1620,7 +1620,7 @@
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T05:20:24Z"
+      "lastUpdated": "2026-06-28T05:30:30Z"
     },
     {
       "matchId": "537402",
@@ -1638,11 +1638,11 @@
       "homeTeamName": "Algeria",
       "awayTeamId": "team-austria",
       "awayTeamName": "Austria",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T05:20:24Z"
+      "lastUpdated": "2026-06-28T05:30:30Z"
     },
     {
       "matchId": "537417",
