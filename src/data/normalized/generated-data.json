@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T03:10:26.580Z",
+  "generatedAt": "2026-06-28T03:20:26.150Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1616,11 +1616,11 @@
       "homeTeamName": "Jordan",
       "awayTeamId": "team-argentina",
       "awayTeamName": "Argentina",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T05:10:24Z"
+      "lastUpdated": "2026-06-28T05:20:24Z"
     },
     {
       "matchId": "537402",
@@ -1639,10 +1639,10 @@
       "awayTeamId": "team-austria",
       "awayTeamName": "Austria",
       "homeGoals": 1,
-      "awayGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T05:10:24Z"
+      "lastUpdated": "2026-06-28T05:20:24Z"
     },
     {
       "matchId": "537417",
