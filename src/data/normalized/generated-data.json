@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T01:10:27.858Z",
+  "generatedAt": "2026-06-28T01:20:33.716Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1575,7 +1575,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T03:10:27Z"
+      "lastUpdated": "2026-06-28T03:20:30Z"
     },
     {
       "matchId": "537408",
@@ -1593,11 +1593,11 @@
       "homeTeamName": "Congo DR",
       "awayTeamId": "team-uzbekistan",
       "awayTeamName": "Uzbekistan",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-28T03:10:27Z"
+      "lastUpdated": "2026-06-28T03:20:30Z"
     },
     {
       "matchId": "537401",
@@ -1619,7 +1619,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-28T02:50:54Z"
+      "lastUpdated": "2026-06-28T03:12:21Z"
     },
     {
       "matchId": "537402",
