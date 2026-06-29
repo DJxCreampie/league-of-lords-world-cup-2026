@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T23:41:11.943Z",
+  "generatedAt": "2026-06-29T23:50:31.067Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1712,7 +1712,7 @@
       "winnerTeamId": "team-paraguay",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-30T01:30:09Z"
+      "lastUpdated": "2026-06-30T01:45:09Z"
     },
     {
       "matchId": "537418",
@@ -1734,7 +1734,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-30T01:00:00Z"
+      "lastUpdated": "2026-06-30T01:49:09Z"
     },
     {
       "matchId": "537424",
