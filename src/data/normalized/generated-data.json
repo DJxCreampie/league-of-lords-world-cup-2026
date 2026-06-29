@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T21:30:35.367Z",
+  "generatedAt": "2026-06-29T21:40:31.990Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1710,8 +1710,8 @@
       "homeGoals": 0,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "PAUSED",
-      "lastUpdated": "2026-06-29T23:30:33Z"
+      "sourceStatus": "IN_PLAY",
+      "lastUpdated": "2026-06-29T23:40:30Z"
     },
     {
       "matchId": "537418",
