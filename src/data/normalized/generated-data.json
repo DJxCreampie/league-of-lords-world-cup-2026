@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T19:30:39.309Z",
+  "generatedAt": "2026-06-29T19:40:34.472Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1711,7 +1711,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-29T21:15:00Z"
+      "lastUpdated": "2026-06-29T21:35:00Z"
     },
     {
       "matchId": "537418",
@@ -2055,15 +2055,15 @@
       "stage": "LAST_16",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-brazil",
+      "homeTeamName": "Brazil",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-29T15:20:12Z"
+      "lastUpdated": "2026-06-29T21:32:39Z"
     },
     {
       "matchId": "537378",
