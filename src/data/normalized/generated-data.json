@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T07:00:39.737Z",
+  "generatedAt": "2026-06-29T07:10:29.264Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1417,7 +1417,7 @@
       "winnerTeamId": "team-senegal",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-29T05:20:12Z"
+      "lastUpdated": "2026-06-29T09:10:04Z"
     },
     {
       "matchId": "537373",
