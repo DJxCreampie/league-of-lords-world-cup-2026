@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T04:00:43.885Z",
+  "generatedAt": "2026-06-30T04:10:31.403Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1739,7 +1739,7 @@
       "winnerTeamId": "team-morocco",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-30T05:55:25Z"
+      "lastUpdated": "2026-06-30T06:02:35Z"
     },
     {
       "matchId": "537424",
