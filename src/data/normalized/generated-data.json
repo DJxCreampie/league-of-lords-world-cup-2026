@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T22:50:33.378Z",
+  "generatedAt": "2026-06-30T22:59:04.495Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1771,7 +1771,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-06-30T21:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1782,9 +1782,10 @@
       "awayTeamName": "Sweden",
       "homeGoals": 3,
       "awayGoals": 0,
+      "winnerTeamId": "team-france",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T00:50:30Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-01T00:55:18Z"
     },
     {
       "matchId": "537425",
@@ -2042,13 +2043,13 @@
       "minute": null,
       "homeTeamId": "team-paraguay",
       "homeTeamName": "Paraguay",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-france",
+      "awayTeamName": "France",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-30T15:20:13Z"
+      "lastUpdated": "2026-07-01T00:57:58Z"
     },
     {
       "matchId": "537377",
