@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T23:50:31.067Z",
+  "generatedAt": "2026-06-30T00:00:43.000Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1712,7 +1712,7 @@
       "winnerTeamId": "team-paraguay",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-30T01:45:09Z"
+      "lastUpdated": "2026-06-30T02:00:09Z"
     },
     {
       "matchId": "537418",
