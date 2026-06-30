@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T00:20:30.698Z",
+  "generatedAt": "2026-06-30T00:30:37.386Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1707,12 +1707,12 @@
       "homeTeamName": "Germany",
       "awayTeamId": "team-paraguay",
       "awayTeamName": "Paraguay",
-      "homeGoals": 5,
-      "awayGoals": 6,
+      "homeGoals": 4,
+      "awayGoals": 5,
       "winnerTeamId": "team-paraguay",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-30T02:15:10Z"
+      "lastUpdated": "2026-06-30T02:22:13Z"
     },
     {
       "matchId": "537418",
