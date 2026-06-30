@@ -13,7 +13,7 @@ import {
 import { deriveTeamStatuses, getTeamGoals, getTeamMatchesPlayed, rankManagers } from './scoring'
 import { formatTeamTier, sortTeamsByTierThenName } from './lib/teamTiers'
 import { addDaysToNewYorkDayKey, formatLastUpdatedNewYork, formatNewYorkDateTime, formatNewYorkDayLabel } from './lib/time'
-import { getDefaultMatchFeedDay, getMatchesForNewYorkDay } from './lib/matchFeed'
+import { formatMatchFeedScore, formatPenaltyShootoutScore, getDefaultMatchFeedDay, getMatchesForNewYorkDay } from './lib/matchFeed'
 import './style.css'
 
 const leaderboard = rankManagers(
@@ -417,10 +417,11 @@ function App() {
             return (
               <li className="feed-item" key={match.id}>
                 <strong>
-                  {match.status === 'scheduled'
-                    ? `Upcoming · ${homeTeam?.name} vs ${awayTeam?.name}`
-                    : `${match.status.toUpperCase()} · ${homeTeam?.name} ${match.homeGoals} - ${match.awayGoals} ${awayTeam?.name}`}
+                  {formatMatchFeedScore(match, homeTeam?.name, awayTeam?.name)}
                 </strong>
+                {formatPenaltyShootoutScore(match, homeTeam?.name, awayTeam?.name) && (
+                  <p>{formatPenaltyShootoutScore(match, homeTeam?.name, awayTeam?.name)}</p>
+                )}
                 <p>{formatNewYorkDateTime(match.kickoffTime)}</p>
                 <ul className="impact-list">
                   <li>

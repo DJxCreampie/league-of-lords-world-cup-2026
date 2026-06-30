@@ -75,6 +75,8 @@ export const matches: Match[] = generatedMatches.map((match) => ({
   awayTeamId: String(match.awayTeamId),
   homeGoals: Number(match.homeGoals ?? 0),
   awayGoals: Number(match.awayGoals ?? 0),
+  homePenaltyShootoutGoals: match.homePenaltyShootoutGoals === undefined ? undefined : Number(match.homePenaltyShootoutGoals),
+  awayPenaltyShootoutGoals: match.awayPenaltyShootoutGoals === undefined ? undefined : Number(match.awayPenaltyShootoutGoals),
 }))
 
 export const matchScoreOverrides: MatchScoreOverride[] = []

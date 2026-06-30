@@ -31,6 +31,15 @@ const normalizeStatus = (raw) => {
 
 const resolveTeamId = (apiId, name) => TEAM_ID_BY_API_ID[String(apiId)] ?? TEAM_ID_BY_API_NAME[String(name).toLowerCase()] ?? `unmapped:${apiId}`
 
+const normalizeOptionalScoreNumber = (value) => {
+  if (value === null || value === undefined) return undefined
+
+  const score = Number(value)
+  return Number.isFinite(score) ? score : undefined
+}
+
+const normalizeScoreNumber = (value) => normalizeOptionalScoreNumber(value) ?? 0
+
 async function fetchFootballData(path) {
   if (!FOOTBALL_DATA_API_KEY) {
     throw new Error('Missing FOOTBALL_DATA_API_KEY for football-data mode')
@@ -55,7 +64,7 @@ async function fetchFootballData(path) {
   return payload
 }
 
-function normalizeFootballDataMatch(match, competition) {
+export function normalizeFootballDataMatch(match, competition) {
   const homeApiId = String(match?.homeTeam?.id ?? 'unknown-home')
   const awayApiId = String(match?.awayTeam?.id ?? 'unknown-away')
   const homeName = String(match?.homeTeam?.name ?? 'Unknown Home')
@@ -65,8 +74,10 @@ function normalizeFootballDataMatch(match, competition) {
   const homeTeamId = resolveTeamId(homeApiId, homeName)
   const awayTeamId = resolveTeamId(awayApiId, awayName)
 
-  const homeGoals = Number(match?.score?.fullTime?.home ?? 0)
-  const awayGoals = Number(match?.score?.fullTime?.away ?? 0)
+  const homeGoals = normalizeScoreNumber(match?.score?.fullTime?.home)
+  const awayGoals = normalizeScoreNumber(match?.score?.fullTime?.away)
+  const homePenaltyShootoutGoals = normalizeOptionalScoreNumber(match?.score?.penalties?.home)
+  const awayPenaltyShootoutGoals = normalizeOptionalScoreNumber(match?.score?.penalties?.away)
 
   const winner = match?.score?.winner
   const winnerTeamId = status === 'final'
@@ -95,6 +106,8 @@ function normalizeFootballDataMatch(match, competition) {
     awayTeamName: awayName,
     homeGoals,
     awayGoals,
+    ...(homePenaltyShootoutGoals === undefined ? {} : { homePenaltyShootoutGoals }),
+    ...(awayPenaltyShootoutGoals === undefined ? {} : { awayPenaltyShootoutGoals }),
     winnerTeamId,
     sourceProvider: 'football-data.org',
     sourceStatus: String(match?.status ?? ''),
@@ -132,8 +145,10 @@ if (sourceMode !== 'football-data') {
   throw new Error(`Unsupported DATA_SOURCE "${sourceMode}". Production refresh supports only football-data.`)
 }
 
-const output = await buildFromFootballData()
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const output = await buildFromFootballData()
 
-await fs.mkdir('src/data/normalized', { recursive: true })
-await fs.writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`)
-console.log(`Updated ${outputPath} using source mode: ${sourceMode}`)
+  await fs.mkdir('src/data/normalized', { recursive: true })
+  await fs.writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`)
+  console.log(`Updated ${outputPath} using source mode: ${sourceMode}`)
+}
