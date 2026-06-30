@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T02:20:33.159Z",
+  "generatedAt": "2026-06-30T02:30:35.485Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1736,7 +1736,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-30T04:20:30Z"
+      "lastUpdated": "2026-06-30T04:30:33Z"
     },
     {
       "matchId": "537424",
@@ -2036,15 +2036,15 @@
       "stage": "LAST_16",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-paraguay",
+      "homeTeamName": "Paraguay",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-29T15:20:12Z"
+      "lastUpdated": "2026-06-30T04:22:06Z"
     },
     {
       "matchId": "537377",
