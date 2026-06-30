@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T05:50:35.566Z",
+  "generatedAt": "2026-06-30T05:52:58.717Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2019,13 +2019,13 @@
       "minute": null,
       "homeTeamId": "team-canada",
       "homeTeamName": "Canada",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-morocco",
+      "awayTeamName": "Morocco",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-29T15:20:12Z"
+      "lastUpdated": "2026-06-30T07:51:46Z"
     },
     {
       "matchId": "537375",
