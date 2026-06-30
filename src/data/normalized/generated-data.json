@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T02:30:35.485Z",
+  "generatedAt": "2026-06-30T02:40:31.093Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1732,11 +1732,11 @@
       "homeTeamName": "Netherlands",
       "awayTeamId": "team-morocco",
       "awayTeamName": "Morocco",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-30T04:30:33Z"
+      "lastUpdated": "2026-06-30T04:40:30Z"
     },
     {
       "matchId": "537424",
