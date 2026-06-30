@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T18:30:39.213Z",
+  "generatedAt": "2026-06-30T18:40:36.665Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1757,11 +1757,11 @@
       "homeTeamName": "Ivory Coast",
       "awayTeamId": "team-norway",
       "awayTeamName": "Norway",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-30T20:30:36Z"
+      "lastUpdated": "2026-06-30T20:40:33Z"
     },
     {
       "matchId": "537416",
