@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T22:10:35.462Z",
+  "generatedAt": "2026-06-30T22:20:33.874Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1780,11 +1780,11 @@
       "homeTeamName": "France",
       "awayTeamId": "team-sweden",
       "awayTeamName": "Sweden",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T00:10:33Z"
+      "lastUpdated": "2026-07-01T00:20:33Z"
     },
     {
       "matchId": "537425",
