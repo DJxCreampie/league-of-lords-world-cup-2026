@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T19:20:36.123Z",
+  "generatedAt": "2026-06-30T19:30:45.518Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2064,13 +2064,13 @@
       "minute": null,
       "homeTeamId": "team-brazil",
       "homeTeamName": "Brazil",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-norway",
+      "awayTeamName": "Norway",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-06-30T15:20:13Z"
+      "lastUpdated": "2026-06-30T21:24:31Z"
     },
     {
       "matchId": "537378",
