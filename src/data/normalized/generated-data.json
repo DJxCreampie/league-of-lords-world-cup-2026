@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T02:50:35.395Z",
+  "generatedAt": "2026-06-30T03:00:38.384Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1733,10 +1733,10 @@
       "awayTeamId": "team-morocco",
       "awayTeamName": "Morocco",
       "homeGoals": 1,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-06-30T04:50:33Z"
+      "sourceStatus": "PAUSED",
+      "lastUpdated": "2026-06-30T05:00:36Z"
     },
     {
       "matchId": "537424",
