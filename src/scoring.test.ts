@@ -131,8 +131,8 @@ const testMatches: Match[] = [
     status: 'finished',
     homeTeamId: 'team-e',
     awayTeamId: 'team-f',
-    homeGoals: 7,
-    awayGoals: 5,
+    homeGoals: 1,
+    awayGoals: 1,
     homePenaltyShootoutGoals: 4,
     awayPenaltyShootoutGoals: 3,
   },
@@ -278,11 +278,11 @@ describe('scoring', () => {
       rankManagers(testManagers, testTeams, testAssignments, testMatches).map(
         (manager) => manager.name,
       ),
-    ).toEqual(['Top', 'Middle', 'Bottom'])
+    ).toEqual(['Middle', 'Top', 'Bottom'])
   })
 
   it('counts eliminated teams toward the manager total', () => {
-    expect(getManagerTotal(testManagers[1], testTeams, testAssignments, testMatches)).toBe(16)
+    expect(getManagerTotal(testManagers[1], testTeams, testAssignments, testMatches)).toBe(6)
   })
 
   it('does not count scheduled match goals', () => {
@@ -328,8 +328,58 @@ describe('scoring', () => {
   })
 
   it('does not count penalty shootout goals', () => {
-    expect(getTeamGoals(testTeams[4], testMatches)).toBe(7)
-    expect(getTeamGoals(testTeams[5], testMatches)).toBe(5)
+    expect(getTeamGoals(testTeams[4], testMatches)).toBe(1)
+    expect(getTeamGoals(testTeams[5], testMatches)).toBe(1)
+  })
+
+
+  it('gives each team only one goal from a 1-1 knockout match decided 4-3 on penalties', () => {
+    const shootoutMatch: Match[] = [{
+      id: 'knockout-penalties',
+      stage: 'ROUND_OF_16',
+      status: 'finished',
+      homeTeamId: 'team-a',
+      awayTeamId: 'team-b',
+      homeGoals: 1,
+      awayGoals: 1,
+      homePenaltyShootoutGoals: 4,
+      awayPenaltyShootoutGoals: 3,
+    }]
+
+    expect(getTeamGoals(testTeams[0], shootoutMatch)).toBe(1)
+    expect(getTeamGoals(testTeams[1], shootoutMatch)).toBe(1)
+  })
+
+  it('keeps manager totals from counting penalty shootout goals', () => {
+    const shootoutMatch: Match[] = [{
+      id: 'knockout-penalties',
+      stage: 'ROUND_OF_16',
+      status: 'finished',
+      homeTeamId: 'team-a',
+      awayTeamId: 'team-e',
+      homeGoals: 1,
+      awayGoals: 1,
+      homePenaltyShootoutGoals: 4,
+      awayPenaltyShootoutGoals: 3,
+    }]
+
+    expect(getManagerTotal(testManagers[0], testTeams, testAssignments, shootoutMatch)).toBe(1)
+    expect(getManagerTotal(testManagers[1], testTeams, testAssignments, shootoutMatch)).toBe(1)
+  })
+
+  it('counts penalty kicks from regulation or extra time when they are included in normal goals', () => {
+    const matchWithInGamePenalty: Match[] = [{
+      id: 'normal-time-penalty',
+      stage: 'GROUP_STAGE',
+      status: 'finished',
+      homeTeamId: 'team-a',
+      awayTeamId: 'team-b',
+      homeGoals: 2,
+      awayGoals: 1,
+    }]
+
+    expect(getTeamGoals(testTeams[0], matchWithInGamePenalty)).toBe(2)
+    expect(getTeamGoals(testTeams[1], matchWithInGamePenalty)).toBe(1)
   })
 
   it('counts derived active teams as active teams remaining', () => {
@@ -338,7 +388,7 @@ describe('scoring', () => {
 
   it('adds active teams remaining to ranked managers', () => {
     expect(
-      rankManagers(testManagers, testTeams, testAssignments, testMatches)[0].activeTeamsRemaining,
+      rankManagers(testManagers, testTeams, testAssignments, testMatches).find((manager) => manager.id === 'top')?.activeTeamsRemaining,
     ).toBe(3)
   })
 
@@ -394,7 +444,7 @@ describe('scoring', () => {
 
   it('uses manual team goal adjustments to change team totals', () => {
     expect(getTeamGoals(testTeams[2], testMatches, [], testTeamGoalAdjustments)).toBe(3)
-    expect(getTeamGoals(testTeams[4], testMatches, [], testTeamGoalAdjustments)).toBe(6)
+    expect(getTeamGoals(testTeams[4], testMatches, [], testTeamGoalAdjustments)).toBe(0)
   })
 
   it('uses manual team goal adjustments to change manager totals', () => {
