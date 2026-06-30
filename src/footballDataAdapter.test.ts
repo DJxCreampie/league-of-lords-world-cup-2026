@@ -13,8 +13,10 @@ describe('football-data adapter score normalization', () => {
       awayTeam: { id: 2, name: 'Paraguay' },
       score: {
         winner: 'HOME_TEAM',
-        fullTime: { home: 1, away: 1 },
-        penalties: { home: 4, away: 3 },
+        fullTime: { home: 4, away: 5 },
+        regularTime: { home: 1, away: 1 },
+        extraTime: { home: 0, away: 0 },
+        penalties: { home: 3, away: 4 },
       },
       competition: { id: 2000, code: 'WC', name: 'FIFA World Cup' },
       season: { startDate: '2026-06-11' },
@@ -23,7 +25,7 @@ describe('football-data adapter score normalization', () => {
 
     expect(normalized.homeGoals).toBe(1)
     expect(normalized.awayGoals).toBe(1)
-    expect(normalized.homePenaltyShootoutGoals).toBe(4)
-    expect(normalized.awayPenaltyShootoutGoals).toBe(3)
+    expect(normalized.homePenaltyShootoutGoals).toBe(3)
+    expect(normalized.awayPenaltyShootoutGoals).toBe(4)
   })
 })

@@ -40,6 +40,24 @@ const normalizeOptionalScoreNumber = (value) => {
 
 const normalizeScoreNumber = (value) => normalizeOptionalScoreNumber(value) ?? 0
 
+const hasPenaltyShootoutScore = (score) => (
+  normalizeOptionalScoreNumber(score?.penalties?.home) !== undefined &&
+  normalizeOptionalScoreNumber(score?.penalties?.away) !== undefined
+)
+
+const normalizeNonShootoutGoals = (score, side) => {
+  if (hasPenaltyShootoutScore(score)) {
+    const regularTimeGoals = normalizeOptionalScoreNumber(score?.regularTime?.[side])
+    const extraTimeGoals = normalizeOptionalScoreNumber(score?.extraTime?.[side])
+
+    if (regularTimeGoals !== undefined || extraTimeGoals !== undefined) {
+      return (regularTimeGoals ?? 0) + (extraTimeGoals ?? 0)
+    }
+  }
+
+  return normalizeScoreNumber(score?.fullTime?.[side])
+}
+
 async function fetchFootballData(path) {
   if (!FOOTBALL_DATA_API_KEY) {
     throw new Error('Missing FOOTBALL_DATA_API_KEY for football-data mode')
@@ -74,8 +92,8 @@ export function normalizeFootballDataMatch(match, competition) {
   const homeTeamId = resolveTeamId(homeApiId, homeName)
   const awayTeamId = resolveTeamId(awayApiId, awayName)
 
-  const homeGoals = normalizeScoreNumber(match?.score?.fullTime?.home)
-  const awayGoals = normalizeScoreNumber(match?.score?.fullTime?.away)
+  const homeGoals = normalizeNonShootoutGoals(match?.score, 'home')
+  const awayGoals = normalizeNonShootoutGoals(match?.score, 'away')
   const homePenaltyShootoutGoals = normalizeOptionalScoreNumber(match?.score?.penalties?.home)
   const awayPenaltyShootoutGoals = normalizeOptionalScoreNumber(match?.score?.penalties?.away)
 
