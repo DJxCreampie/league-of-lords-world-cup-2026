@@ -1707,12 +1707,14 @@
       "homeTeamName": "Germany",
       "awayTeamId": "team-paraguay",
       "awayTeamName": "Paraguay",
-      "homeGoals": 4,
-      "awayGoals": 5,
+      "homeGoals": 1,
+      "awayGoals": 1,
       "winnerTeamId": "team-paraguay",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-06-30T02:22:13Z"
+      "lastUpdated": "2026-06-30T02:22:13Z",
+      "homePenaltyShootoutGoals": 3,
+      "awayPenaltyShootoutGoals": 4
     },
     {
       "matchId": "537418",

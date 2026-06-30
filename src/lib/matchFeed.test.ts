@@ -1,29 +1,61 @@
 import { describe, expect, it } from 'vitest'
-import { getDefaultMatchFeedDay, getMatchesForNewYorkDay } from './matchFeed'
+import { formatMatchFeedScore, formatPenaltyShootoutScore, getDefaultMatchFeedDay, getMatchesForNewYorkDay } from './matchFeed'
+import type { Match } from '../types'
 
 describe('Match Feed day selection', () => {
-  it('defaults the selected day to today in America/New_York', () => {
-    expect(getDefaultMatchFeedDay(new Date('2026-06-17T03:30:00Z'))).toBe('2026-06-16')
-    expect(getDefaultMatchFeedDay(new Date('2026-06-17T04:30:00Z'))).toBe('2026-06-17')
+  it('defaults to the current New York day', () => {
+    expect(getDefaultMatchFeedDay(new Date('2026-06-12T03:30:00.000Z'))).toBe('2026-06-11')
   })
 
-  it('returns no matches for today instead of defaulting to the earliest match day', () => {
-    const matches = [
+  it('filters matches by New York day', () => {
+    const matches: Match[] = [
       {
-        id: 'earliest-match',
+        id: 'late-ny',
         stage: 'Group',
-        status: 'scheduled' as const,
-        kickoffTime: '2026-06-11T19:00:00Z',
-        homeTeamId: 'team-a',
-        awayTeamId: 'team-b',
+        status: 'scheduled',
+        kickoffTime: '2026-06-12T03:30:00.000Z',
+        homeTeamId: 'a',
+        awayTeamId: 'b',
         homeGoals: 0,
         awayGoals: 0,
       },
     ]
 
-    const today = getDefaultMatchFeedDay(new Date('2026-06-17T12:00:00Z'))
+    expect(getMatchesForNewYorkDay(matches, '2026-06-11').map((match) => match.id)).toEqual(['late-ny'])
+    expect(getMatchesForNewYorkDay(matches, '2026-06-12')).toEqual([])
+  })
 
-    expect(today).toBe('2026-06-17')
-    expect(getMatchesForNewYorkDay(matches, today)).toEqual([])
+  it('excludes penalty shootout goals from the main match feed score', () => {
+    const match: Match = {
+      id: 'germany-paraguay',
+      stage: 'ROUND_OF_16',
+      status: 'finished',
+      kickoffTime: '2026-07-04T19:00:00.000Z',
+      homeTeamId: 'germany',
+      awayTeamId: 'paraguay',
+      homeGoals: 1,
+      awayGoals: 1,
+      homePenaltyShootoutGoals: 4,
+      awayPenaltyShootoutGoals: 3,
+    }
+
+    expect(formatMatchFeedScore(match, 'Germany', 'Paraguay')).toBe('FINISHED · Germany 1 - 1 Paraguay')
+  })
+
+  it('displays penalty shootout results separately when present', () => {
+    const match: Match = {
+      id: 'germany-paraguay',
+      stage: 'ROUND_OF_16',
+      status: 'finished',
+      kickoffTime: '2026-07-04T19:00:00.000Z',
+      homeTeamId: 'germany',
+      awayTeamId: 'paraguay',
+      homeGoals: 1,
+      awayGoals: 1,
+      homePenaltyShootoutGoals: 4,
+      awayPenaltyShootoutGoals: 3,
+    }
+
+    expect(formatPenaltyShootoutScore(match, 'Germany', 'Paraguay')).toBe('Penalties: Germany 4 - 3 Paraguay')
   })
 })
