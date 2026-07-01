@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T16:00:51.879Z",
+  "generatedAt": "2026-07-01T16:10:37.746Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1827,10 +1827,10 @@
       "awayTeamId": "team-congo-dr",
       "awayTeamName": "Congo DR",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T18:00:24Z"
+      "lastUpdated": "2026-07-01T18:10:36Z"
     },
     {
       "matchId": "537422",
