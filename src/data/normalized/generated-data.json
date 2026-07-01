@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T21:50:37.917Z",
+  "generatedAt": "2026-07-01T22:00:45.071Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1849,11 +1849,11 @@
       "homeTeamName": "Belgium",
       "awayTeamId": "team-senegal",
       "awayTeamName": "Senegal",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T23:50:36Z"
+      "lastUpdated": "2026-07-02T00:00:42Z"
     },
     {
       "matchId": "537421",
@@ -1875,7 +1875,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-01T15:20:12Z"
+      "lastUpdated": "2026-07-02T00:00:00Z"
     },
     {
       "matchId": "537420",
