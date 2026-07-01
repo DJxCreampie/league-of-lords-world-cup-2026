@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T18:00:41.735Z",
+  "generatedAt": "2026-07-01T18:10:40.077Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1817,7 +1817,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-01T16:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1828,9 +1828,10 @@
       "awayTeamName": "Congo DR",
       "homeGoals": 2,
       "awayGoals": 1,
+      "winnerTeamId": "team-england",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T20:00:39Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-01T20:01:21Z"
     },
     {
       "matchId": "537422",
