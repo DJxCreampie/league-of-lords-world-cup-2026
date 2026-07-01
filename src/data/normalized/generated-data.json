@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T22:40:39.092Z",
+  "generatedAt": "2026-07-01T22:50:41.252Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1840,7 +1840,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-01T20:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1849,11 +1849,12 @@
       "homeTeamName": "Belgium",
       "awayTeamId": "team-senegal",
       "awayTeamName": "Senegal",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 2,
+      "winnerTeamId": "team-belgium",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-02T00:40:36Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-02T00:49:52Z"
     },
     {
       "matchId": "537421",
@@ -1875,7 +1876,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-02T00:00:00Z"
+      "lastUpdated": "2026-07-02T00:48:54Z"
     },
     {
       "matchId": "537420",
@@ -2089,13 +2090,13 @@
       "minute": null,
       "homeTeamId": "team-mexico",
       "homeTeamName": "Mexico",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-england",
+      "awayTeamName": "England",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-01T15:20:12Z"
+      "lastUpdated": "2026-07-02T00:50:27Z"
     },
     {
       "matchId": "537379",
