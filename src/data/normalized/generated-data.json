@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T02:20:37.859Z",
+  "generatedAt": "2026-07-01T02:30:39.522Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1803,11 +1803,11 @@
       "homeTeamName": "Mexico",
       "awayTeamId": "team-ecuador",
       "awayTeamName": "Ecuador",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T04:20:36Z"
+      "lastUpdated": "2026-07-01T04:30:36Z"
     },
     {
       "matchId": "537426",
