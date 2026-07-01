@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T04:00:41.922Z",
+  "generatedAt": "2026-07-01T04:10:37.128Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1794,7 +1794,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-01T01:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1805,9 +1805,10 @@
       "awayTeamName": "Ecuador",
       "homeGoals": 2,
       "awayGoals": 0,
+      "winnerTeamId": "team-mexico",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T06:00:39Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-01T06:02:36Z"
     },
     {
       "matchId": "537426",
