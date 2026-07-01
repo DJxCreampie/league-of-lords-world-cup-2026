@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T17:40:35.055Z",
+  "generatedAt": "2026-07-01T17:50:38.744Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1826,11 +1826,11 @@
       "homeTeamName": "England",
       "awayTeamId": "team-congo-dr",
       "awayTeamName": "Congo DR",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T19:40:33Z"
+      "lastUpdated": "2026-07-01T19:50:36Z"
     },
     {
       "matchId": "537422",
