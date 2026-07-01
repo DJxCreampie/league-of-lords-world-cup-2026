@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T20:20:38.473Z",
+  "generatedAt": "2026-07-01T20:27:59.961Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1850,10 +1850,10 @@
       "awayTeamId": "team-senegal",
       "awayTeamName": "Senegal",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-01T22:20:36Z"
+      "lastUpdated": "2026-07-01T22:27:57Z"
     },
     {
       "matchId": "537421",
