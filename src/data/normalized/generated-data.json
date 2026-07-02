@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T20:50:40.334Z",
+  "generatedAt": "2026-07-02T21:00:44.686Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1886,7 +1886,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-02T19:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1895,11 +1895,12 @@
       "homeTeamName": "Spain",
       "awayTeamId": "team-austria",
       "awayTeamName": "Austria",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 0,
+      "winnerTeamId": "team-spain",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-02T22:50:39Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-02T22:59:09Z"
     },
     {
       "matchId": "537419",
@@ -1921,7 +1922,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-02T15:20:12Z"
+      "lastUpdated": "2026-07-02T23:00:01Z"
     },
     {
       "matchId": "537429",
