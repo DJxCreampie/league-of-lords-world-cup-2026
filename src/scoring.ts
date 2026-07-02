@@ -214,7 +214,6 @@ export function rankManagers(
       totalKnockoutGoals: assignedTeams.reduce((sum, team) => sum + (team.knockoutGoals ?? 0), 0),
     }
   }).sort((a, b) => b.totalGoals - a.totalGoals
-    || b.activeTeamsRemaining - a.activeTeamsRemaining
-    || b.totalKnockoutGoals - a.totalKnockoutGoals
+    || a.totalMatchesPlayed - b.totalMatchesPlayed
     || a.name.localeCompare(b.name))
 }

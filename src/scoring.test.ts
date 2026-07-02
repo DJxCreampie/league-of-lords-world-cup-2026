@@ -281,6 +281,104 @@ describe('scoring', () => {
     ).toEqual(['Middle', 'Top', 'Bottom'])
   })
 
+  it('ranks managers with equal goals by fewer matches played', () => {
+    const managers: Manager[] = [
+      { id: 'efficient', name: 'Efficient' },
+      { id: 'busy', name: 'Busy' },
+    ]
+    const teams: Team[] = [
+      { id: 'efficient-team', name: 'Efficient Team', status: 'active' },
+      { id: 'busy-team', name: 'Busy Team', status: 'active' },
+      { id: 'opponent-a', name: 'Opponent A', status: 'active' },
+      { id: 'opponent-b', name: 'Opponent B', status: 'active' },
+      { id: 'opponent-c', name: 'Opponent C', status: 'active' },
+    ]
+    const assignments: Assignment[] = [
+      { managerId: 'efficient', teamId: 'efficient-team' },
+      { managerId: 'busy', teamId: 'busy-team' },
+    ]
+    const matches: Match[] = [
+      {
+        id: 'efficient-scores-four',
+        stage: 'Group',
+        status: 'finished',
+        homeTeamId: 'efficient-team',
+        awayTeamId: 'opponent-a',
+        homeGoals: 4,
+        awayGoals: 0,
+      },
+      {
+        id: 'busy-scores-two-first',
+        stage: 'Group',
+        status: 'finished',
+        homeTeamId: 'busy-team',
+        awayTeamId: 'opponent-b',
+        homeGoals: 2,
+        awayGoals: 0,
+      },
+      {
+        id: 'busy-scores-two-second',
+        stage: 'Group',
+        status: 'finished',
+        homeTeamId: 'busy-team',
+        awayTeamId: 'opponent-c',
+        homeGoals: 2,
+        awayGoals: 0,
+      },
+    ]
+
+    expect(rankManagers(managers, teams, assignments, matches).map((manager) => ({
+      name: manager.name,
+      totalGoals: manager.totalGoals,
+      totalMatchesPlayed: manager.totalMatchesPlayed,
+    }))).toEqual([
+      { name: 'Efficient', totalGoals: 4, totalMatchesPlayed: 1 },
+      { name: 'Busy', totalGoals: 4, totalMatchesPlayed: 2 },
+    ])
+  })
+
+  it('uses manager name as the final predictable fallback for equal goals and matches', () => {
+    const managers: Manager[] = [
+      { id: 'zebra', name: 'Zebra' },
+      { id: 'alpha', name: 'Alpha' },
+    ]
+    const teams: Team[] = [
+      { id: 'zebra-team', name: 'Zebra Team', status: 'active' },
+      { id: 'alpha-team', name: 'Alpha Team', status: 'active' },
+      { id: 'opponent-a', name: 'Opponent A', status: 'active' },
+      { id: 'opponent-b', name: 'Opponent B', status: 'active' },
+    ]
+    const assignments: Assignment[] = [
+      { managerId: 'zebra', teamId: 'zebra-team' },
+      { managerId: 'alpha', teamId: 'alpha-team' },
+    ]
+    const matches: Match[] = [
+      {
+        id: 'zebra-equal',
+        stage: 'Group',
+        status: 'finished',
+        homeTeamId: 'zebra-team',
+        awayTeamId: 'opponent-a',
+        homeGoals: 1,
+        awayGoals: 0,
+      },
+      {
+        id: 'alpha-equal',
+        stage: 'Group',
+        status: 'finished',
+        homeTeamId: 'alpha-team',
+        awayTeamId: 'opponent-b',
+        homeGoals: 1,
+        awayGoals: 0,
+      },
+    ]
+
+    expect(rankManagers(managers, teams, assignments, matches).map((manager) => manager.name)).toEqual([
+      'Alpha',
+      'Zebra',
+    ])
+  })
+
   it('counts eliminated teams toward the manager total', () => {
     expect(getManagerTotal(testManagers[1], testTeams, testAssignments, testMatches)).toBe(6)
   })
