@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T20:10:36.262Z",
+  "generatedAt": "2026-07-02T20:20:44.766Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1899,7 +1899,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-02T22:10:33Z"
+      "lastUpdated": "2026-07-02T22:20:42Z"
     },
     {
       "matchId": "537419",
