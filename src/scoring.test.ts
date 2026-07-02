@@ -192,6 +192,27 @@ const testTeamGoalAdjustments: TeamGoalAdjustment[] = [
   { teamId: 'team-e', goals: -1 },
 ]
 
+function buildRankingScenario(
+  managerResults: { id: string; name: string; goals: number; matchesPlayed: number }[],
+): { managers: Manager[]; teams: Team[]; assignments: Assignment[]; matches: Match[] } {
+  const managers = managerResults.map(({ id, name }) => ({ id, name }))
+  const teams = managerResults.map(({ id, name }) => ({ id: `${id}-team`, name: `${name} Team`, status: 'active' as const }))
+  const assignments = managerResults.map(({ id }) => ({ managerId: id, teamId: `${id}-team` }))
+  const matches = managerResults.flatMap(({ id, goals, matchesPlayed }) =>
+    Array.from({ length: matchesPlayed }, (_, index) => ({
+      id: `${id}-match-${index}`,
+      stage: 'Group',
+      status: 'finished' as const,
+      homeTeamId: `${id}-team`,
+      awayTeamId: 'opponent',
+      homeGoals: index === 0 ? goals : 0,
+      awayGoals: 0,
+    })),
+  )
+
+  return { managers, teams, assignments, matches }
+}
+
 function getUnassignedTeams(teams: Team[], assignments: Assignment[]): Team[] {
   const assignedTeamIds = new Set(assignments.map((assignment) => assignment.teamId))
 
@@ -279,6 +300,68 @@ describe('scoring', () => {
         (manager) => manager.name,
       ),
     ).toEqual(['Middle', 'Top', 'Bottom'])
+  })
+
+  it('ranks higher goals above lower goals', () => {
+    const { managers, teams, assignments, matches } = buildRankingScenario([
+      { id: 'lower', name: 'Lower', goals: 9, matchesPlayed: 3 },
+      { id: 'higher', name: 'Higher', goals: 10, matchesPlayed: 1 },
+    ])
+
+    expect(rankManagers(managers, teams, assignments, matches).map((manager) => manager.name)).toEqual([
+      'Higher',
+      'Lower',
+    ])
+  })
+
+  it('ranks more matches played higher when goals are tied', () => {
+    const { managers, teams, assignments, matches } = buildRankingScenario([
+      { id: 'fewer-matches', name: 'Fewer Matches', goals: 30, matchesPlayed: 14 },
+      { id: 'more-matches', name: 'More Matches', goals: 30, matchesPlayed: 15 },
+    ])
+
+    expect(rankManagers(managers, teams, assignments, matches).map((manager) => manager.name)).toEqual([
+      'More Matches',
+      'Fewer Matches',
+    ])
+  })
+
+  it('gives managers the same rank when goals and matches played are tied', () => {
+    const { managers, teams, assignments, matches } = buildRankingScenario([
+      { id: 'manager-c', name: 'Manager C', goals: 30, matchesPlayed: 15 },
+      { id: 'manager-d', name: 'Manager D', goals: 30, matchesPlayed: 15 },
+    ])
+
+    expect(rankManagers(managers, teams, assignments, matches).map((manager) => manager.displayRank)).toEqual([1, 1])
+  })
+
+  it('uses competition ranking by skipping the next number after a tie', () => {
+    const { managers, teams, assignments, matches } = buildRankingScenario([
+      { id: 'first-tied', name: 'First Tied', goals: 10, matchesPlayed: 2 },
+      { id: 'second-tied', name: 'Second Tied', goals: 10, matchesPlayed: 2 },
+      { id: 'after-tie', name: 'After Tie', goals: 9, matchesPlayed: 2 },
+    ])
+
+    expect(rankManagers(managers, teams, assignments, matches).map((manager) => manager.displayRank)).toEqual([1, 1, 3])
+  })
+
+  it('supports the example competition ranking sequence', () => {
+    const { managers, teams, assignments, matches } = buildRankingScenario([
+      { id: 'rank-1', name: 'Rank 1', goals: 10, matchesPlayed: 2 },
+      { id: 'rank-2', name: 'Rank 2', goals: 9, matchesPlayed: 2 },
+      { id: 'rank-3', name: 'Rank 3', goals: 8, matchesPlayed: 2 },
+      { id: 'rank-4', name: 'Rank 4', goals: 7, matchesPlayed: 2 },
+      { id: 'rank-5-a', name: 'Rank 5 A', goals: 6, matchesPlayed: 2 },
+      { id: 'rank-5-b', name: 'Rank 5 B', goals: 6, matchesPlayed: 2 },
+      { id: 'rank-7', name: 'Rank 7', goals: 5, matchesPlayed: 2 },
+      { id: 'rank-8', name: 'Rank 8', goals: 4, matchesPlayed: 2 },
+      { id: 'rank-9', name: 'Rank 9', goals: 3, matchesPlayed: 2 },
+      { id: 'rank-10', name: 'Rank 10', goals: 2, matchesPlayed: 2 },
+    ])
+
+    expect(rankManagers(managers, teams, assignments, matches).map((manager) => manager.displayRank)).toEqual([
+      1, 2, 3, 4, 5, 5, 7, 8, 9, 10,
+    ])
   })
 
   it('counts eliminated teams toward the manager total', () => {

@@ -92,6 +92,7 @@ export type RankedManager = Manager & {
   activeTeamsRemaining: number
   totalMatchesPlayed: number
   totalKnockoutGoals: number
+  displayRank: number
 }
 
 function applyTeamOverrides(teams: Team[], matches: Match[], teamManualOverrides: TeamManualOverride[] = []): Team[] {
@@ -203,7 +204,7 @@ export function rankManagers(
   managers: Manager[], teams: Team[], assignments: Assignment[], matches: Match[],
   matchScoreOverrides: MatchScoreOverride[] = [], teamGoalAdjustments: TeamGoalAdjustment[] = [], teamManualOverrides: TeamManualOverride[] = [],
 ): RankedManager[] {
-  return managers.map((manager) => {
+  const sortedManagers = managers.map((manager, originalIndex) => {
     const assignedTeams = getAssignedTeams(manager, teams, assignments, matches, matchScoreOverrides, teamGoalAdjustments, teamManualOverrides)
     return {
       ...manager,
@@ -212,9 +213,29 @@ export function rankManagers(
       activeTeamsRemaining: assignedTeams.filter((team) => team.status === 'active').length,
       totalMatchesPlayed: assignedTeams.reduce((sum, team) => sum + team.matchesPlayed, 0),
       totalKnockoutGoals: assignedTeams.reduce((sum, team) => sum + (team.knockoutGoals ?? 0), 0),
+      displayRank: 0,
+      originalIndex,
     }
   }).sort((a, b) => b.totalGoals - a.totalGoals
-    || b.activeTeamsRemaining - a.activeTeamsRemaining
-    || b.totalKnockoutGoals - a.totalKnockoutGoals
-    || a.name.localeCompare(b.name))
+    || b.totalMatchesPlayed - a.totalMatchesPlayed
+    || a.originalIndex - b.originalIndex)
+
+  let currentDisplayRank = 0
+
+  return sortedManagers.map((manager, index) => {
+    const previousManager = sortedManagers[index - 1]
+    currentDisplayRank = previousManager &&
+      previousManager.totalGoals === manager.totalGoals &&
+      previousManager.totalMatchesPlayed === manager.totalMatchesPlayed
+      ? currentDisplayRank
+      : index + 1
+
+    const { originalIndex, ...rankedManager } = {
+      ...manager,
+      displayRank: currentDisplayRank,
+    }
+    void originalIndex
+
+    return rankedManager
+  })
 }

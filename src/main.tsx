@@ -94,14 +94,9 @@ function App() {
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
 
   const sortedLeaderboard = useMemo(() => {
-    const withRank = leaderboard.map((manager, index) => ({
-      ...manager,
-      rank: index + 1,
-    }))
+    if (sortKey === 'rank') return leaderboard
 
-    if (sortKey === 'rank') return withRank
-
-    return [...withRank].sort((a, b) => {
+    return [...leaderboard].sort((a, b) => {
       if (sortKey === 'manager') {
         const result = a.name.localeCompare(b.name)
         return sortDirection === 'asc' ? result : -result
@@ -290,7 +285,7 @@ function App() {
                       )
                     }
                   >
-                    <span className="rank">#{manager.rank}</span>
+                    <span className="rank">#{manager.displayRank}</span>
                     <span className="manager-name">{manager.name}</span>
                     <span>{manager.totalGoals}</span>
                     <span>{manager.totalMatchesPlayed}</span>
