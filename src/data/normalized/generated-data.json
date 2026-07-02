@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T00:40:33.828Z",
+  "generatedAt": "2026-07-02T00:50:37.698Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1872,11 +1872,11 @@
       "homeTeamName": "United States",
       "awayTeamId": "team-bosnia-herzegovina",
       "awayTeamName": "Bosnia-Herzegovina",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-02T02:40:33Z"
+      "lastUpdated": "2026-07-02T02:50:36Z"
     },
     {
       "matchId": "537420",
