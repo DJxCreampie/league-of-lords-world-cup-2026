@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T02:00:45.459Z",
+  "generatedAt": "2026-07-02T02:10:35.531Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1863,7 +1863,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-02T00:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1874,9 +1874,10 @@
       "awayTeamName": "Bosnia-Herzegovina",
       "homeGoals": 2,
       "awayGoals": 0,
+      "winnerTeamId": "team-united-states",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-02T04:00:42Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-02T04:07:45Z"
     },
     {
       "matchId": "537420",
