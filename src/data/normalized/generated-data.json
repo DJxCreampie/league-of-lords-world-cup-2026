@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T19:30:39.889Z",
+  "generatedAt": "2026-07-02T19:40:34.753Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1895,11 +1895,11 @@
       "homeTeamName": "Spain",
       "awayTeamId": "team-austria",
       "awayTeamName": "Austria",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-02T21:30:39Z"
+      "lastUpdated": "2026-07-02T21:40:33Z"
     },
     {
       "matchId": "537419",
