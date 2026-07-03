@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T03:10:35.520Z",
+  "generatedAt": "2026-07-03T03:20:34.007Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1941,11 +1941,11 @@
       "homeTeamName": "Switzerland",
       "awayTeamId": "team-algeria",
       "awayTeamName": "Algeria",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-03T05:10:33Z"
+      "lastUpdated": "2026-07-03T05:20:33Z"
     },
     {
       "matchId": "537428",
