@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T23:20:40.445Z",
+  "generatedAt": "2026-07-03T23:30:45.235Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1990,10 +1990,10 @@
       "awayTeamId": "team-cape-verde",
       "awayTeamName": "Cape Verde Islands",
       "homeGoals": 1,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-04T01:20:39Z"
+      "lastUpdated": "2026-07-04T01:30:42Z"
     },
     {
       "matchId": "537430",
@@ -2015,7 +2015,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-03T15:20:13Z"
+      "lastUpdated": "2026-07-04T01:30:00Z"
     },
     {
       "matchId": "537376",
