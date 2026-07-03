@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T21:00:51.530Z",
+  "generatedAt": "2026-07-03T21:10:45.631Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1971,7 +1971,7 @@
       "winnerTeamId": "team-egypt",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-07-03T22:53:23Z"
+      "lastUpdated": "2026-07-03T23:04:00Z"
     },
     {
       "matchId": "537427",
@@ -1993,7 +1993,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-03T22:46:54Z"
+      "lastUpdated": "2026-07-03T23:06:12Z"
     },
     {
       "matchId": "537430",
