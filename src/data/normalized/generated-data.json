@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T04:50:40.341Z",
+  "generatedAt": "2026-07-03T05:01:01.139Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1932,7 +1932,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-03T03:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1943,9 +1943,10 @@
       "awayTeamName": "Algeria",
       "homeGoals": 2,
       "awayGoals": 0,
+      "winnerTeamId": "team-switzerland",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-03T06:50:39Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-03T06:58:24Z"
     },
     {
       "matchId": "537428",
