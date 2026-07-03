@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T00:50:33.293Z",
+  "generatedAt": "2026-07-03T01:00:44.844Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1918,11 +1918,11 @@
       "homeTeamName": "Portugal",
       "awayTeamId": "team-croatia",
       "awayTeamName": "Croatia",
-      "homeGoals": 1,
+      "homeGoals": 2,
       "awayGoals": 1,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-03T02:50:30Z"
+      "lastUpdated": "2026-07-03T03:00:42Z"
     },
     {
       "matchId": "537429",
@@ -1944,7 +1944,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-02T15:20:12Z"
+      "lastUpdated": "2026-07-03T03:00:01Z"
     },
     {
       "matchId": "537428",
