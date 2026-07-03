@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T20:50:38.422Z",
+  "generatedAt": "2026-07-03T21:00:51.530Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1955,7 +1955,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-03T18:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1966,11 +1966,12 @@
       "awayTeamName": "Egypt",
       "homeGoals": 1,
       "awayGoals": 1,
-      "homePenaltyShootoutGoals": 0,
-      "awayPenaltyShootoutGoals": 0,
+      "homePenaltyShootoutGoals": 2,
+      "awayPenaltyShootoutGoals": 4,
+      "winnerTeamId": "team-egypt",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-03T22:44:57Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-03T22:53:23Z"
     },
     {
       "matchId": "537427",
@@ -2162,13 +2163,13 @@
       "minute": null,
       "homeTeamId": "unmapped:unknown-home",
       "homeTeamName": "Unknown Home",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-egypt",
+      "awayTeamName": "Egypt",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-03T15:20:13Z"
+      "lastUpdated": "2026-07-03T23:00:10Z"
     },
     {
       "matchId": "537382",
