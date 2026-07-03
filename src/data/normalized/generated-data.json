@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T22:20:42.109Z",
+  "generatedAt": "2026-07-03T22:30:46.501Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1989,11 +1989,11 @@
       "homeTeamName": "Argentina",
       "awayTeamId": "team-cape-verde",
       "awayTeamName": "Cape Verde Islands",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-04T00:20:39Z"
+      "lastUpdated": "2026-07-04T00:30:45Z"
     },
     {
       "matchId": "537430",
