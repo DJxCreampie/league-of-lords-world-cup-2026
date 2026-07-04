@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T00:40:44.901Z",
+  "generatedAt": "2026-07-04T00:50:39.903Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -1980,7 +1980,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-03T22:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -1991,9 +1991,10 @@
       "awayTeamName": "Cape Verde Islands",
       "homeGoals": 3,
       "awayGoals": 2,
+      "winnerTeamId": "team-argentina",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-04T02:40:42Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-04T02:45:06Z"
     },
     {
       "matchId": "537430",
@@ -2015,7 +2016,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-04T02:35:07Z"
+      "lastUpdated": "2026-07-04T02:48:18Z"
     },
     {
       "matchId": "537376",
