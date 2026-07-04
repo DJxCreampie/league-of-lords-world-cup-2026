@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T23:00:49.152Z",
+  "generatedAt": "2026-07-04T23:10:46.157Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2049,7 +2049,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-04T21:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
@@ -2060,9 +2060,10 @@
       "awayTeamName": "France",
       "homeGoals": 0,
       "awayGoals": 1,
+      "winnerTeamId": "team-france",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-05T01:00:48Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-05T01:05:57Z"
     },
     {
       "matchId": "537377",
