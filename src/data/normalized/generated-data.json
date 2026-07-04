@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T01:40:41.430Z",
+  "generatedAt": "2026-07-04T01:50:39.350Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2012,11 +2012,11 @@
       "homeTeamName": "Colombia",
       "awayTeamId": "team-ghana",
       "awayTeamName": "Ghana",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-04T03:40:39Z"
+      "lastUpdated": "2026-07-04T03:50:36Z"
     },
     {
       "matchId": "537376",
