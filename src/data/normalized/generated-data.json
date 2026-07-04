@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T05:40:39.213Z",
+  "generatedAt": "2026-07-04T05:50:43.612Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2163,15 +2163,15 @@
       "stage": "LAST_16",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-argentina",
+      "homeTeamName": "Argentina",
       "awayTeamId": "team-egypt",
       "awayTeamName": "Egypt",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-03T23:00:10Z"
+      "lastUpdated": "2026-07-04T07:44:48Z"
     },
     {
       "matchId": "537382",
@@ -2187,13 +2187,13 @@
       "minute": null,
       "homeTeamId": "team-switzerland",
       "homeTeamName": "Switzerland",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-colombia",
+      "awayTeamName": "Colombia",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-03T15:20:13Z"
+      "lastUpdated": "2026-07-04T07:45:34Z"
     },
     {
       "matchId": "537383",
