@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T22:06:13.201Z",
+  "generatedAt": "2026-07-05T22:10:45.616Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2086,7 +2086,7 @@
       "winnerTeamId": "team-norway",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-07-06T00:04:18Z"
+      "lastUpdated": "2026-07-06T00:08:45Z"
     },
     {
       "matchId": "537378",
