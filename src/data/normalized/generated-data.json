@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T21:50:46.050Z",
+  "generatedAt": "2026-07-05T22:00:51.652Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2082,10 +2082,10 @@
       "awayTeamId": "team-norway",
       "awayTeamName": "Norway",
       "homeGoals": 0,
-      "awayGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-05T23:50:45Z"
+      "lastUpdated": "2026-07-06T00:00:48Z"
     },
     {
       "matchId": "537378",
@@ -2107,7 +2107,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-05T15:20:13Z"
+      "lastUpdated": "2026-07-06T00:00:00Z"
     },
     {
       "matchId": "537379",
