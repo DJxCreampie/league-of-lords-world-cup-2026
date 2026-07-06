@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T01:40:45.352Z",
+  "generatedAt": "2026-07-06T01:50:44.370Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2104,11 +2104,11 @@
       "homeTeamName": "Mexico",
       "awayTeamId": "team-england",
       "awayTeamName": "England",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-06T03:40:42Z"
+      "lastUpdated": "2026-07-06T03:50:42Z"
     },
     {
       "matchId": "537379",
