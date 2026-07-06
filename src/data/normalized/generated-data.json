@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T02:20:42.891Z",
+  "generatedAt": "2026-07-06T02:30:51.568Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2105,10 +2105,10 @@
       "awayTeamId": "team-england",
       "awayTeamName": "England",
       "homeGoals": 1,
-      "awayGoals": 2,
+      "awayGoals": 3,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-06T04:20:42Z"
+      "lastUpdated": "2026-07-06T04:30:51Z"
     },
     {
       "matchId": "537379",
