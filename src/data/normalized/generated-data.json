@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T22:42:17.755Z",
+  "generatedAt": "2026-07-07T22:50:51.131Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2198,11 +2198,11 @@
       "awayTeamName": "Colombia",
       "homeGoals": 0,
       "awayGoals": 0,
-      "homePenaltyShootoutGoals": 0,
-      "awayPenaltyShootoutGoals": 0,
+      "homePenaltyShootoutGoals": 3,
+      "awayPenaltyShootoutGoals": 3,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-08T00:42:15Z"
+      "lastUpdated": "2026-07-08T00:50:48Z"
     },
     {
       "matchId": "537383",
