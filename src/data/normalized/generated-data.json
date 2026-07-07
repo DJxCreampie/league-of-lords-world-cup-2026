@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T18:01:13.851Z",
+  "generatedAt": "2026-07-07T18:10:50.207Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2164,7 +2164,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-07T16:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
@@ -2175,9 +2175,10 @@
       "awayTeamName": "Egypt",
       "homeGoals": 3,
       "awayGoals": 2,
+      "winnerTeamId": "team-argentina",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-07T20:01:12Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-07T20:06:48Z"
     },
     {
       "matchId": "537382",
