@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T17:50:50.085Z",
+  "generatedAt": "2026-07-07T18:01:13.851Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2173,11 +2173,11 @@
       "homeTeamName": "Argentina",
       "awayTeamId": "team-egypt",
       "awayTeamName": "Egypt",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-07T19:50:48Z"
+      "lastUpdated": "2026-07-07T20:01:12Z"
     },
     {
       "matchId": "537382",
@@ -2199,7 +2199,7 @@
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-07T15:20:12Z"
+      "lastUpdated": "2026-07-07T20:00:00Z"
     },
     {
       "matchId": "537383",
