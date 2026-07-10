@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T20:50:47.779Z",
+  "generatedAt": "2026-07-10T21:00:52.992Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2235,7 +2235,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-10T19:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "QUARTER_FINALS",
       "group": null,
@@ -2246,9 +2246,10 @@
       "awayTeamName": "Belgium",
       "homeGoals": 2,
       "awayGoals": 1,
+      "winnerTeamId": "team-spain",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-10T22:50:13Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-10T23:00:15Z"
     },
     {
       "matchId": "537385",
