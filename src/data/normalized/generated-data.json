@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T19:30:48.409Z",
+  "generatedAt": "2026-07-10T19:40:51.944Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2244,11 +2244,11 @@
       "homeTeamName": "Spain",
       "awayTeamId": "team-belgium",
       "awayTeamName": "Belgium",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-10T21:30:45Z"
+      "lastUpdated": "2026-07-10T21:40:48Z"
     },
     {
       "matchId": "537385",
