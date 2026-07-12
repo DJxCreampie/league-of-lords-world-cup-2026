@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T03:40:46.502Z",
+  "generatedAt": "2026-07-12T03:50:43.604Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2281,7 +2281,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-12T01:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "QUARTER_FINALS",
       "group": null,
@@ -2290,11 +2290,12 @@
       "homeTeamName": "Argentina",
       "awayTeamId": "team-switzerland",
       "awayTeamName": "Switzerland",
-      "homeGoals": 2,
+      "homeGoals": 3,
       "awayGoals": 1,
+      "winnerTeamId": "team-argentina",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-12T05:40:45Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-12T05:46:58Z"
     },
     {
       "matchId": "537387",
