@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T01:10:46.812Z",
+  "generatedAt": "2026-07-12T01:20:49.482Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2290,11 +2290,11 @@
       "homeTeamName": "Argentina",
       "awayTeamId": "team-switzerland",
       "awayTeamName": "Switzerland",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-12T03:10:45Z"
+      "lastUpdated": "2026-07-12T03:20:48Z"
     },
     {
       "matchId": "537387",
