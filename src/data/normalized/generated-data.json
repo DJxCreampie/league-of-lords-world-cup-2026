@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T20:10:49.690Z",
+  "generatedAt": "2026-07-14T20:20:50.219Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2314,10 +2314,10 @@
       "awayTeamId": "team-spain",
       "awayTeamName": "Spain",
       "homeGoals": 0,
-      "awayGoals": 1,
+      "awayGoals": 2,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-14T22:10:49Z"
+      "lastUpdated": "2026-07-14T22:19:50Z"
     },
     {
       "matchId": "537388",
