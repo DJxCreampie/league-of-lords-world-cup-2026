@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T21:00:55.054Z",
+  "generatedAt": "2026-07-14T21:10:49.034Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2318,7 +2318,7 @@
       "winnerTeamId": "team-spain",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-07-14T22:59:16Z"
+      "lastUpdated": "2026-07-14T23:03:30Z"
     },
     {
       "matchId": "537388",
@@ -2354,15 +2354,15 @@
       "stage": "THIRD_PLACE",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-france",
+      "homeTeamName": "France",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-14T15:20:10Z"
+      "lastUpdated": "2026-07-14T23:02:46Z"
     },
     {
       "matchId": "537390",
@@ -2376,15 +2376,15 @@
       "stage": "FINAL",
       "group": null,
       "minute": null,
-      "homeTeamId": "unmapped:unknown-home",
-      "homeTeamName": "Unknown Home",
+      "homeTeamId": "team-spain",
+      "homeTeamName": "Spain",
       "awayTeamId": "unmapped:unknown-away",
       "awayTeamName": "Unknown Away",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-14T15:20:10Z"
+      "lastUpdated": "2026-07-14T23:02:15Z"
     }
   ]
 }
