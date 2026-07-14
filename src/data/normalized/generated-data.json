@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T20:50:52.140Z",
+  "generatedAt": "2026-07-14T21:00:55.054Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2304,7 +2304,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-14T19:00:00Z",
-      "status": "live",
+      "status": "final",
       "matchday": null,
       "stage": "SEMI_FINALS",
       "group": null,
@@ -2315,9 +2315,10 @@
       "awayTeamName": "Spain",
       "homeGoals": 0,
       "awayGoals": 2,
+      "winnerTeamId": "team-spain",
       "sourceProvider": "football-data.org",
-      "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-14T22:50:49Z"
+      "sourceStatus": "FINISHED",
+      "lastUpdated": "2026-07-14T22:59:16Z"
     },
     {
       "matchId": "537388",
