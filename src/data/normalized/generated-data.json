@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T20:10:52.409Z",
+  "generatedAt": "2026-07-15T20:17:48.301Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2336,11 +2336,11 @@
       "homeTeamName": "England",
       "awayTeamId": "team-argentina",
       "awayTeamName": "Argentina",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "IN_PLAY",
-      "lastUpdated": "2026-07-15T22:10:49Z"
+      "lastUpdated": "2026-07-15T22:17:46Z"
     },
     {
       "matchId": "537389",
