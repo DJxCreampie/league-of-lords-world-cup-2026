@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T21:20:53.149Z",
+  "generatedAt": "2026-07-15T21:30:57.174Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2357,13 +2357,13 @@
       "minute": null,
       "homeTeamId": "team-france",
       "homeTeamName": "France",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-england",
+      "awayTeamName": "England",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-15T15:20:06Z"
+      "lastUpdated": "2026-07-15T23:25:01Z"
     },
     {
       "matchId": "537390",
@@ -2379,13 +2379,13 @@
       "minute": null,
       "homeTeamId": "team-spain",
       "homeTeamName": "Spain",
-      "awayTeamId": "unmapped:unknown-away",
-      "awayTeamName": "Unknown Away",
+      "awayTeamId": "team-argentina",
+      "awayTeamName": "Argentina",
       "homeGoals": 0,
       "awayGoals": 0,
       "sourceProvider": "football-data.org",
       "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-15T15:20:06Z"
+      "lastUpdated": "2026-07-15T23:25:32Z"
     }
   ]
 }
