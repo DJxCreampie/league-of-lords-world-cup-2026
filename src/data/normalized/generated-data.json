@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T07:10:34.319Z",
+  "generatedAt": "2026-07-17T07:20:35.251Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2226,7 +2226,7 @@
       "winnerTeamId": "team-france",
       "sourceProvider": "football-data.org",
       "sourceStatus": "FINISHED",
-      "lastUpdated": "2026-07-17T05:20:06Z"
+      "lastUpdated": "2026-07-17T09:13:38Z"
     },
     {
       "matchId": "537384",
