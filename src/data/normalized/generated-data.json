@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T21:00:33.339Z",
+  "generatedAt": "2026-07-18T21:10:26.957Z",
   "source": "football-data.org",
   "meta": {
     "competitionCode": "WC",
@@ -2350,7 +2350,7 @@
       "competitionName": "FIFA World Cup",
       "seasonYear": 2026,
       "kickoffTime": "2026-07-18T21:00:00Z",
-      "status": "upcoming",
+      "status": "live",
       "matchday": null,
       "stage": "THIRD_PLACE",
       "group": null,
@@ -2360,10 +2360,10 @@
       "awayTeamId": "team-england",
       "awayTeamName": "England",
       "homeGoals": 0,
-      "awayGoals": 0,
+      "awayGoals": 1,
       "sourceProvider": "football-data.org",
-      "sourceStatus": "TIMED",
-      "lastUpdated": "2026-07-18T21:53:15Z"
+      "sourceStatus": "IN_PLAY",
+      "lastUpdated": "2026-07-18T23:10:24Z"
     },
     {
       "matchId": "537390",
